@@ -12,6 +12,11 @@ class MaterialsController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('materials/index.html.twig');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Material');
+        $materials = $repository->findAll();
+
+        return $this->render('materials/index.html.twig', array(
+            'materials' => $materials,
+        ));
     }
 }
