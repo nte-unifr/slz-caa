@@ -2,28 +2,43 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-3">
             <div class="page-header">
-                <h1>Matériel d'autoapprentissage <small>Base de données</small></h1>
+                <h3>Filtres</h3>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 table-responsive">
-            <table class="table table-striped table-hover">
+        <div class="col-xs-12 col-sm-9 table-responsive">
+            <div class="page-header">
+                <h2>Matériel d'autoapprentissage</h2>
+            </div>
+            <table id="materials" class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Title</th>
+                        <th>Titre</th>
+                        <th>Niveaux cible</th>
+                        <th>Compétences</th>
+                        <th>Thématiques</th>
+                        <th>Langue de départ</th>
+                        <th>Média</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for material in materials %}
                         <tr>
                             <td>{{ material.titel }}</td>
+                            <td>{{ material.sprachniveau }}</td>
+                            <td>{{ material.fertigkeit }}</td>
+                            <td>{{ material.fachbezug }}</td>
+                            <td></td>
+                            <td>{{ material.begleitmat }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            
+            <div class="page-header">
+                <h2>Liens d'autoapprentissage</h2>
+            </div>
         </div>
     </div>
 {% endblock %}
