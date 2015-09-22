@@ -22,20 +22,18 @@
                         <th>Média</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {% for material in materials %}
-                        <tr>
-                            <td>{{ material.titel }}</td>
-                            <td>{{ material.sprachniveau }}</td>
-                            <td>{{ material.fertigkeit }}</td>
-                            <td>{{ material.fachbezug }}</td>
-                            <td></td>
-                            <td>{{ material.begleitmat }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Niveaux cible</th>
+                        <th>Compétences</th>
+                        <th>Thématiques</th>
+                        <th>Langue de départ</th>
+                        <th>Média</th>
+                    </tr>
+                </tfoot>
             </table>
-            
+
             <div class="page-header">
                 <h2>Liens d'autoapprentissage</h2>
             </div>

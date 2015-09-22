@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * Materials
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="materials")
  * @ORM\Entity
  */
-class Material
+class Material implements JsonSerializable
 {
     /**
      * @var integer
@@ -2041,5 +2042,27 @@ class Material
     public function getEmpty()
     {
         return $this->empty;
+    }
+
+    public function jsonSerialize()
+    {
+        return array(
+            'id' => $this->id,
+            'title' => $this->titel,
+            'author' => $this->autor,
+            'publication' => $this->jahr,
+            'lang_level' => $this->prettify($this->sprachniveau),
+            'skills' => $this->prettify($this->fertigkeit),
+            'thematic' => $this->fachbezug,
+            'lang_source' => $this->prettify($this->ausgangssprache),
+            'medium' => $this->medium."|".$this->nrcdrom,
+            'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
+            'description' => $this->kommentar
+        );
+    }
+
+    public function prettify($string)
+    {
+        return str_replace(" ", ", ", $string);
     }
 }
