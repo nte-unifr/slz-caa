@@ -1,0 +1,29 @@
+everyday:
+    - landeskunde
+    - tourismus
+    - film
+    - literatur
+    - musik
+    - beruf
+    - korrespondenz
+    - gastronomie
+humanities:
+    - didaktik
+    - geschichte
+    - kunst
+    - linguistik
+    - politik
+    - psychologie
+    - recht
+    - soziologie
+    - wirtschaft
+naturalscience:
+    - biologie
+    - chemie
+    - geografie
+    - informatik
+    - ingenieurwissenschaft
+    - mathematik
+    - medizin
+    - physik
+    - technik
