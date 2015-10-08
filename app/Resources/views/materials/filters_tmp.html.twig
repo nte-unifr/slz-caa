@@ -1,0 +1,39 @@
+<fieldset>
+    <legend>Général</legend>
+    <div class="form-group">
+        <label for="filtersLanguage">Langue</label>
+        <select id="filtersLanguage" data-col="6">
+            {% for language in languages %}
+                <option value="{{ language }}">{{ language|trans({}, "languages") }}</option>
+            {% endfor %}
+        </select>
+        <p class="help-block">Il s'agit de la langue que vous souhaitez apprendre.</p>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Matériel</legend>
+    <div class="form-group">
+        <label for="filtersSource">Langue de départ</label>
+        <select id="filtersSource" data-col="">
+            {% for language in languages_source %}
+                <option value="{{ language }}">{{ language }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="filtersMedia">Média</label>
+        <select id="filtersMedia" data-col="5" multiple>
+            {% for media in medias %}
+                <option value="{{ media }}" selected>{{ media|trans({}, "medias") }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="filtersDate">Année de publication</label>
+        <select id="filtersDate" data-col="">
+            <option value="0">Tous</option>
+            <option value="2010">Depuis 2010</option>
+            <option value="2000">Depuis 2000</option>
+            <option value="1990">Depuis 1990</option>
+        </select>
+</fieldset>

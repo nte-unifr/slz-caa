@@ -2051,18 +2051,21 @@ class Material implements JsonSerializable
             'title' => $this->titel,
             'author' => $this->autor,
             'publication' => $this->jahr,
-            'lang_level' => $this->prettify($this->sprachniveau),
-            'skills' => $this->prettify($this->fertigkeit),
-            'thematic' => $this->fachbezug,
-            'lang_source' => $this->prettify($this->ausgangssprache),
-            'medium' => $this->medium."|".$this->nrcdrom,
+            'lang_level' => $this->toArray($this->sprachniveau),
+            'skills' => $this->toArray($this->fertigkeit),
+            'thematic' => $this->toArray($this->fachbezug),
+            'lang_source' => $this->toArray($this->ausgangssprache),
+            'lang_target' => $this->spr,
+            'medium' => array($this->medium, $this->nrcdrom),
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
-            'description' => $this->kommentar
+            'description' => $this->kommentar,
+            'year' => $this->jahr
         );
     }
 
-    public function prettify($string)
+    // Utility
+    public function toArray($string)
     {
-        return str_replace(" ", ", ", $string);
+        return explode(" ", $string);
     }
 }
