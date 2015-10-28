@@ -36,7 +36,7 @@ class MaterialsController extends Controller
                 'medias' => $medias,
                 'languages_source' => $languages_source,
                 'levels' => $levels,
-                'themes' => $themes
+                'themes' => $themes,
                 'modalities' => $modalities
             ));
         }

@@ -2059,7 +2059,7 @@ class Material implements JsonSerializable
             'medium' => array($this->medium, $this->nrcdrom),
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
             'description' => $this->kommentar,
-            'year' => $this->jahr
+            'year' => $this->jahr,
             'asl' => $this->asl
         );
     }

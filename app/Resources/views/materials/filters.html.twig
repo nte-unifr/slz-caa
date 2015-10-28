@@ -12,6 +12,11 @@
     <div class="form-group">
         <label for="fiTheme">Thématique</label><br>
         <select id="fiTheme" class="js-chosen" multiple>
+            <optgroup label="-">
+                {% for theme in themes.no %}
+                    <option value="" selected>{{ theme|trans({}, "themes") }}</option>
+                {% endfor %}
+            </optgroup>
             <optgroup label="Quotidien">
                 {% for theme in themes.everyday %}
                     <option value="{{ theme }}" selected>{{ theme|trans({}, "themes") }}</option>
