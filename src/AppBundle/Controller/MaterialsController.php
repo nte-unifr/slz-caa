@@ -29,6 +29,7 @@ class MaterialsController extends Controller
             $languages_source = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/languages_source.yml'));
             $levels = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/levels.yml'));
             $themes = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/themes.yml'));
+            $modalities = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/modalities.yml'));
             return $this->render('materials/index.html.twig', array(
                 'materials' => $materials,
                 'languages' => $languages,
@@ -36,6 +37,7 @@ class MaterialsController extends Controller
                 'languages_source' => $languages_source,
                 'levels' => $levels,
                 'themes' => $themes
+                'modalities' => $modalities
             ));
         }
     }

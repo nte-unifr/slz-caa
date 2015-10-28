@@ -2060,6 +2060,7 @@ class Material implements JsonSerializable
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
             'description' => $this->kommentar,
             'year' => $this->jahr
+            'asl' => $this->asl
         );
     }
 

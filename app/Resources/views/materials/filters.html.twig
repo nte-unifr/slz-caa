@@ -32,9 +32,9 @@
     <div class="form-group">
         <label for="fiModality">Modalité d'apprentissage</label><br>
         <select id="fiModality" class="js-chosen" multiple>
-            <option value="autonomie" selected>En autonomie</option>
-            <option value="accompagnement" selected>Accompagnement d'un cours</option>
-            <option value="consultation" selected>Avec matériel de consultation</option>
+            {% for modality in modalities %}
+                <option value="{{ modality }}" selected>{{ modality|trans({}, "modalities") }}</option>
+            {% endfor %}
         </select>
         <p class="help-block">Exemple de matériel de consultation : Dictionnaires, Grammaires, Encyclopédies</p>
     </div>
