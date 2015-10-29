@@ -12,13 +12,14 @@ everyday:
 humanities:
     - didaktik
     - geschichte
-    - kunst
+    - kunstgeschichte
     - linguistik
     - politik
     - psychologie
     - recht
     - soziologie
     - wirtschaft
+    - philosophie
 naturalscience:
     - biologie
     - chemie

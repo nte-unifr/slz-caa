@@ -33,8 +33,12 @@ var fiTypeValue          = "";
 var fiYearValue          = "";
 
 var THEME_COL       = 3;
+var SOURCE_COL      = 4;
 var LANGUAGE_COL    = 6;
 var MODALITY_COL    = 8;
+var ID_COL          = 9;
+
+var THEMES_LIST     = "";
 
 // Allow to format the lang level to include label class instead of pure text
 var formatLangLevel = function(data) {
@@ -44,36 +48,40 @@ var formatLangLevel = function(data) {
     });
     return formatted;
 };
-var filterTable = function(table, col, value) {
-    value = value.toLowerCase() == "all" ? "" : value;
-    table.columns(col).search(value).draw();
-};
 
-var setThemeAlts = function(themes) {
-    if ($.inArray('reise', themes) != -1) {
-        themes.push("tourismus");
+var getThemeWithAlts = function(themes) {
+    var themesWithAlts = fiThemeValue.slice();
+    if ($.inArray("tourismus", fiThemeValue) != -1) {
+        themesWithAlts.push("reise");
     }
-    if ($.inArray('literatur', themes) != -1) {
-        themes.push("literaturwissenschaft");
+    if ($.inArray("literatur", fiThemeValue) != -1) {
+        themesWithAlts.push("literaturwissenschaft");
     }
-    if ($.inArray('gastronomie', themes) != -1) {
-        themes.push("hotellerie");
+    if ($.inArray("gastronomie", fiThemeValue) != -1) {
+        themesWithAlts.push("hotellerie");
     }
-    if ($.inArray('geisteswissenschaft', themes) != -1) {
-        themes.push("akademisch");
-        themes.push("wissenschaft");
+    if ($.inArray("naturwissenschaft", fiThemeValue) != -1) {
+        themesWithAlts.push("akademisch");
+        themesWithAlts.push("wissenschaft");
     }
-    if ($.inArray('naturwissenschaft', themes) != -1) {
-        themes.push("akademisch");
-        themes.push("wissenschaft");
+    if ($.inArray("informatik", fiThemeValue) != -1) {
+        themesWithAlts.push("internet");
     }
-    if ($.inArray('informatik', themes) != -1) {
-        themes.push("internet");
+    if ($.inArray("medizin", fiThemeValue) != -1) {
+        themesWithAlts.push("pharmazie");
     }
-    if ($.inArray('medizin', themes) != -1) {
-        themes.push("pharmazie");
+    if ($.inArray("", fiThemeValue) != -1) {
+        // here we check every theme the col may have that is not present in
+        // the complete list of themes, if so, just add it when no particular
+        // theme is chosen
+        $.each( themes, function(key, value) {
+            if ($.inArray(value, THEMES_LIST) == -1) {
+                themesWithAlts.push(value);
+            }
+        });
     }
-    return themes;
+
+    return themesWithAlts;
 }
 
 var setFiltersValues = function() {
@@ -94,20 +102,28 @@ var setFiltersValues = function() {
     fiYearValue          = fiYear.chosen().val();
 }
 
+function isUncommonSource(source) {
+    var commonSources = ["deutsch", "englisch", "französisch", "italienisch", "spanisch"];
+    return commonSources.indexOf(source) == -1;
+}
+
 // Check each row to filter
 $.fn.dataTable.ext.search.push(
     function(settings, data, dataIndex) {
 
         // fiLanguage
-        if (data[LANGUAGE_COL] != fiLanguageValue) {
+        var languages = data[LANGUAGE_COL].toUpperCase().split(" ");
+        var languagesCheck = false;
+        if (languages.indexOf(fiLanguageValue) == -1 && fiLanguageValue != "ALL") {
             return false;
         }
 
         // fiTheme
-        var themes = setThemeAlts(data[THEME_COL].toLowerCase().split(" "));
+        var themes = data[THEME_COL].toLowerCase().split(" ");
+        var themesWithAlts = getThemeWithAlts(themes);
         var themesCheck = false;
-        // iterate over every themes values to check if there is correspondance
-        fiThemeValue.filter(function(n) {
+        // iterate over each theme to check if there is correspondance
+        themesWithAlts.filter(function(n) {
             themesCheck = (themes.indexOf(n) != -1) ? true : themesCheck;
         });
         if (!themesCheck) {
@@ -117,11 +133,28 @@ $.fn.dataTable.ext.search.push(
         // fiModality
         var modalities = data[MODALITY_COL].toLowerCase().split(" ");
         var modalitiesCheck = false;
-        // iterate over every themes values to check if there is correspondance
+        // iterate over each modality to check if there is correspondance
         fiModalityValue.filter(function(n) {
             modalitiesCheck = (modalities.indexOf(n) != -1) ? true : modalitiesCheck;
         });
         if (!modalitiesCheck) {
+            return false;
+        }
+
+        // fiSource
+        var sources = data[SOURCE_COL].toLowerCase().split(", ");
+        var sourcesCheck = false;
+        // iterate over each source to check if there is correspondance
+        fiSourceValue.filter(function(n) {
+            if (n == "other") {
+                var uncommonSources = sources.filter(isUncommonSource);
+                sourcesCheck = (uncommonSources.length > 0) ? true : sourcesCheck;
+            }
+            else {
+                sourcesCheck = (sources.indexOf(n) != -1) ? true : sourcesCheck;
+            }
+        });
+        if (!sourcesCheck) {
             return false;
         }
 
@@ -132,8 +165,18 @@ $.fn.dataTable.ext.search.push(
 
 $(document).ready(function() {
 
+    // Set list of themes
+    $.ajax({
+        url: "/materials/themes",
+        dataType: "JSON",
+        success: function(json){
+            THEMES_LIST = json;
+        }
+    })
+
     // Datatable init
     materialsTable = $("#materials .table").DataTable({
+        "rowId": "id",
         "select": true,
         "ajax": "/materials.json",
         "deferRender": true,
@@ -147,7 +190,8 @@ $(document).ready(function() {
             { "data": "medium", "render": function (data, type, full, meta) { return data[0] } },
             { "data": "lang_target", "visible": false },
             { "data": "year", "visible": false },
-            { "data": "asl", "visible": false }
+            { "data": "modality", "visible": false },
+            { "data": "id", "visible": false }
         ],
         "language": {
             loadingRecords: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"><span class="sr-only">45% Complete</span></div></div>'
