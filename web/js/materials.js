@@ -34,6 +34,7 @@ var fiYearValue          = "";
 
 var THEME_COL       = 3;
 var SOURCE_COL      = 4;
+var TYPE_COL        = 5;
 var LANGUAGE_COL    = 6;
 var MODALITY_COL    = 8;
 var ID_COL          = 9;
@@ -155,6 +156,17 @@ $.fn.dataTable.ext.search.push(
             }
         });
         if (!sourcesCheck) {
+            return false;
+        }
+
+        // fiType
+        var types = data[TYPE_COL].toLowerCase().split(" ");
+        var typesCheck = false;
+        // iterate over each type to check if there is correspondance
+        fiTypeValue.filter(function(n) {
+            typesCheck = (types.indexOf(n) != -1) ? true : typesCheck;
+        });
+        if (!typesCheck) {
             return false;
         }
 
