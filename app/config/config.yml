@@ -78,3 +78,14 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Bazinga js trans
+bazinga_js_translation:
+    locale_fallback: "%locale%"
+    default_domain: messages
+    active_locales:
+        - fr
+        - en
+        - de
+    active_domains:
+        - medias

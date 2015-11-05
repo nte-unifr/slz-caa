@@ -34,10 +34,10 @@ var fiYearValue          = "";
 
 var THEME_COL       = 3;
 var SOURCE_COL      = 4;
-var TYPE_COL        = 5;
 var LANGUAGE_COL    = 6;
 var MODALITY_COL    = 8;
 var ID_COL          = 9;
+var TYPE_COL        = 10;
 
 var THEMES_LIST     = "";
 
@@ -49,6 +49,16 @@ var formatLangLevel = function(data) {
     });
     return formatted;
 };
+
+// Format type to translate ugly acronyms
+var formatType = function(data) {
+    var formatted = "";
+    var datas = data[0].split(" ");
+    $.each(datas, function(index, value) {
+        formatted = formatted + Translator.trans(value, {}, 'medias');
+    });
+    return formatted;
+}
 
 var getThemeWithAlts = function(themes) {
     var themesWithAlts = fiThemeValue.slice();
@@ -160,7 +170,7 @@ $.fn.dataTable.ext.search.push(
         }
 
         // fiType
-        var types = data[TYPE_COL].toLowerCase().split(" ");
+        var types = data[TYPE_COL].toLowerCase().split(",");
         var typesCheck = false;
         // iterate over each type to check if there is correspondance
         fiTypeValue.filter(function(n) {
@@ -193,17 +203,19 @@ $(document).ready(function() {
         "ajax": "/materials.json",
         "deferRender": true,
         "fixedHeader": true,
+        "pageLength": 25,
         "columns": [
             { "data": "title" },
             { "data": "lang_level", "render": function (data, type, full, meta) { return formatLangLevel(data) } },
             { "data": "skills[, ]" },
             { "data": "thematic[<br> ]" },
             { "data": "lang_source[, ]" },
-            { "data": "medium", "render": function (data, type, full, meta) { return data[0] } },
+            { "data": "medium", "render": function (data, type, full, meta) { return formatType(data) } },
             { "data": "lang_target", "visible": false },
             { "data": "year", "visible": false },
             { "data": "modality", "visible": false },
-            { "data": "id", "visible": false }
+            { "data": "id", "visible": false },
+            { "data": "type", "visible": false }
         ],
         "language": {
             loadingRecords: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"><span class="sr-only">45% Complete</span></div></div>'

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -118,9 +118,12 @@
                 "js/bootstrap.min.js"
                 "js/materials.js"
                 "js/chosen.jquery.min.js"
+                "bundles/bazingajstranslation/js/translator.min.js"
+                "js/translations/*/*.js"
                 output="js/compiled/app.js" %}
                 <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
+            <script src="{{ url('bazinga_jstranslation_js') }}"></script>
         {% endblock %}
     </body>
 </html>
