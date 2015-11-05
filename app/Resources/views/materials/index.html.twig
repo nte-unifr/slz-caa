@@ -5,7 +5,7 @@
         <div class="col-xs-12 col-sm-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Filtres</h3>
+                    <h3 class="panel-title">{{ 'filters'|trans }}</h3>
                 </div>
                 <div class="panel-body">
                     {% include "materials/filters.html.twig" %}
@@ -17,10 +17,10 @@
                 <div class="panel-heading">
                     <ul class="nav nav-pills" role="pilllist">
                         <li role="presentation" class="active">
-                            <a href="#materials-tab" aria-controls="materials-tab" role="pill" data-toggle="pill">Matériel</a>
+                            <a href="#materials-tab" aria-controls="materials-tab" role="pill" data-toggle="pill">{{ 'material'|trans }}</a>
                         </li>
                         <li role="presentation">
-                            <a href="#links-tab" aria-controls="links-tab" role="pill" data-toggle="pill">Liens</a>
+                            <a href="#links-tab" aria-controls="links-tab" role="pill" data-toggle="pill">{{ 'links'|trans }}</a>
                         </li>
                     </ul>
                 </div>
