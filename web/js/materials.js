@@ -35,6 +35,7 @@ var fiYearValue          = "";
 var THEME_COL       = 3;
 var SOURCE_COL      = 4;
 var LANGUAGE_COL    = 6;
+var YEAR_COL        = 7;
 var MODALITY_COL    = 8;
 var ID_COL          = 9;
 var TYPE_COL        = 10;
@@ -177,6 +178,12 @@ $.fn.dataTable.ext.search.push(
             typesCheck = (types.indexOf(n) != -1) ? true : typesCheck;
         });
         if (!typesCheck) {
+            return false;
+        }
+
+        // fiYear
+        var year = data[YEAR_COL];
+        if (fiYearValue != "all" && year < fiYearValue) {
             return false;
         }
 

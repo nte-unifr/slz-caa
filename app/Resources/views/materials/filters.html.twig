@@ -177,9 +177,8 @@
     <div class="form-group">
         <label for="fiYear">Année de publication</label><br>
         <select id="fiYear" class="js-chosen">
-            <option value="0">Tous</option>
-            <option value="2010">Depuis 2010</option>
-            <option value="2000">Depuis 2000</option>
-            <option value="1990">Depuis 1990</option>
+            {% for year in years %}
+                <option value="{{ year }}" {% if year == "all" %}selected{% endif %}>{{ year|trans({}, "years") }}</option>
+            {% endfor %}
         </select>
 </fieldset>
