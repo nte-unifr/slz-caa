@@ -191,7 +191,7 @@ $(document).ready(function() {
     $.ajax({
         url: "/materials/themes",
         dataType: "JSON",
-        success: function(json){
+        success: function(json) {
             THEMES_LIST = json;
         }
     })
