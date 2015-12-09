@@ -3,7 +3,31 @@ search_material: Recherche de matériel
 registration: Inscription
 caa: Centre d'autoapprentissage de langues (CAA)
 caa_abr: CAA
-language_centre: Centre de langues
+language_center: Centre de langues
 filters: Filtres
 material: Matériel
 links: Liens
+info: Infos
+contact: Contact
+unifr: Université de Fribourg
+language: Langue
+language_info: Quelle langue désirez-vous apprendre?
+general: Général
+thematic: Thématique
+learning_modality: Modalité d'apprentissage
+reference_books_examples: Matériel de consultation: Dictionnaires, Grammaires, Encyclopédies
+wortschatz: Vocabulaire
+lesen: Lire
+hören: Ecouter
+sprechen: Parler
+aussprache: Prononciation
+schreiben: Ecrire
+orthografie: Orthographe
+grammatik: Grammaire
+test: Tests
+level_of_language: Niveau linguistique
+level_description: Description des niveaux (PDF)
+material: Matériel
+source_language: Langue de départ
+media: Médias
+year_of_publication: Année de publication

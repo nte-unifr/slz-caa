@@ -1,9 +1,33 @@
 brand: Self-access
 search_material: Research material
 registration: Registration
-caa: Self-access centre for language learning (SAC)
+caa: Self-access center for language learning (SAC)
 caa_abr: SAC
-language_centre: Language Centre
+language_center: Language Center
 filters: Filters
 material: Material
 links: Links
+info: Info
+contact: Contact
+unifr: University of Fribourg
+language: Language
+language_info: What language would you like to learn?
+general: General
+thematic: Thematic
+learning_modality: Learning modality
+reference_books_examples: Reference books: dictionaries, grammar books, encyclopedias
+wortschatz: Vocabulary
+lesen: Reading
+hören: Listening
+sprechen: Speaking
+aussprache: Pronunciation
+schreiben: Writing
+orthografie: Spelling
+grammatik: Grammar
+test: Tests
+level_of_language: Level of language
+level_description: Description of levels (PDF)
+material: Material
+source_language: Source language
+media: Media
+year_of_publication: Year of publication

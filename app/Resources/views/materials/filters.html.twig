@@ -1,16 +1,16 @@
 <fieldset>
-    <legend>Général</legend>
+    <legend>{{ 'general'|trans }}</legend>
     <div class="form-group">
-        <label for="fiLanguage">Langue</label><br>
+        <label for="fiLanguage">{{ 'language'|trans }}</label><br>
         <select id="fiLanguage" class="js-chosen" data-col="6">
             {% for language in languages %}
                 <option value="{{ language }}">{{ language|trans({}, "languages") }}</option>
             {% endfor %}
         </select>
-        <p class="help-block">Il s'agit de la langue que vous souhaitez apprendre.</p>
+        <p class="help-block">{{ 'language_info'|trans }}</p>
     </div>
     <div class="form-group">
-        <label for="fiTheme">Thématique</label><br>
+        <label for="fiTheme">{{ 'thematic'|trans }}</label><br>
         <select id="fiTheme" class="js-chosen" multiple>
             <optgroup label="-">
                 {% for theme in themes.no %}
@@ -35,21 +35,21 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="fiModality">Modalité d'apprentissage</label><br>
+        <label for="fiModality">{{ 'learning_modality'|trans }}</label><br>
         <select id="fiModality" class="js-chosen" multiple>
             {% for modality in modalities %}
                 <option value="{{ modality }}" selected>{{ modality|trans({}, "modalities") }}</option>
             {% endfor %}
         </select>
-        <p class="help-block">Exemple de matériel de consultation : Dictionnaires, Grammaires, Encyclopédies</p>
+        <p class="help-block">{{ 'reference_books_examples'|trans }}</p>
     </div>
 </fieldset>
 <fieldset>
-    <legend>Niveaux linguistiques</legend>
+    <legend>{{ 'level_of_language'|trans }}</legend>
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiVocabulary">{{ "wortschatz"|trans({}, "skills") }}</label><br>
+                <label for="fiVocabulary">{{ "wortschatz"|trans }}</label><br>
                 <select id="fiVocabulary" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -59,7 +59,7 @@
         </div>
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiReading">{{ "lesen"|trans({}, "skills") }}</label><br>
+                <label for="fiReading">{{ "lesen"|trans }}</label><br>
                 <select id="fiReading" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -71,7 +71,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiListening">{{ "hören"|trans({}, "skills") }}</label><br>
+                <label for="fiListening">{{ "hören"|trans }}</label><br>
                 <select id="fiListening" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -81,7 +81,7 @@
         </div>
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiSpeaking">{{ "sprechen"|trans({}, "skills") }}</label><br>
+                <label for="fiSpeaking">{{ "sprechen"|trans }}</label><br>
                 <select id="fiSpeaking" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -93,7 +93,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiPronunciation">{{ "aussprache"|trans({}, "skills") }}</label><br>
+                <label for="fiPronunciation">{{ "aussprache"|trans }}</label><br>
                 <select id="fiPronunciation" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -103,7 +103,7 @@
         </div>
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiWriting">{{ "schreiben"|trans({}, "skills") }}</label><br>
+                <label for="fiWriting">{{ "schreiben"|trans }}</label><br>
                 <select id="fiWriting" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -115,7 +115,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiSpelling">{{ "orthografie"|trans({}, "skills") }}</label><br>
+                <label for="fiSpelling">{{ "orthografie"|trans }}</label><br>
                 <select id="fiSpelling" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -125,7 +125,7 @@
         </div>
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiGrammar">{{ "grammatik"|trans({}, "skills") }}</label><br>
+                <label for="fiGrammar">{{ "grammatik"|trans }}</label><br>
                 <select id="fiGrammar" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -137,7 +137,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="fiTests">{{ "test"|trans({}, "skills") }}</label><br>
+                <label for="fiTests">{{ "test"|trans }}</label><br>
                 <select id="fiTests" class="js-chosen">
                     {% for level in levels %}
                         <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
@@ -146,7 +146,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-6">
-            <p class="help-block">Description des niveaux (pdf):
+            <p class="help-block">{{ 'level_description'|trans }}:
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><label>DE</label></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><label>FR</label></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><label>EN</label></a>
@@ -157,9 +157,9 @@
     </div>
 </fieldset>
 <fieldset>
-    <legend>Matériel</legend>
+    <legend>{{ 'material'|trans }}</legend>
     <div class="form-group">
-        <label for="fiSource">Langue de départ</label><br>
+        <label for="fiSource">{{ 'source_language'|trans }}</label><br>
         <select id="fiSource" class="js-chosen" multiple>
             {% for language in languages_source %}
                 <option value="{{ language }}" selected>{{ language|trans({}, "languages_source") }}</option>
@@ -167,7 +167,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="fiType">Média</label><br>
+        <label for="fiType">{{ 'media'|trans }}</label><br>
         <select id="fiType" class="js-chosen" data-col="5" multiple>
             {% for media in medias %}
                 <option value="{{ media }}" selected>{{ media|trans({}, "medias") }}</option>
@@ -175,7 +175,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="fiYear">Année de publication</label><br>
+        <label for="fiYear">{{ 'year_of_publication'|trans }}</label><br>
         <select id="fiYear" class="js-chosen">
             {% for year in years %}
                 <option value="{{ year }}" {% if year == "all" %}selected{% endif %}>{{ year|trans({}, "years") }}</option>
