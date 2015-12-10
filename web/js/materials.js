@@ -203,6 +203,12 @@ $(document).ready(function() {
         }
     })
 
+    // Get current lang
+    var currentLang = $("html").attr("lang");
+    var langUrl = "//cdn.datatables.net/plug-ins/1.10.10/i18n/English.json";
+    if (currentLang == "de") langUrl = "//cdn.datatables.net/plug-ins/1.10.10/i18n/German.json";
+    else if (currentLang == "fr") langUrl = "//cdn.datatables.net/plug-ins/1.10.10/i18n/French.json";
+
     // Datatable init
     materialsTable = $("#materials .table").DataTable({
         "rowId": "id",
@@ -225,8 +231,12 @@ $(document).ready(function() {
             { "data": "type", "visible": false }
         ],
         "language": {
-            loadingRecords: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"><span class="sr-only">45% Complete</span></div></div>'
-        }
+            "url": langUrl,
+            "loadingRecords": '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"><span class="sr-only">45% Complete</span></div></div>',
+        },
+        "dom": "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row well'<'col-sm-5'i><'col-sm-7'p>>",
     });
 
     // Chosen init
