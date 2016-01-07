@@ -45,115 +45,29 @@
     </div>
 </fieldset>
 <fieldset>
-    <legend>{{ 'level_of_language'|trans }}</legend>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiVocabulary">{{ "wortschatz"|trans }}</label><br>
-                <select id="fiVocabulary" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiReading">{{ "lesen"|trans }}</label><br>
-                <select id="fiReading" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
+    <legend>{{ 'levels_and_skills'|trans }}</legend>
+    <div class="form-group">
+        <label for="fiLevel">{{ 'level_of_language'|trans }}</label><br>
+        <select id="fiLevel" class="js-chosen" multiple>
+            {% for level in levels %}
+                <option value="{{ level }}" selected>{{ level|trans({}, "levels") }}</option>
+            {% endfor %}
+        </select>
+        <p class="help-block">{{ 'level_description'|trans }}:
+            <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><label>DE</label></a>
+            <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><label>FR</label></a>
+            <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><label>EN</label></a>
+            <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><label>IT</label></a>
+            <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><label>ES</label></a>
+        </p>
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiListening">{{ "hören"|trans }}</label><br>
-                <select id="fiListening" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiSpeaking">{{ "sprechen"|trans }}</label><br>
-                <select id="fiSpeaking" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiPronunciation">{{ "aussprache"|trans }}</label><br>
-                <select id="fiPronunciation" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiWriting">{{ "schreiben"|trans }}</label><br>
-                <select id="fiWriting" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiSpelling">{{ "orthografie"|trans }}</label><br>
-                <select id="fiSpelling" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiGrammar">{{ "grammatik"|trans }}</label><br>
-                <select id="fiGrammar" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-                <label for="fiTests">{{ "test"|trans }}</label><br>
-                <select id="fiTests" class="js-chosen">
-                    {% for level in levels %}
-                        <option value="{{ level }}">{{ level|trans({}, "levels") }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <p class="help-block">{{ 'level_description'|trans }}:
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><label>DE</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><label>FR</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><label>EN</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><label>IT</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><label>ES</label></a>
-            </p>
-        </div>
+    <div class="form-group">
+        <label for="fiSkills">{{ 'skills'|trans }}</label><br>
+        <select id="fiSkills" class="js-chosen" multiple>
+            {% for skill in skills %}
+                <option value="{{ skill }}" selected>{{ skill|trans({}, "skills") }}</option>
+            {% endfor %}
+        </select>
     </div>
 </fieldset>
 <fieldset>
