@@ -31,3 +31,12 @@ material: Material
 source_language: Source language
 media: Media
 year_of_publication: Year of publication
+title: Title
+target_level: Target level
+skills: Skills
+thematics: Thematics
+source_language: Source language
+medium: Medium
+target_language: Target language
+year: Year
+modality: Modality

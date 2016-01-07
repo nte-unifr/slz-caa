@@ -31,3 +31,12 @@ material: Lernmaterialien
 source_language: Ausgangssprache
 media: Medium
 year_of_publication: Erscheinungsjahr
+title: Titel
+target_level: Zielniveau
+skills: Fertigkeiten
+thematics: Sachbezüge
+source_language: Ausgangssprache
+medium: Medium
+target_language: Zielsprache
+year: Jahr
+modality: Lernweise

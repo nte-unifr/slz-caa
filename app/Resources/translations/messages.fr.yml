@@ -31,3 +31,12 @@ material: Matériel
 source_language: Langue de départ
 media: Médias
 year_of_publication: Année de publication
+title: Titre
+target_level: Niveau cible
+skills: Compétences
+thematics: Thématiques
+source_language: Langue de départ
+medium: Média
+target_language: Langue cible
+year: Année
+modality: Modalité
