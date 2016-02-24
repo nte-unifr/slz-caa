@@ -11,27 +11,18 @@
     </div>
     <div class="form-group">
         <label for="fiTheme">{{ 'thematic'|trans }}</label><br>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active" id="fiThemeAll">
+                <input type="radio" name="options" autocomplete="off" checked> All
+            </label>
+            <label class="btn btn-primary" id="fiThemeSelect">
+                <input type="radio" name="options" autocomplete="off"> Select
+            </label>
+        </div>
         <select id="fiTheme" class="js-chosen" multiple>
-            <optgroup label="-">
-                {% for theme in themes.no %}
-                    <option value="" selected>{{ theme|trans({}, "themes") }}</option>
-                {% endfor %}
-            </optgroup>
-            <optgroup label="Quotidien">
-                {% for theme in themes.everyday %}
-                    <option value="{{ theme }}" selected>{{ theme|trans({}, "themes") }}</option>
-                {% endfor %}
-            </optgroup>
-            <optgroup label="Sciences des lettres">
-                {% for theme in themes.humanities %}
-                    <option value="{{ theme }}" selected>{{ theme|trans({}, "themes") }}</option>
-                {% endfor %}
-            </optgroup>
-            <optgroup label="Sciences naturelles">
-                {% for theme in themes.naturalscience %}
-                    <option value="{{ theme }}" selected>{{ theme|trans({}, "themes") }}</option>
-                {% endfor %}
-            </optgroup>
+            {% for theme in themes %}
+                <option value="{{ theme }}">{{ theme|trans({}, "themes") }}</option>
+            {% endfor %}
         </select>
     </div>
     <div class="form-group">

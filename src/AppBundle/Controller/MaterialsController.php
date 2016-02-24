@@ -11,12 +11,17 @@ class MaterialsController extends Controller
 {
     /**
      * @Route("/", name="home", defaults={"_format" = "html"})
-     * @Route("/materials.{_format}", defaults={"_format" = "html"})
+     * @Route("/materials.{_format}/{limit}", defaults={"_format" = "html"})
      */
-    public function indexAction($_format)
+    public function indexAction($_format, $limit = null)
     {
         $repository = $this->getDoctrine()->getRepository("AppBundle:Material");
-        $materials = $repository->findAll();
+        if ($limit) {
+            $materials = $repository->findBy([], [], $limit);
+        }
+        else {
+            $materials = $repository->findAll();
+        }
 
         if ($_format == "json") {
             $response = new Response(json_encode(array("data" => $materials)));
@@ -55,22 +60,6 @@ class MaterialsController extends Controller
 
         if ($_format == "json") {
             $response = new Response(json_encode($material));
-            return $response;
-        }
-    }
-
-    /**
-     * @Route("/materials/themes.{_format}", defaults={"_format" = "json"})
-     */
-    public function themesAction($_format) {
-        if ($_format == "json") {
-            $yaml = new Parser();
-            $themes = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/themes.yml'));
-            $flat_themes = array();
-            foreach($themes as $sub) {
-                $flat_themes = array_merge($flat_themes, $sub);
-            }
-            $response = new Response(json_encode($flat_themes));
             return $response;
         }
     }

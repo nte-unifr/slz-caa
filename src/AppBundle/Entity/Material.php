@@ -2048,20 +2048,32 @@ class Material implements JsonSerializable
     {
         return array(
             'id' => $this->id,
-            'title' => $this->titel,
-            'author' => $this->autor,
-            'publication' => $this->jahr,
-            'lang_level' => $this->toArray($this->sprachniveau),
-            'skills' => $this->toArray($this->fertigkeit),
-            'thematic' => $this->toArray($this->fachbezug),
-            'lang_source' => $this->toArray($this->ausgangssprache),
-            'lang_target' => $this->spr,
-            'medium' => array($this->medium, $this->nrcdrom),
+            'titel' => $this->titel,
+            'autor' => $this->autor,
+            'jahr' => $this->jahr,
+            'sprachniveau' => array(
+                'display' => $this->sprachniveauDisplay($this->sprachniveau),
+                'data' => $this->toArray($this->sprachniveau)
+            ),
+            'fertigkeit' => array(
+                'display' => str_replace(" ", ", ", $this->fertigkeit),
+                'data' => $this->toArray($this->fertigkeit)
+            ),
+            'fachbezug' => array(
+                'display' => str_replace(" ", ",<br>", $this->fachbezug),
+                'data' => $this->toArray($this->fachbezug)
+            ),
+            'ausgangssprache' => array(
+                'display' => str_replace(" ", ", ", $this->ausgangssprache),
+                'data' => $this->toArray($this->ausgangssprache)
+            ),
+            'spr' => $this->toArray($this->spr),
+            'medium' => $this->toArray($this->medium),
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
-            'description' => $this->kommentar,
-            'year' => $this->jahr,
-            'modality' => $this->asl,
-            'type' => $this->toArray($this->medium)
+            'kommentar' => $this->kommentar,
+            'asl' => $this->toArray($this->asl),
+            'type' => $this->toArray($this->medium),
+            'nrcdrom' => $this->toArray($this->nrcdrom)
         );
     }
 
@@ -2069,5 +2081,18 @@ class Material implements JsonSerializable
     public function toArray($string)
     {
         return explode(" ", $string);
+    }
+
+    public function sprachniveauDisplay($string)
+    {
+        $result = "";
+        $sprachniveaux = $this->toArray($string);
+        foreach ($sprachniveaux as $index => $sprachniveau) {
+            $result .= '<span class="label label-primary">' . $sprachniveau . '</span>';
+            if ($index != count($sprachniveaux)-1) {
+                $result .= '&nbsp;';
+            }
+        }
+        return $result;
     }
 }

@@ -1,189 +1,85 @@
-var materialsTable;
-
-var fiLanguage      = $("#fiLanguage");
-var fiTheme         = $("#fiTheme");
-var fiModality      = $("#fiModality");
-var fiVocabulary    = $("#fiVocabulary");
-var fiReading       = $("#fiReading");
-var fiListening     = $("#fiListening");
-var fiSpeaking      = $("#fiSpeaking");
-var fiPronunciation = $("#fiPronunciation");
-var fiWriting       = $("#fiWriting");
-var fiSpelling      = $("#fiSpelling");
-var fiGrammar       = $("#fiGrammar");
-var fiTests         = $("#fiTests");
-var fiSource        = $("#fiSource");
-var fiType          = $("#fiType");
-var fiYear          = $("#fiYear");
-
-var fiLanguageValue      = "";
-var fiThemeValue         = "";
-var fiModalityValue      = "";
-var fiVocabularyValue    = "";
-var fiReadingValue       = "";
-var fiListeningValue     = "";
-var fiSpeakingValue      = "";
-var fiPronunciationValue = "";
-var fiWritingValue       = "";
-var fiSpellingValue      = "";
-var fiGrammarValue       = "";
-var fiTestsValue         = "";
-var fiSourceValue        = "";
-var fiTypeValue          = "";
-var fiYearValue          = "";
-
-var THEME_COL       = 3;
-var SOURCE_COL      = 4;
-var LANGUAGE_COL    = 6;
-var YEAR_COL        = 7;
-var MODALITY_COL    = 8;
-var ID_COL          = 9;
-var TYPE_COL        = 10;
-
-var THEMES_LIST     = "";
-
-// Allow to format the lang level to include label class instead of pure text
-var formatLangLevel = function(data) {
+// Format medium to translate ugly acronyms
+var formatMedium = function(data) {
     var formatted = "";
     $.each(data, function(index, value) {
-        formatted = formatted + '<span class="label label-primary">' + value + '</span>&nbsp;';
-    });
-    return formatted;
-};
-
-// Format type to translate ugly acronyms
-var formatType = function(data) {
-    var formatted = "";
-    var datas = data[0].split(" ");
-    $.each(datas, function(index, value) {
         formatted = formatted + Translator.trans(value, {}, 'medias');
     });
     return formatted;
 }
 
-var getThemeWithAlts = function(themes) {
-    var themesWithAlts = fiThemeValue.slice();
-    if ($.inArray("tourismus", fiThemeValue) != -1) {
-        themesWithAlts.push("reise");
-    }
-    if ($.inArray("literatur", fiThemeValue) != -1) {
-        themesWithAlts.push("literaturwissenschaft");
-    }
-    if ($.inArray("gastronomie", fiThemeValue) != -1) {
-        themesWithAlts.push("hotellerie");
-    }
-    if ($.inArray("naturwissenschaft", fiThemeValue) != -1) {
-        themesWithAlts.push("akademisch");
-        themesWithAlts.push("wissenschaft");
-    }
-    if ($.inArray("informatik", fiThemeValue) != -1) {
-        themesWithAlts.push("internet");
-    }
-    if ($.inArray("medizin", fiThemeValue) != -1) {
-        themesWithAlts.push("pharmazie");
-    }
-    if ($.inArray("", fiThemeValue) != -1) {
-        // here we check every theme the col may have that is not present in
-        // the complete list of themes, if so, just add it when no particular
-        // theme is chosen
-        $.each( themes, function(key, value) {
-            if ($.inArray(value, THEMES_LIST) == -1) {
-                themesWithAlts.push(value);
-            }
-        });
-    }
+var isRowAllowed = function(tableData, filterData, wildcard) {
+    wildcard = typeof wildcard !== 'undefined' ? wildcard : null; // define wildcard if not set
 
-    return themesWithAlts;
-}
-
-var setFiltersValues = function() {
-    fiLanguageValue      = fiLanguage.chosen().val();
-    fiThemeValue         = fiTheme.chosen().val();
-    fiModalityValue      = fiModality.chosen().val();
-    fiVocabularyValue    = fiVocabulary.chosen().val();
-    fiReadingValue       = fiReading.chosen().val();
-    fiListeningValue     = fiListening.chosen().val();
-    fiSpeakingValue      = fiSpeaking.chosen().val();
-    fiPronunciationValue = fiPronunciation.chosen().val();
-    fiWritingValue       = fiWriting.chosen().val();
-    fiSpellingValue      = fiSpelling.chosen().val();
-    fiGrammarValue       = fiGrammar.chosen().val();
-    fiTestsValue         = fiTests.chosen().val();
-    fiSourceValue        = fiSource.chosen().val();
-    fiTypeValue          = fiType.chosen().val();
-    fiYearValue          = fiYear.chosen().val();
-}
-
-function isUncommonSource(source) {
-    var commonSources = ["deutsch", "englisch", "französisch", "italienisch", "spanisch"];
-    return commonSources.indexOf(source) == -1;
+    _.each(tableData, function(element, index, tableData){ tableData[index] = element.toUpperCase(); }); // uppercase every element of the table
+    _.each(filterData, function(element, index, filterData){ filterData[index] = element.toUpperCase(); }); // uppercase every element of the table
+    var intersection = _.intersection(tableData, filterData); // get elements that are in both tables
+    return intersection.length > 0 || _.contains(filterData, wildcard); // we have at least an element or filter is set to wildcard
 }
 
 // Check each row to filter
 $.fn.dataTable.ext.search.push(
-    function(settings, data, dataIndex) {
+    function(settings, searchData, index, rowData, counter) {
 
-        // fiLanguage
-        var languages = data[LANGUAGE_COL].toUpperCase().split(" ");
-        var languagesCheck = false;
-        if (languages.indexOf(fiLanguageValue) == -1 && fiLanguageValue != "ALL") {
+        // language / spr
+        var tableSpr = rowData.spr;
+        var filterSpr = [$("#fiLanguage").chosen().val()];
+        if (!isRowAllowed(tableSpr, filterSpr, "ALL")) {
             return false;
         }
 
-        // fiTheme
-        var themes = data[THEME_COL].toLowerCase().split(" ");
-        var themesWithAlts = getThemeWithAlts(themes);
-        var themesCheck = false;
-        // iterate over each theme to check if there is correspondance
-        themesWithAlts.filter(function(n) {
-            themesCheck = (themes.indexOf(n) != -1) ? true : themesCheck;
-        });
-        if (!themesCheck) {
-            return false;
-        }
-
-        // fiModality
-        var modalities = data[MODALITY_COL].toLowerCase().split(" ");
-        var modalitiesCheck = false;
-        // iterate over each modality to check if there is correspondance
-        fiModalityValue.filter(function(n) {
-            modalitiesCheck = (modalities.indexOf(n) != -1) ? true : modalitiesCheck;
-        });
-        if (!modalitiesCheck) {
-            return false;
-        }
-
-        // fiSource
-        var sources = data[SOURCE_COL].toLowerCase().split(", ");
-        var sourcesCheck = false;
-        // iterate over each source to check if there is correspondance
-        fiSourceValue.filter(function(n) {
-            if (n == "other") {
-                var uncommonSources = sources.filter(isUncommonSource);
-                sourcesCheck = (uncommonSources.length > 0) ? true : sourcesCheck;
+        // theme / fachbezug
+        if ($("#fiThemeSelect").hasClass("active")) {
+            var tableFachbezug = rowData.fachbezug.data;
+            var filterFachbezug = $("#fiTheme").chosen().val();
+            if (!isRowAllowed(tableFachbezug, filterFachbezug)) {
+                return false;
             }
-            else {
-                sourcesCheck = (sources.indexOf(n) != -1) ? true : sourcesCheck;
-            }
-        });
-        if (!sourcesCheck) {
+        }
+
+        // modality / asl
+        var tableAsl = rowData.asl;
+        var filterAsl = $("#fiModality").chosen().val();
+        if (!isRowAllowed(tableAsl, filterAsl)) {
             return false;
         }
 
-        // fiType
-        var types = data[TYPE_COL].toLowerCase().split(",");
-        var typesCheck = false;
-        // iterate over each type to check if there is correspondance
-        fiTypeValue.filter(function(n) {
-            typesCheck = (types.indexOf(n) != -1) ? true : typesCheck;
-        });
-        if (!typesCheck) {
+        // levels / sprachniveau
+        var tableSprachniveau = rowData.sprachniveau.data;
+        var filterSprachniveau = $("#fiLevel").chosen().val();
+        if (!isRowAllowed(tableSprachniveau, filterSprachniveau)) {
             return false;
         }
 
-        // fiYear
-        var year = data[YEAR_COL];
-        if (fiYearValue != "all" && year < fiYearValue) {
+        // skills / fertigkeit
+        var tableFertigkeit = rowData.fertigkeit.data;
+        var filterFertigkeit = $("#fiSkills").chosen().val();
+        if (!isRowAllowed(tableFertigkeit, filterFertigkeit)) {
+            return false;
+        }
+
+        // source / ausgangssprache
+        var tableAusgangssprache = rowData.ausgangssprache.data;
+        var filterAusgangssprache = $("#fiSource").chosen().val();
+        _.each(tableAusgangssprache, function(element, index, tableData){ tableData[index] = element.toUpperCase(); });
+        var uncommonSources = _.without(tableAusgangssprache, "DEUTSCH", "ENGLISCH", "FRANZÖSISCH", "ITALIENISCH", "SPANISCH");
+        if (uncommonSources.length > 0) {
+            tableAusgangssprache.push("other");
+        }
+        if (!isRowAllowed(tableAusgangssprache, filterAusgangssprache)) {
+            return false;
+        }
+
+        // type / type
+        var tableType = rowData.type;
+        var filterType = $("#fiType").chosen().val();
+        if (!isRowAllowed(tableType, filterType)) {
+            return false;
+        }
+
+        // year / jahr
+        var tableJahr = rowData.jahr;
+        var filterJahr = $("#fiYear").chosen().val();
+        if (filterJahr != "all" && tableJahr < filterJahr) {
             return false;
         }
 
@@ -194,15 +90,6 @@ $.fn.dataTable.ext.search.push(
 
 $(document).ready(function() {
 
-    // Set list of themes
-    $.ajax({
-        url: "/materials/themes",
-        dataType: "JSON",
-        success: function(json) {
-            THEMES_LIST = json;
-        }
-    })
-
     // Get current lang
     var currentLang = $("html").attr("lang");
     var langUrl = "//cdn.datatables.net/plug-ins/1.10.10/i18n/English.json";
@@ -210,7 +97,7 @@ $(document).ready(function() {
     else if (currentLang == "fr") langUrl = "//cdn.datatables.net/plug-ins/1.10.10/i18n/French.json";
 
     // Datatable init
-    materialsTable = $("#materials .table").DataTable({
+    var materialsTable = $("#materials .table").DataTable({
         "rowId": "id",
         "select": true,
         "ajax": "/materials.json",
@@ -218,15 +105,27 @@ $(document).ready(function() {
         "fixedHeader": true,
         "pageLength": 25,
         "columns": [
-            { "data": "title" },
-            { "data": "lang_level", "render": function (data, type, full, meta) { return formatLangLevel(data) } },
-            { "data": "skills[, ]" },
-            { "data": "thematic[<br> ]" },
-            { "data": "lang_source[, ]" },
-            { "data": "medium", "render": function (data, type, full, meta) { return formatType(data) } },
-            { "data": "lang_target", "visible": false },
-            { "data": "year", "visible": false },
-            { "data": "modality", "visible": false },
+            { "data": "titel" },
+            {
+                "data": "sprachniveau",
+                render: { _: 'data', display: 'display' },
+            },
+            {
+                "data": "fertigkeit",
+                render: { _: 'data', display: 'display' },
+            },
+            {
+                "data": "fachbezug",
+                render: { _: 'data', display: 'display' },
+            },
+            {
+                "data": "ausgangssprache",
+                render: { _: 'data', display: 'display' },
+            },
+            { "data": "medium", "render": function (data, type, full, meta) { return formatMedium(data) } },
+            { "data": "jahr" },
+            { "data": "spr", "visible": false },
+            { "data": "asl", "visible": false },
             { "data": "id", "visible": false },
             { "data": "type", "visible": false }
         ],
@@ -240,15 +139,18 @@ $(document).ready(function() {
     });
 
     // Chosen init
-    chosenElem = $(".js-chosen");
-    chosenElem.chosen({width: "95%"});
+    $(".js-chosen").chosen({width: "95%"}).change(function () {
+        materialsTable.draw();
+    });
 
-    // Init filters values
-    setFiltersValues();
-
-    // Chosen on change
-    chosenElem.change(function () {
-        setFiltersValues();
+    // On click
+    $("#fiTheme_chosen").hide();
+    $("#fiThemeAll input").change(function () {
+        $("#fiTheme_chosen").hide();
+        materialsTable.draw();
+    });
+    $("#fiThemeSelect input").change(function () {
+        $("#fiTheme_chosen").show();
         materialsTable.draw();
     });
 })
