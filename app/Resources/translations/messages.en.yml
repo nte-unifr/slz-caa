@@ -41,3 +41,5 @@ target_language: Target language
 year: Year
 modality: Modality
 levels_and_skills: Levels and skills
+all_f: All
+select: Select
