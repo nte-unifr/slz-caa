@@ -28,7 +28,7 @@ $.fn.dataTable.ext.search.push(
         }
 
         // theme / fachbezug
-        if ($("#fiThemeSelect").hasClass("active")) {
+        if ($("#fiTheme_chosen").is(":visible")) {
             var tableFachbezug = rowData.fachbezug.data;
             var filterFachbezug = $("#fiTheme").chosen().val();
             if (!isRowAllowed(tableFachbezug, filterFachbezug)) {
@@ -145,11 +145,11 @@ $(document).ready(function() {
 
     // On click
     $("#fiTheme_chosen").hide();
-    $("#fiThemeAll input").change(function () {
+    $("#fiThemeAll").change(function () {
         $("#fiTheme_chosen").hide();
         materialsTable.draw();
     });
-    $("#fiThemeSelect input").change(function () {
+    $("#fiThemeSelect").change(function () {
         $("#fiTheme_chosen").show();
         materialsTable.draw();
     });
