@@ -105,7 +105,9 @@ $(document).ready(function() {
         "fixedHeader": true,
         "pageLength": 25,
         "columns": [
+            { "data": "id", "visible": false },
             { "data": "titel" },
+            { "data": "autor", "visible": false },
             {
                 "data": "sprachniveau",
                 render: { _: 'data', display: 'display' },
@@ -122,12 +124,19 @@ $(document).ready(function() {
                 "data": "ausgangssprache",
                 render: { _: 'data', display: 'display' },
             },
+            { "data": "spr", "visible": false },
             { "data": "medium", "render": function (data, type, full, meta) { return formatMedium(data) } },
             { "data": "jahr" },
-            { "data": "spr", "visible": false },
+            { "data": "code", "visible": false },
+            { "data": "kommentar", "visible": false },
             { "data": "asl", "visible": false },
-            { "data": "id", "visible": false },
-            { "data": "type", "visible": false }
+            { "data": "type", "visible": false },
+            {
+                "data": null,
+                "defaultContent": '<button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>',
+                "searchable": false,
+                "orderable": false
+            }
         ],
         "language": {
             "url": langUrl,
@@ -144,6 +153,12 @@ $(document).ready(function() {
     });
 
     // On click
+    $('#materials .table tbody').on( 'click', 'button', function () {
+        var data = materialsTable.row( $(this).parents('tr') ).data();
+        console.log(data);
+        $("#rowModal .modal-title").html(data["titel"]);
+        $("#rowModal").modal("show");
+    } );
     $("#fiTheme_chosen").hide();
     $("#fiThemeAll").change(function () {
         $("#fiTheme_chosen").hide();
