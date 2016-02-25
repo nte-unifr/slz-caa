@@ -100,7 +100,7 @@ $(document).ready(function() {
     var materialsTable = $("#materials .table").DataTable({
         "rowId": "id",
         "select": true,
-        "ajax": "/materials.json",
+        "ajax": "materials.json",
         "deferRender": true,
         "fixedHeader": true,
         "pageLength": 25,
