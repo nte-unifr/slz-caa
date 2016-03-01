@@ -155,9 +155,17 @@ $(document).ready(function() {
     // On click
     $('#materials .table tbody').on( 'click', 'button', function () {
         var data = materialsTable.row( $(this).parents('tr') ).data();
-        console.log(data);
-        $("#rowModal .modal-title").html(data["titel"]);
-        $("#rowModal").modal("show");
+        $("#materialModal .modal-title").html(data.titel);
+        $("#materialModal #autor").html(data.autor);
+        $("#materialModal #jahr").html(data.jahr);
+        $("#materialModal #sprachniveau").html(data.sprachniveau.display);
+        $("#materialModal #fertigkeit").html(data.fertigkeit.display);
+        $("#materialModal #fachbezug").html(data.fachbezug.display);
+        $("#materialModal #ausgangssprache").html(data.ausgangssprache.display);
+        $("#materialModal #medium").html(formatMedium(data.medium));
+        $("#materialModal #signatur").html(data["signatur"]);
+        $("#materialModal #beschreibung").html(data.kommentar);
+        $("#materialModal").modal("show");
     } );
     $("#fiTheme_chosen").hide();
     $("#fiThemeAll").change(function () {
