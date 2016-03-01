@@ -163,7 +163,7 @@ $(document).ready(function() {
         $("#materialModal #fachbezug").html(data.fachbezug.display);
         $("#materialModal #ausgangssprache").html(data.ausgangssprache.display);
         $("#materialModal #medium").html(formatMedium(data.medium));
-        $("#materialModal #signatur").html(data["signatur"]);
+        $("#materialModal #signatur").html(data.code);
         $("#materialModal #beschreibung").html(data.kommentar);
         $("#materialModal").modal("show");
     } );
