@@ -133,7 +133,7 @@ $(document).ready(function() {
             { "data": "type", "visible": false },
             {
                 "data": null,
-                "defaultContent": '<button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>',
+                "defaultContent": '<button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>',
                 "searchable": false,
                 "orderable": false
             }
