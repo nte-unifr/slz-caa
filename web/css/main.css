@@ -1,3 +1,9 @@
 .help-block label {
     cursor: pointer;
 }
+.btn-filter {
+    margin-bottom: 3px;
+}
+.btn-filter:hover {
+    background-color: #004e7b;
+}

@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ title }}</h3>
+    </div>
+    <div class="panel-body">
+        {% for element in elements %}
+            <a class="btn-filter btn btn-primary">{{ element|trans({}, translations) }} <i class="fa fa-check-square"></i></a>
+        {% endfor %}
+    </div>
+</div>
