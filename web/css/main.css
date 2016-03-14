@@ -1,9 +1,20 @@
 .help-block label {
     cursor: pointer;
 }
-.btn-filter {
+
+
+#filters-accordion .panel-heading a {
+    color: #6d6d6d;
+}
+#filters-accordion .panel-heading a:hover {
+    text-decoration: none;
+}
+#filters-accordion .panel-title span {
+    float: right;
+}
+#filters-accordion .btn-filter {
     margin-bottom: 3px;
 }
-.btn-filter:hover {
-    background-color: #004e7b;
+#filters-accordion .btn-filter.full-width {
+    width: 100%;
 }

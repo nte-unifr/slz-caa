@@ -1,60 +1,49 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'language'|trans }}</h3>
+<div id="filters-accordion">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ 'language'|trans }}</h3>
+            </div>
+            <div class="panel-body">
+            </div>
+        </div>
+        {%
+            include 'materials/_panel.html.twig'
+            with {'title': 'thematic'|trans, 'elements': themes, 'identifier': 'themes'}
+        %}
+        {%
+            include 'materials/_panel.html.twig'
+            with {'title': 'learning_modality'|trans, 'elements': modalities, 'identifier': 'modalities', 'footer': 'reference_books_examples'|trans}
+        %}
     </div>
-    <div class="panel-body">
+    <div class="panel-group">
+        {%
+            include 'materials/_panel.html.twig'
+            with {'title': 'target_level'|trans, 'elements': levels, 'identifier': 'levels', 'footer': 'level_description'|trans ~':
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><strong>IT</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><strong>ES</strong></a>'}
+        %}
+        {%
+            include 'materials/_panel.html.twig'
+            with {'title': 'skills'|trans, 'elements': skills, 'identifier': 'skills'}
+        %}
     </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'thematic'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-    </div>
-</div>
-
-{% include 'materials/_panel.html.twig' with {'title': 'thematic'|trans, 'elements': themes, 'translations': 'themes'} %}
-{% include 'materials/_panel.html.twig' with {'title': 'learning_modality'|trans, 'elements': modalities, 'translations': 'modalities'} %}
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'target_level'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'skills'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'source_language'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'media'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'year_of_publication'|trans }}</h3>
-    </div>
-    <div class="panel-body">
+    <div class="panel-group">
+        {%
+            include 'materials/_panel.html.twig'
+            with {'title': 'source_language'|trans, 'elements': languages_source, 'identifier': 'languages_source'}
+        %}
+        {%
+            include 'materials/_panel.html.twig'
+            with {'title': 'media'|trans, 'elements': medias, 'identifier': 'medias'}
+        %}
+        {%
+            include 'materials/_panel.html.twig'
+            with {'title': 'year_of_publication'|trans, 'elements': years, 'identifier': 'years', 'radio': 'all'}
+        %}
     </div>
 </div>
 
