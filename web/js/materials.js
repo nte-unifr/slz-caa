@@ -98,6 +98,7 @@ $(document).ready(function() {
 
     // Datatable init
     var materialsTable = $("#materials .table").DataTable({
+        "order": [[ 2, "asc" ]],
         "rowId": "id",
         "select": true,
         "ajax": "materials.json",
@@ -105,6 +106,12 @@ $(document).ready(function() {
         "fixedHeader": true,
         "pageLength": 25,
         "columns": [
+            {
+                "data": null,
+                "defaultContent": '<button type="button" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>',
+                "searchable": false,
+                "orderable": false
+            },
             { "data": "id", "visible": false },
             { "data": "titel" },
             { "data": "autor", "visible": false },
@@ -130,13 +137,7 @@ $(document).ready(function() {
             { "data": "code", "visible": false },
             { "data": "kommentar", "visible": false },
             { "data": "asl", "visible": false },
-            { "data": "type", "visible": false },
-            {
-                "data": null,
-                "defaultContent": '<button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>',
-                "searchable": false,
-                "orderable": false
-            }
+            { "data": "type", "visible": false }
         ],
         "language": {
             "url": langUrl,
