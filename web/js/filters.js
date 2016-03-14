@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-    $( '.btn-filter' ).click(function() {
+    // behaviour of buttons when selecting/deselecting options
+    $('#filters-accordion .btn-filter').click(function() {
         var $i = $(this).find('i');
         if ($i.hasClass('fa-check-square')) {
             $i.removeClass('fa-check-square').addClass('fa-square');
@@ -18,11 +19,22 @@ $(document).ready(function() {
         }
     });
 
-    $('.filter-collapse').on('show.bs.collapse', function () {
+    // select/deselect all options
+    $("#filters-accordion a.select-all").click(function() {
+        $(this).closest('.panel-body').find('.btn-filter').addClass('active');
+        $(this).closest('.panel-body').find('.btn-filter i.fa-square').removeClass('fa-square').addClass('fa-check-square');
+    });
+    $("#filters-accordion a.deselect-all").click(function() {
+        $(this).closest('.panel-body').find('.btn-filter').removeClass('active');
+        $(this).closest('.panel-body').find('.btn-filter i.fa-check-square').removeClass('fa-check-square').addClass('fa-square');
+    });
+
+    // change chevron when opening/closing a filter panel
+    $('#filters-accordion .filter-collapse').on('show.bs.collapse', function () {
       var $chevron = $(this).data('chevron');
       $($chevron).html("<i class='fa fa-chevron-up'></i>");
     });
-    $('.filter-collapse').on('hide.bs.collapse', function () {
+    $('#filters-accordion .filter-collapse').on('hide.bs.collapse', function () {
       var $chevron = $(this).data('chevron');
       $($chevron).html("<i class='fa fa-chevron-down'></i>");
     });

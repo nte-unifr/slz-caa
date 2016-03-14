@@ -9,6 +9,11 @@
     </div>
     <div id="collapse{{ identifier }}" class="panel-collapse collapse filter-collapse" data-chevron="#chevron{{ identifier }}">
         <div class="panel-body">
+            {% if radio is not defined %}
+                <p class="text-center">
+                    <a class="select-all" href="#">Select all</a> | <a class="deselect-all" href="#">Deselect all</a>
+                </p>
+            {% endif %}
             {% for element in elements %}
                 {% if radio is defined %}
                     {% include 'materials/_radio.html.twig' %}
