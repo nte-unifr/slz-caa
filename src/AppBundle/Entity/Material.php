@@ -2088,7 +2088,7 @@ class Material implements JsonSerializable
         $result = "";
         $sprachniveaux = $this->toArray($string);
         foreach ($sprachniveaux as $index => $sprachniveau) {
-            $result .= '<span class="label label-primary">' . $sprachniveau . '</span>';
+            $result .= '<span class="label label-default">' . $sprachniveau . '</span>';
             if ($index != count($sprachniveaux)-1) {
                 $result .= '&nbsp;';
             }
