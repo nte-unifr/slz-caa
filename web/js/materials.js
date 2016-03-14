@@ -155,7 +155,7 @@ $(document).ready(function() {
     // On click
     $('#materials .table tbody').on( 'click', 'button', function () {
         var data = materialsTable.row( $(this).parents('tr') ).data();
-        $("#materialModal .modal-title").html(data.titel);
+        $("#materialModal #titel").html(data.titel);
         $("#materialModal #autor").html(data.autor);
         $("#materialModal #jahr").html(data.jahr);
         $("#materialModal #sprachniveau").html(data.sprachniveau.display);
