@@ -88,4 +88,9 @@ bazinga_js_translation:
         - en
         - de
     active_domains:
-        - medias
+        - medium
+        - fertigkeit
+        - fachbezug
+        - ausgangssprache
+        - spr
+        - asl

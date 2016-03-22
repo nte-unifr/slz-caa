@@ -1,26 +1,35 @@
 <div class="panel panel-default">
-    <div class="panel-heading">
-        <a data-toggle="collapse" data-target="#collapse{{ identifier }}" href="#collapse{{ identifier }}">
+    <a class="panel-heading-anchor" data-toggle="collapse" data-target="#collapse{{ identifier }}">
+        <div class="panel-heading">
             <h3 class="panel-title">
                 <i class="fa fa-filter"></i> {{ title }}
                 <span id="chevron{{ identifier }}"><i class="fa fa-chevron-down"></i></span>
             </h3>
-        </a>
-    </div>
-    <div id="collapse{{ identifier }}" class="panel-collapse collapse filter-collapse" data-chevron="#chevron{{ identifier }}">
+        </div>
+    </a>
+    <div id="collapse{{ identifier }}" class="panel-collapse collapse {{ expanded }} filter-collapse" data-chevron="#chevron{{ identifier }}">
         <div class="panel-body">
             {% if radio is not defined %}
                 <p class="text-center">
-                    <a class="select-all" href="#">Select all</a> | <a class="deselect-all" href="#">Deselect all</a>
+                    <a class="select-all">Select all</a> | <a class="deselect-all">Deselect all</a>
                 </p>
             {% endif %}
+            {% set i = 0 %}
             {% for element in elements %}
                 {% if radio is defined %}
                     {% include 'materials/_radio.html.twig' %}
                 {% else %}
-                    {% include 'materials/_checkbox.html.twig' %}
+                    {% if limit is defined and i >= limit %}
+                        {% include 'materials/_checkbox_hidden.html.twig' %}
+                    {% else %}
+                        {% include 'materials/_checkbox.html.twig' %}
+                    {% endif %}
                 {% endif %}
+                {% set i = i+1 %}
             {% endfor %}
+            {% if limit is defined %}
+                <p class="text-right"><a class="show-more" data-status="more"><i class="fa fa-plus-circle"></i> more</a></p>
+            {% endif %}
         </div>
         {% if footer is defined %}
             <div class="panel-footer">

@@ -1,4 +1,4 @@
-<a class="btn-filter full-width btn btn-primary{% if element == radio %} active{% endif %}">
+<a class="btn-filter filter-radio full-width btn btn-primary{% if element == radio %} active{% endif %}" data-value="{{ element }}" data-identifier="{{ identifier }}">
     {{ element|trans({}, identifier) }}&nbsp;
     {% if element == radio %}
         <i class="fa fa-check-circle"></i>

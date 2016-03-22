@@ -11,42 +11,37 @@ class MaterialsController extends Controller
 {
     /**
      * @Route("/", name="home", defaults={"_format" = "html"})
-     * @Route("/materials.{_format}/{limit}", defaults={"_format" = "html"})
+     * @Route("/materials.{_format}", defaults={"_format" = "json"})
      */
-    public function indexAction($_format, $limit = null)
+    public function indexAction($_format)
     {
         $repository = $this->getDoctrine()->getRepository("AppBundle:Material");
-        if ($limit) {
-            $materials = $repository->findBy([], [], $limit);
-        }
-        else {
-            $materials = $repository->findAll();
-        }
+        $materials = $repository->findAll();
 
         if ($_format == "json") {
-            $response = new Response(json_encode(array("data" => $materials)));
+            $response = new Response(json_encode(array("count" => count($materials), "data" => $materials)));
             return $response;
         }
         else {
             $yaml = new Parser();
-            $languages = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/languages.yml'));
-            $medias = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/medias.yml'));
-            $languages_source = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/languages_source.yml'));
-            $levels = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/levels.yml'));
-            $themes = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/themes.yml'));
-            $modalities = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/modalities.yml'));
-            $years = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/years.yml'));
-            $skills = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/skills.yml'));
+            $spr = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/spr.yml'));
+            $medium = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/medium.yml'));
+            $ausgangssprache = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/ausgangssprache.yml'));
+            $sprachniveau = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/sprachniveau.yml'));
+            $fachbezug = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fachbezug.yml'));
+            $asl = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/asl.yml'));
+            $jahr = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/jahr.yml'));
+            $fertigkeit = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fertigkeit.yml'));
             return $this->render('materials/index.html.twig', array(
                 'materials' => $materials,
-                'languages' => $languages,
-                'medias' => $medias,
-                'languages_source' => $languages_source,
-                'levels' => $levels,
-                'themes' => $themes,
-                'modalities' => $modalities,
-                'years' => $years,
-                'skills' => $skills
+                'spr' => $spr,
+                'medium' => $medium,
+                'ausgangssprache' => $ausgangssprache,
+                'sprachniveau' => $sprachniveau,
+                'fachbezug' => $fachbezug,
+                'asl' => $asl,
+                'jahr' => $jahr,
+                'fertigkeit' => $fertigkeit
             ));
         }
     }

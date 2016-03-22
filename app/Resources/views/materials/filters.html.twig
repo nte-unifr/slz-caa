@@ -1,22 +1,23 @@
 <div id="filters-accordion">
     <div class="panel-group">
+        {% set expanded = '' %}
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'language'|trans, 'elements': languages, 'identifier': 'languages'}
+            with {'title': 'spr'|trans({}, 'fields'), 'elements': spr, 'identifier': 'spr', 'limit': 5, 'expanded': 'in'}
         %}
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'thematic'|trans, 'elements': themes, 'identifier': 'themes'}
+            with {'title': 'fachbezug'|trans({}, 'fields'), 'elements': fachbezug, 'identifier': 'fachbezug'}
         %}
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'learning_modality'|trans, 'elements': modalities, 'identifier': 'modalities', 'footer': 'reference_books_examples'|trans}
+            with {'title': 'asl'|trans({}, 'fields'), 'elements': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
         %}
     </div>
     <div class="panel-group">
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'target_level'|trans, 'elements': levels, 'identifier': 'levels', 'footer': 'level_description'|trans ~':
+            with {'title': 'sprachniveau'|trans({}, 'fields'), 'elements': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
@@ -25,126 +26,21 @@
         %}
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'skills'|trans, 'elements': skills, 'identifier': 'skills'}
+            with {'title': 'fertigkeit'|trans({}, 'fields'), 'elements': fertigkeit, 'identifier': 'fertigkeit'}
         %}
     </div>
     <div class="panel-group">
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'source_language'|trans, 'elements': languages_source, 'identifier': 'languages_source'}
+            with {'title': 'ausgangssprache'|trans({}, 'fields'), 'elements': ausgangssprache, 'identifier': 'ausgangssprache'}
         %}
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'media'|trans, 'elements': medias, 'identifier': 'medias'}
+            with {'title': 'medium'|trans({}, 'fields'), 'elements': medium, 'identifier': 'medium'}
         %}
         {%
             include 'materials/_panel.html.twig'
-            with {'title': 'year_of_publication'|trans, 'elements': years, 'identifier': 'years', 'radio': 'all'}
+            with {'title': 'jahr'|trans({}, 'fields'), 'elements': jahr, 'identifier': 'jahr', 'radio': 'all'}
         %}
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'general'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-        <div class="form-group">
-            <label for="fiLanguage">{{ 'language'|trans }}</label><br>
-            <select id="fiLanguage" class="js-chosen" data-col="6">
-                {% for language in languages %}
-                    <option value="{{ language }}">{{ language|trans({}, "languages") }}</option>
-                {% endfor %}
-            </select>
-            <p class="help-block">{{ 'language_info'|trans }}</p>
-        </div>
-        <div class="form-group">
-            <label for="fiTheme">{{ 'thematic'|trans }}</label><br>
-            <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary active" id="fiThemeAll">
-                    <input type="radio" name="options" autocomplete="off" checked> {{ 'all_f'|trans }}
-                </label>
-                <label class="btn btn-primary" id="fiThemeSelect">
-                    <input type="radio" name="options" autocomplete="off"> {{ 'select'|trans }}
-                </label>
-            </div>
-            <select id="fiTheme" class="js-chosen" multiple>
-                {% for theme in themes %}
-                    <option value="{{ theme }}">{{ theme|trans({}, "themes") }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="fiModality">{{ 'learning_modality'|trans }}</label><br>
-            <select id="fiModality" class="js-chosen" multiple>
-                {% for modality in modalities %}
-                    <option value="{{ modality }}" selected>{{ modality|trans({}, "modalities") }}</option>
-                {% endfor %}
-            </select>
-            <p class="help-block">{{ 'reference_books_examples'|trans }}</p>
-        </div>
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'levels_and_skills'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-        <div class="form-group">
-            <label for="fiLevel">{{ 'level_of_language'|trans }}</label><br>
-            <select id="fiLevel" class="js-chosen" multiple>
-                {% for level in levels %}
-                    <option value="{{ level }}" selected>{{ level|trans({}, "levels") }}</option>
-                {% endfor %}
-            </select>
-            <p class="help-block">{{ 'level_description'|trans }}:
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><label>DE</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><label>FR</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><label>EN</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><label>IT</label></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><label>ES</label></a>
-            </p>
-        </div>
-        <div class="form-group">
-            <label for="fiSkills">{{ 'skills'|trans }}</label><br>
-            <select id="fiSkills" class="js-chosen" multiple>
-                {% for skill in skills %}
-                    <option value="{{ skill }}" selected>{{ skill|trans({}, "skills") }}</option>
-                {% endfor %}
-            </select>
-        </div>
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ 'material'|trans }}</h3>
-    </div>
-    <div class="panel-body">
-        <div class="form-group">
-            <label for="fiSource">{{ 'source_language'|trans }}</label><br>
-            <select id="fiSource" class="js-chosen" multiple>
-                {% for language in languages_source %}
-                    <option value="{{ language }}" selected>{{ language|trans({}, "languages_source") }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="fiType">{{ 'media'|trans }}</label><br>
-            <select id="fiType" class="js-chosen" data-col="5" multiple>
-                {% for media in medias %}
-                    <option value="{{ media }}" selected>{{ media|trans({}, "medias") }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="fiYear">{{ 'year_of_publication'|trans }}</label><br>
-            <select id="fiYear" class="js-chosen">
-                {% for year in years %}
-                    <option value="{{ year }}" {% if year == "all" %}selected{% endif %}>{{ year|trans({}, "years") }}</option>
-                {% endfor %}
-            </select>
-        </div>
     </div>
 </div>

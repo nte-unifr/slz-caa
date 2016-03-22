@@ -2049,44 +2049,27 @@ class Material implements JsonSerializable
         return array(
             'id' => $this->id,
             'titel' => $this->titel,
-            'autor' => $this->autor,
+            'spr' => explode(" ", $this->spr),
+            'fachbezug' => explode(" ", $this->fachbezug),
+            'asl' => explode(" ", $this->asl),
+            'sprachniveau' => explode(" ", $this->sprachniveau),
+            'fertigkeit' => explode(" ", $this->fertigkeit),
+            'ausgangssprache' => explode(" ", $this->ausgangssprache),
+            'medium' => explode(" ", $this->medium),
             'jahr' => $this->jahr,
-            'sprachniveau' => array(
-                'display' => $this->sprachniveauDisplay($this->sprachniveau),
-                'data' => $this->toArray($this->sprachniveau)
-            ),
-            'fertigkeit' => array(
-                'display' => str_replace(" ", ", ", $this->fertigkeit),
-                'data' => $this->toArray($this->fertigkeit)
-            ),
-            'fachbezug' => array(
-                'display' => str_replace(" ", ",<br>", $this->fachbezug),
-                'data' => $this->toArray($this->fachbezug)
-            ),
-            'ausgangssprache' => array(
-                'display' => str_replace(" ", ", ", $this->ausgangssprache),
-                'data' => $this->toArray($this->ausgangssprache)
-            ),
-            'spr' => $this->toArray($this->spr),
-            'medium' => $this->toArray($this->medium),
+            'autor' => $this->autor,
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
             'kommentar' => $this->kommentar,
-            'asl' => $this->toArray($this->asl),
-            'type' => $this->toArray($this->medium),
-            'nrcdrom' => $this->toArray($this->nrcdrom)
+            'nrcdrom' => explode(" ", $this->nrcdrom)
         );
     }
 
     // Utility
-    public function toArray($string)
-    {
-        return explode(" ", $string);
-    }
 
     public function sprachniveauDisplay($string)
     {
         $result = "";
-        $sprachniveaux = $this->toArray($string);
+        $sprachniveaux = explode(" ", $string);
         foreach ($sprachniveaux as $index => $sprachniveau) {
             $result .= '<span class="label label-default">' . $sprachniveau . '</span>';
             if ($index != count($sprachniveaux)-1) {
