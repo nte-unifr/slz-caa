@@ -9,26 +9,17 @@ var CAATA = {
 
         // Datatable init
         CAATA.table = $('#materials .table').DataTable({
-            'order': [[ 2, 'asc' ]],
+            'order': [[ 1, 'asc' ]],
             'rowId': 'id',
             'select': true,
             'ajax': 'materials.json',
             'deferRender': true,
             'fixedHeader': true,
-            'pageLength': 25,
+            'pageLength': 50,
+            'scrollX': true,
             'columns': [
                 { 'data': 'id', 'visible': false },
-                {
-                    'data': null,
-                    'defaultContent': '<button type="button" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>',
-                    'searchable': false,
-                    'orderable': false
-                },
                 { 'data': 'titel' },
-                {
-                    'data': 'spr',
-                    'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'spr', 'u') } }
-                },
                 {
                     'data': 'fachbezug',
                     'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'fachbezug') } }
@@ -56,15 +47,26 @@ var CAATA = {
                 { 'data': 'jahr' },
                 { 'data': 'autor', 'visible': false },
                 { 'data': 'code', 'visible': false },
-                { 'data': 'kommentar', 'visible': false }
+                { 'data': 'kommentar', 'visible': false },
+                {
+                    'data': 'spr',
+                    'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'spr', 'u') } },
+                    'visible': false
+                }
             ],
             'language': {
                 'url': langUrl,
                 'loadingRecords': '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"><span class="sr-only">45% Complete</span></div></div>',
             },
-            'dom': "<'row well'<'col-sm-6'l i><'col-sm-6'f>>" +
+            'dom': "<'row well'<'col-sm-12 col-md-8'i><'col-sm-12 col-md-4 text-right'f><'col-sm-12'B>>" +
                     "<'row'<'col-sm-12'tr>>" +
-                    "<'row well'<'col-sm-5'l i><'col-sm-7'p>>",
+                    "<'row well'<'col-sm-5'l><'col-sm-7'p>>",
+            'buttons': [
+                { extend: 'columnsToggle', className: 'btn-sm' }
+            ],
+            "drawCallback": function( settings ) {
+                $(".dt-buttons").children().first().hide(); // hide the button for id
+            }
         });
     }
 };
@@ -149,25 +151,4 @@ $.fn.dataTable.ext.search.push(
 
         return true;
     }
-)
-
-
-$(document).ready(function() {
-
-    // On click
-    $('#materials .table tbody').on( 'click', 'button', function () {
-        var data = CAAFI.materialsTable.row( $(this).parents('tr') ).data();
-        console.log(data.ausgangssprache);
-        $('#materialModal #titel').html(data.titel);
-        $('#materialModal #autor').html(data.autor);
-        $('#materialModal #jahr').html(data.jahr);
-        $('#materialModal #sprachniveau').html(data.sprachniveau.display);
-        $('#materialModal #fertigkeit').html(data.fertigkeit.display);
-        $('#materialModal #fachbezug').html(data.fachbezug.display);
-        $('#materialModal #ausgangssprache').html(data.ausgangssprache);
-        $('#materialModal #medium').html(data.medium.display);
-        $('#materialModal #signatur').html(data.code);
-        $('#materialModal #beschreibung').html(data.kommentar);
-        $('#materialModal').modal('show');
-    } );
-})
+);
