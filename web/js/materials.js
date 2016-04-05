@@ -58,9 +58,9 @@ var CAATA = {
                 'url': langUrl,
                 'loadingRecords': '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"><span class="sr-only">45% Complete</span></div></div>',
             },
-            'dom': "<'row well'<'col-sm-12 col-md-8'i><'col-sm-12 col-md-4 text-right'f><'col-sm-12'B>>" +
+            'dom': "<'row well'<'col-sm-12 col-md-8'i><'col-sm-12 col-md-4 text-right'f><'col-sm-12 buttons-cols-vis'B>>" +
                     "<'row'<'col-sm-12'tr>>" +
-                    "<'row well'<'col-sm-5'l><'col-sm-7'p>>",
+                    "<'row well panel-well-fix'<'col-sm-5'l><'col-sm-7'p>>",
             'buttons': [
                 { extend: 'columnsToggle', className: 'btn-sm' }
             ],

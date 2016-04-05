@@ -27,3 +27,16 @@
 #filters-accordion .select-all:hover, #filters-accordion .deselect-all:hover, #filters-accordion .show-more:hover {
     cursor: pointer;
 }
+
+.panel-fix .panel-body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.panel-well-fix {
+    margin-bottom: 0;
+}
+
+.buttons-cols-vis {
+    padding: 5px;
+    text-align: center;
+}
