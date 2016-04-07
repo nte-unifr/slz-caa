@@ -45,10 +45,10 @@ $(document).ready(function() {
         CAATA.draw();
     } );
 
-
-
+    // behaviour of the spr select
     $("#select-spr").chosen().change(function() {
         var val = $("#select-spr").chosen().val();
-        console.log(val);
+        CAAFI.setSpr(val);
+        CAATA.table.draw(); // use direct draw : speedy
     });
 });

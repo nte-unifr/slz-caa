@@ -1,5 +1,5 @@
 var CAAFI = {
-    spr: [],
+    spr: 'DAF',
     fachbezug: [],
     asl: [],
     sprachniveau: [],
@@ -7,6 +7,9 @@ var CAAFI = {
     ausgangssprache: [],
     medium: [],
     jahr: 'all',
+    setSpr: function(value) {
+        CAAFI['spr'] = value;
+    },
     setValues: function(el, draw=true) {
         var identifier = el.data('identifier');
         var value = el.data('value');

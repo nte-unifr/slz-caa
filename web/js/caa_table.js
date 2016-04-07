@@ -172,7 +172,7 @@ $.fn.dataTable.ext.search.push(
         var tableJahr = rowData['jahr'];
         var globalJahr = CAAFI['jahr'];
 
-        // if (!isRowAllowed(tableSpr, globalSpr)) { return false; }
+        if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase())) { return false; }
         if (!isRowAllowed(tableFachbezug, globalFachbezug, 'no')) { return false; }
         if (!isRowAllowed(tableAsl, globalAsl)) { return false; }
         if (!isRowAllowed(tableSprachniveau, globalSprachniveau)) { return false; }
