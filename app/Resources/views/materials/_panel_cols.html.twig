@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <a class="panel-heading-anchor" data-toggle="collapse" data-target="#collapseCols">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-eye"></i> {{ 'displayed_columns'|trans }}
+                <span id="chevronCols"><i class="fa fa-chevron-down"></i></span>
+            </h3>
+        </div>
+    </a>
+    <div id="collapseCols" class="panel-collapse collapse in filter-collapse" data-chevron="#chevronCols">
+        <div class="panel-body">
+            {% for field in fields %}
+                {% if field.display %}
+                    <a class="btn btn-primary btn-toggle-col active" data-field="{{ field.name }}">
+                        {{ field.name|trans({}, 'fields') }} <i class="fa fa-check-square"></i>
+                    </a>
+                {% else %}
+                    <a class="btn btn-primary btn-toggle-col" data-field="{{ field.name }}">
+                        {{ field.name|trans({}, 'fields') }} <i class="fa fa-square"></i>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

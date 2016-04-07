@@ -32,6 +32,7 @@ class MaterialsController extends Controller
             $asl = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/asl.yml'));
             $jahr = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/jahr.yml'));
             $fertigkeit = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fertigkeit.yml'));
+            $fields = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fields.yml'));
             return $this->render('materials/index.html.twig', array(
                 'materials' => $materials,
                 'spr' => $spr,
@@ -41,7 +42,8 @@ class MaterialsController extends Controller
                 'fachbezug' => $fachbezug,
                 'asl' => $asl,
                 'jahr' => $jahr,
-                'fertigkeit' => $fertigkeit
+                'fertigkeit' => $fertigkeit,
+                'fields' => $fields
             ));
         }
     }

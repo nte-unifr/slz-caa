@@ -13,3 +13,7 @@ unifr: University of Fribourg
 reference_books_examples: Reference books: dictionaries, grammar books, encyclopedias
 level_description: Description of levels (PDF)
 material: Material
+displayed_columns: Displayed columns
+search: Search
+fulltext_search: The search is "fulltext", even on hidden columns.
+which_lang: What language would you like to learn :

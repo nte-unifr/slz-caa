@@ -1,0 +1,36 @@
+-
+    name: titel
+    display: true
+-
+    name: fachbezug
+    display: true
+-
+    name: asl
+    display: true
+-
+    name: sprachniveau
+    display: true
+-
+    name: fertigkeit
+    display: true
+-
+    name: ausgangssprache
+    display: true
+-
+    name: medium
+    display: true
+-
+    name: jahr
+    display: true
+-
+    name: autor
+    display: false
+-
+    name: code
+    display: false
+-
+    name: kommentar
+    display: false
+-
+    name: spr
+    display: false

@@ -78,7 +78,6 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="//www.unifr.ch/centredelangues/{{ app.request.locale|split('_')[0] }}/Auto/projet-dapprentissage">{{ 'info'|trans }}</a></li>
                                     <li><a href="//www.unifr.ch/centredelangues/{{ app.request.locale|split('_')[0] }}/Auto/FAQ">FAQ</a></li>
-                                    <li><a href="mailto:***REMOVED***">{{ 'contact'|trans }}</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right visible-xs-block">
                                     <li class="dropdown">
@@ -116,8 +115,10 @@
                 "js/chosen.jquery.min.js"
                 "bundles/bazingajstranslation/js/translator.min.js"
                 "js/translations/*/*.js"
+                "js/caa_table.js"
+                "js/caa_ui.js"
+                "js/caa_filters.js"
                 "js/materials.js"
-                "js/filters.js"
                 output="js/compiled/app.js" %}
                 <script src="{{ asset_url }}"></script>
             {% endjavascripts %}

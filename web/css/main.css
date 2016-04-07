@@ -18,14 +18,15 @@
 #filters-accordion .panel-title span {
     float: right;
 }
-#filters-accordion .btn-filter {
-    margin-bottom: 3px;
-}
 #filters-accordion .btn-filter.full-width {
     width: 100%;
 }
 #filters-accordion .select-all:hover, #filters-accordion .deselect-all:hover, #filters-accordion .show-more:hover {
     cursor: pointer;
+}
+
+.panel-body .btn {
+    margin-bottom: 3px;
 }
 
 .panel-fix .panel-body {
@@ -39,4 +40,8 @@
 .buttons-cols-vis {
     padding: 5px;
     text-align: center;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    white-space: normal !important;
 }

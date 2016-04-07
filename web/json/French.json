@@ -1,0 +1,24 @@
+
+
+{
+	"sProcessing":     "Traitement en cours...",
+	"sSearch":         "Rechercher&nbsp;:",
+    "sLengthMenu":     "_MENU_",
+	"sInfo":           "_START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+	"sInfoEmpty":      "0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
+	"sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+	"sInfoPostFix":    "",
+	"sLoadingRecords": "<div class=\"progress\"><div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 45%\"><span class=\"sr-only\">45% Complete</span></div></div>",
+    "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+	"sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+	"oPaginate": {
+		"sFirst":      "Premier",
+		"sPrevious":   "Pr&eacute;c&eacute;dent",
+		"sNext":       "Suivant",
+		"sLast":       "Dernier"
+	},
+	"oAria": {
+		"sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+		"sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+	}
+}

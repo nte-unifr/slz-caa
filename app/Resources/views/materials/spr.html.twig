@@ -1,0 +1,9 @@
+<p class="lead">
+    {{ 'which_lang'|trans}}
+    <select id="select-spr">
+        {% for element in spr %}
+            <option value="{{ element }}">{{ element|trans({}, 'spr') }}</option>
+        {% endfor %}
+    </select>
+</p>
+<hr>

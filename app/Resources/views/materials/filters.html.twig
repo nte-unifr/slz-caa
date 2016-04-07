@@ -1,10 +1,12 @@
 <div id="filters-accordion">
     <div class="panel-group">
+        {% include 'materials/_panel_search.html.twig' %}
+    </div>
+    <div class="panel-group">
+        {% include 'materials/_panel_cols.html.twig' %}
+    </div>
+    <div class="panel-group">
         {% set expanded = '' %}
-        {%
-            include 'materials/_panel.html.twig'
-            with {'title': 'spr'|trans({}, 'fields'), 'elements': spr, 'identifier': 'spr', 'limit': 5, 'expanded': 'in'}
-        %}
         {%
             include 'materials/_panel.html.twig'
             with {'title': 'fachbezug'|trans({}, 'fields'), 'elements': fachbezug, 'identifier': 'fachbezug'}
@@ -13,8 +15,6 @@
             include 'materials/_panel.html.twig'
             with {'title': 'asl'|trans({}, 'fields'), 'elements': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
         %}
-    </div>
-    <div class="panel-group">
         {%
             include 'materials/_panel.html.twig'
             with {'title': 'sprachniveau'|trans({}, 'fields'), 'elements': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
@@ -28,8 +28,6 @@
             include 'materials/_panel.html.twig'
             with {'title': 'fertigkeit'|trans({}, 'fields'), 'elements': fertigkeit, 'identifier': 'fertigkeit'}
         %}
-    </div>
-    <div class="panel-group">
         {%
             include 'materials/_panel.html.twig'
             with {'title': 'ausgangssprache'|trans({}, 'fields'), 'elements': ausgangssprache, 'identifier': 'ausgangssprache'}
