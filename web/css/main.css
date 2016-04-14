@@ -21,8 +21,11 @@
 #filters-accordion .btn-filter.full-width {
     width: 100%;
 }
-#filters-accordion .select-all:hover, #filters-accordion .deselect-all:hover, #filters-accordion .show-more:hover {
+#filters-accordion .select-all:hover, #filters-accordion .deselect-all:hover, #filters-accordion .reset-filters:hover {
     cursor: pointer;
+}
+#filters-accordion .reset-filters-box {
+    margin-top: 6px;
 }
 
 .panel-body .btn {

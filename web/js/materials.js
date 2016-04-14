@@ -33,6 +33,17 @@ $(document).ready(function() {
         });
     });
 
+    // reset all filters
+    $('#filters-accordion a.reset-filters').click(function() {
+        $('#filters-accordion .btn-filter.filter-checkbox').each(function() {
+            CAAUI.checkBox($(this));
+            CAAFI.setValues($(this));
+        });
+        var radio = $('#filters-accordion .filter-radio-all').first();
+        CAAUI.checkRadio(radio);
+        CAAFI.setValues(radio);
+    });
+
     // behaviour of buttons to show/hide cols
     $("#filters-accordion .btn-toggle-col").click(function() {
         CAAUI.toggleBox($(this));
