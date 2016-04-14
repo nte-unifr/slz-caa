@@ -9,28 +9,7 @@
             {% include "materials/filters.html.twig" %}
         </div>
         <div class="col-xs-12 col-sm-9 table-responsive">
-            <div class="panel panel-default panel-fix">
-                <div class="panel-heading">
-                    <ul class="nav nav-pills" role="pilllist">
-                        <li role="presentation" class="active">
-                            <a href="#materials-tab" aria-controls="materials-tab" role="pill" data-toggle="pill">{{ 'material'|trans }}</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#links-tab" aria-controls="links-tab" role="pill" data-toggle="pill">{{ 'links'|trans }}</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="panel-body">
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="materials-tab">
-                            {% include "materials/materials.html.twig" %}
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="links-tab">
-                            {% include "materials/links.html.twig" %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include "materials/materials.html.twig" %}
         </div>
     </div>
 {% endblock %}

@@ -97,9 +97,15 @@ var CAATA = {
                 'url': langUrl,
                 'lengthMenu': '_MENU_'
             },
-            'dom': "<'row well'<'col-md-6'i><'col-md-6'p>>" +
+            'dom': "<'row well'<'col-md-6'i><'col-md-6'B>>" +
                     "<'row'<'col-sm-12'tr>>" +
-                    "<'row well panel-well-fix'<'col-md-3'l><'col-md-9'p>>",
+                    "<'row well'<'col-md-3'l><'col-md-9'p>>",
+            'buttons': [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ],
         });
     },
     draw: function() {
