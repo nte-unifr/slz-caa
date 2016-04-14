@@ -32,11 +32,15 @@
     margin-bottom: 3px;
 }
 
-.buttons-cols-vis {
-    padding: 5px;
-    text-align: center;
+.btn-actions {
+    margin-right: 2px;
 }
+
 
 div.dataTables_wrapper div.dataTables_info {
     white-space: normal !important;
+}
+
+table.dataTable tr.selected {
+    background-color: #004E7B !important;
 }

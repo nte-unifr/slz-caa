@@ -21,7 +21,7 @@ var CAATA = {
         CAATA.table = tableEl.DataTable({
             'order': [[ 1, 'asc' ]],
             'rowId': 'id',
-            'select': true,
+            'select': 'multi',
             'ajax': 'materials.json',
             'deferRender': true,
             'fixedHeader': true,
@@ -101,10 +101,48 @@ var CAATA = {
                     "<'row'<'col-sm-12'tr>>" +
                     "<'row well'<'col-md-3'l><'col-md-9'p>>",
             'buttons': [
-                'copyHtml5',
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5'
+                {
+                    extend: 'copyHtml5',
+                    text: 'Copy selected',
+                    exportOptions: {
+                        modifier: {
+                            selected: true
+                        }
+                    },
+                    className: 'btn-primary btn-actions'
+                },
+                {
+                    extend: 'excelHtml5',
+                    text: 'Excel selected',
+                    exportOptions: {
+                        modifier: {
+                            selected: true
+                        }
+                    },
+                    className: 'btn-primary btn-actions'
+                },
+                {
+                    extend: 'csvHtml5',
+                    text: 'CSV selected',
+                    exportOptions: {
+                        modifier: {
+                            selected: true
+                        }
+                    },
+                    className: 'btn-primary btn-actions'
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: 'PDF selected',
+                    exportOptions: {
+                        modifier: {
+                            selected: true
+                        }
+                    },
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+                    className: 'btn-primary btn-actions'
+                }
             ],
         });
     },
