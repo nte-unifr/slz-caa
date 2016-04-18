@@ -97,13 +97,12 @@ var CAATA = {
                 'url': langUrl,
                 'lengthMenu': '_MENU_'
             },
-            'dom': "<'row well'<'col-md-6'i><'col-md-6'B>>" +
+            'dom': "<'row well'<'col-md-6'i><'col-md-6 text-right'B>>" +
                     "<'row'<'col-sm-12'tr>>" +
                     "<'row well'<'col-md-3'l><'col-md-9'p>>",
             'buttons': [
                 {
                     extend: 'copyHtml5',
-                    text: 'Copy selected',
                     exportOptions: {
                         modifier: {
                             selected: true
@@ -114,7 +113,6 @@ var CAATA = {
                 },
                 {
                     extend: 'excelHtml5',
-                    text: 'Excel selected',
                     exportOptions: {
                         modifier: {
                             selected: true
@@ -125,7 +123,6 @@ var CAATA = {
                 },
                 {
                     extend: 'csvHtml5',
-                    text: 'CSV selected',
                     exportOptions: {
                         modifier: {
                             selected: true
@@ -136,7 +133,6 @@ var CAATA = {
                 },
                 {
                     extend: 'pdfHtml5',
-                    text: 'PDF selected',
                     exportOptions: {
                         modifier: {
                             selected: true
