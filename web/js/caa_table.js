@@ -24,7 +24,6 @@ var CAATA = {
             'select': 'multi',
             'ajax': 'materials.json',
             'deferRender': true,
-            'fixedHeader': true,
             'pageLength': 50,
             'scrollX': true,
             'columns': [
