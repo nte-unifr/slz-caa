@@ -17,3 +17,5 @@ displayed_columns: Displayed columns
 search: Search
 fulltext_search: The search is "fulltext", even on hidden columns.
 which_lang: What language would you like to learn :
+trick: Trick!
+select_row_trick: Click on a row to select it, click again to deselect. You can then export the selected rows with the buttons on top of the table.

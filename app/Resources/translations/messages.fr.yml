@@ -17,3 +17,5 @@ displayed_columns: Colonnes affichées
 search: Rechercher
 fulltext_search: La recherche est de type "fulltext", également sur les colonnes masquées.
 which_lang: Quelle langue désirez-vous apprendre :
+trick: Astuce!
+select_row_trick: Cliquez sur une ligne pour la sélectionner, cliquez à nouveau pour desélectionner. Vous pouvez ensuite exporter les lignes choisies grâce aux boutons au dessus du tableau.
