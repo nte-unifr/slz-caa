@@ -5,10 +5,18 @@
         <div class="col-xs-12">
             {% include "materials/spr.html.twig" %}
         </div>
+        <div class="col-xs-12">
+            <div id="info-selection" class="alert alert-info hidden" role="alert">
+                <strong>Trick!</strong> Click on a row to select it. You can then export it with the buttons on top of the table.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-3">
             {% include "materials/filters.html.twig" %}
         </div>
-        <div class="col-xs-12 col-sm-9 table-responsive">
+        <div class="col-xs-12 col-sm-9">
             {% include "materials/materials.html.twig" %}
         </div>
     </div>

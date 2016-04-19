@@ -54,12 +54,21 @@ $(document).ready(function() {
     $('#mainSearch').on( 'keyup', function () {
         CAATA.table.search( this.value );
         CAATA.draw();
-    } );
+    });
 
     // behaviour of the spr select
     $("#select-spr").chosen().change(function() {
         var val = $("#select-spr").chosen().val();
         CAAFI.setSpr(val);
         CAATA.table.draw(); // use direct draw : speedy
+    });
+
+    // behaviour of the info-selection (alert)
+    if (CAAST.getItem('caa.unifr.ch.dismissInfoSelection') !== 'true') {
+        console.log('okay');
+        $("#info-selection").removeClass("hidden");
+    }
+    $("#info-selection").on('closed.bs.alert', function () {
+        CAAST.setItem('caa.unifr.ch.dismissInfoSelection', 'true');
     });
 });
