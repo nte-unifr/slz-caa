@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Importer{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8">
+                {% if app.session.flashBag.has('success') %}
+                    <div class="alert alert-success">
+                        {% for msg in app.session.flashBag.get('success') %}
+                            {{ msg }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <h2>Import from Cardbox workflow</h2>
+                <h3>Step 1 : Export from Cardbox</h3>
+                <ul>
+                    <li>Open Cardbox</li>
+                    <li>
+                        In menu <code>search</code> choose <code>Select</code>
+                        <ul>
+                            <li>In the dropdown menu <code>Field</code> choose <code>ASL</code></li>
+                            <li>
+                                Under <code>Search for</code>, write <code>ASL NSW KBL</code> and click OK
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        In menu <code>File</code> choose <code>Export...</code>
+                        <ul>
+                            <li>Use <code>Comma-separated format ("CSV")</code></li>
+                        </ul>
+                    </li>
+                    <li>Save as <code>.csv</code></li>
+                    <li>Choose <code>The whole of the current selection</code> for <code>What records to export</code></li>
+                </ul>
+
+                <hr>
+
+                <h3>Step 2 : Import your CSV</h3>
+                <form action="" method="post" {{ form_enctype(form) }}>
+                    {{ form_widget(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

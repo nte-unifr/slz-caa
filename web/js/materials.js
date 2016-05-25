@@ -65,7 +65,6 @@ $(document).ready(function() {
 
     // behaviour of the info-selection (alert)
     if (CAAST.getItem('caa.unifr.ch.dismissInfoSelection') !== 'true') {
-        console.log('okay');
         $("#info-selection").removeClass("hidden");
     }
     $("#info-selection").on('closed.bs.alert', function () {

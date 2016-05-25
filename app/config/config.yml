@@ -35,6 +35,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources: ['bootstrap_3_layout.html.twig']
 
 # Assetic Configuration
 assetic:
@@ -94,3 +96,12 @@ bazinga_js_translation:
         - ausgangssprache
         - spr
         - asl
+
+# Vich uploader-bundle
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        uploaded_file:
+            uri_prefix: /files
+            upload_destination: %kernel.root_dir%/../web/files
