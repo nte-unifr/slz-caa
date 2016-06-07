@@ -1,93 +1,98 @@
-DAF: Allemand
-FLE: Français
-EFL: Anglais
-ILS: Italien
-ESP: Espagnol
+AFR: Afrikaans
+AGRI: Grec ancien
+AHEB: Hébreu ancien
 ALB: Albanais
+AMH: Amharique
 ARAB: Arabe
 ARM: Arménien
+ASER: Azéri
 BASK: Basque
+BELO: Bélarus
+BENG: Bengale
+BOS: Bosniaque
+BRAS: Portugais brésilien
+BRE: Breton
+BUL: Bulgare
+CANT: Cantonais
 CAT: Catalan
 CES: Tchèque
-CHIN: Chinois
+CHIN: Chinois mandarin
 CORS: Corse
+CRE: Créole (franç.)
+DAF: Allemand
 DAN: Danois
+EFL: Anglais
+EPR: Espéranto
+ESP: Espagnol
+EST: Estonien
 FIN: Finnois
+FLA: Flamand
+FLE: Français
 FRI: Frison
-GAE: Gallois
-GRI: Grec (nouveau)
-HEB: Hébreu
+GAL: Galicien
+GEO: Géorgien
+GRI: Grec, moderne
+GUA: Guarani
+HAW: Hawaïen
+HEB: Hébreu moderne
 HIN: Hindi
 INDO: Indonésien
+ILS: Italien
 IRI: Irlandais
 ISL: Islandais
 JAP: Japonais
 JID: Yiddish
 KHM: Khmer
+KOR: Coréen
 KRO: Croate
 LAT: Latin
-LIT: Lituanien
-NED: Néerlandais
-NOR: Norvégien
-PER: Persan - Farsi - Iranien
-POL: Polonais
-POR: Portugais
-RGRI: Rhéto-roman
-RUM: Roumain
-RUS: Russe
-SDT: Suisse-allemand
-SER: Serbe
-SK: Serbo-croate
-SLO: Slovène
-SLOW: Slovaque
-SVE: Suédois
-SWA: Swahili
-TUR: Turque
-UNG: Hongrois
-AFR: Afrikaans
-AGRI: Grec ancien
-AHEB: Hébreu ancien
-AMH: Amharique
-ASER: Azerbaïdjanais
-BELO: Biélorusse
-BENG: Bengali
-BOS: Bosniaque
-BRAS: Brésilien
-BRE: Breton
-BUL: Bulgare
-CRE: Créole
-EPR: Espéranto
-EST: Estonien
-FLA: Flamand
-GAL: Galicien
-GEO: Géorgien
-GUA: Guarani
-HAW: Hawaïen
-KOR: Coréen
 LET: Letton
-LUG: Luganda
+LIT: Lituanien
+LUG: Ganda
 LUX: Luxembourgeois
 MAD: Malgache
-MAL: Malaisien
-MONG: Mongol
-NDT: Allemand, bas
-PID: Pidgin
+MALA: Malais
+MALT: Maltais
+MAR: Marathi
+MONG: Mongole
+NED: Néerlandais
+NEP: Népalais
+NOR: Norvégien
+OCC: Occitan
+PER: Persan
+PID: Pidgin (angl.)
+POL: Polonais
+POR: Portugais
 QUE: Quechua
+RGRI: Rhéto-romanche
+ROM: Romani
+RUM: Roumain
+RUS: Russe
 SANS: Sanskrit
 SCO: Gaélique écossais
+SDT: Suisse alémanique
+SER: Serbe
+SLON: Slovène
+SLOK: Slovaque
 SOM: Somali
-SOT: Sotho
+SOT: Sotho du Sud
+SVE: Suédois
+SWA: Swahili
 TAG: Tagalog
 TAH: Tahitien
 TAM: Tamoul
-THA: Thaïlandais
+THA: Thaï
 TIB: Tibétain
+TMZ: Tamazight, berbère
 TSW: Tswana
+TUR: Turc
 UKR: Ukrainien
+UNG: Hongrois
 URD: Ourdou
-VIE: Vietnamien
-WAL: Gallois (Welsh)
+VIET: Vietnamien
+WAL: Gallois
 WOL: Wolof
 XHO: Xhosa
+XL: Plurilingue
 YOR: Yoruba
 ZUL: Zoulou

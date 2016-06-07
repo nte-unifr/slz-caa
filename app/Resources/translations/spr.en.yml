@@ -1,93 +1,98 @@
-DAF: German
-FLE: French
-EFL: English
-ILS: Italian
-ESP: Spanish
+AFR: Afrikaans
+AGRI: Greek, Ancient
+AHEB: Hebrew, Ancient
 ALB: Albanian
+AMH: Amharic
 ARAB: Arabic
 ARM: Armenian
+ASER: Azerbaijani
 BASK: Basque
+BELO: Belarusian
+BENG: Bengali
+BOS: Bosnian
+BRAS: Brazilian Portuguese
+BRE: Breton
+BUL: Bulgarian
+CANT: Cantonese
 CAT: Catalan
 CES: Czech
-CHIN: Chinese
+CHIN: Chinese Mandarin
 CORS: Corsican
+CRE: Creole (french)
+DAF: German
 DAN: Danish
-FIN: Finnish
+EFL: English
+EPR: Esperanto
+ESP: Spanish
+EST: Estonian
+FIN: Finnisch
+FLA: Flemish
+FLE: French
 FRI: Frisian
-GAE: Gaelic
-GRI: Greek (new)
-HEB: Hebrew
+GAL: Gallegan
+GEO: Georgian
+GRI: Greek, Modern
+GUA: Guaraní
+HAW: Hawaiian
+HEB: Hebrew, Modern
 HIN: Hindi
 INDO: Indonesian
+ILS: Italian
 IRI: Irish
 ISL: Icelandic
 JAP: Japanese
 JID: Yiddish
 KHM: Khmer
+KOR: Korean
 KRO: Croatian
 LAT: Latin
+LET: Latvian
 LIT: Lithuanian
+LUG: Luganda
+LUX: Luxemburgish
+MAD: Malagasy
+MALA: Malay
+MALT: Maltese
+MAR: Marathi
+MONG: Mongolian
 NED: Dutch
+NEP: Nepali
 NOR: Norwegian
-PER: Persian - Farsi - Iranian
+OCC: Occitan
+PER: Persian
+PID: Pidgin (engl.)
 POL: Polish
 POR: Portuguese
-RGRI: Raeto-Romance
+QUE: Quechua
+RGRI: Raeto-Romansh
+ROM: Romany
 RUM: Romanian
 RUS: Russian
-SDT: German, Swiss
-SER: Serbian
-SK: Serbo-Croatian
-SLO: Slovenian
-SLOW: Slovak
-SVE: Swedish
-SWA: Swahili
-TUR: Turkish
-UNG: Hungarian
-AFR: Afrikaans
-AGRI: Greek, Ancient
-AHEB: Hebrew, Ancient
-AMH: Amharic
-ASER: Azerbaijanian
-BELO: Belorussian
-BENG: Bengali
-BOS: Bosnian
-BRAS: Brazilian
-BRE: Breton
-BUL: Bulgarian
-CRE: Creole
-EPR: Esperanto
-EST: Estonian
-FLA: Flemish
-GAL: Galician
-GEO: Georgian
-GUA: Guaraní
-HAW: Hawaiian
-KOR: Korean
-LET: Latvian
-LUG: Luganda
-LUX: Luxembourgish
-MAD: Malagasy
-MAL: Malaysian
-MONG: Mongolian
-NDT: German, Low
-PID: Pidgin
-QUE: Quechua
 SANS: Sanskrit
-SCO: Scots Gaelic
+SCO: Gaelic (Scots)
+SDT: Swiss German
+SER: Serbian
+SLON: Slovenian
+SLOK: Slovak
 SOM: Somali
-SOT: Sotho
+SOT: Sotho, Southern
+SVE: Swedish
+SWA: Swahili (generic)
 TAG: Tagalog
 TAH: Tahitian
 TAM: Tamil
 THA: Thai
-TIB: Tibetan
+TIB: Tibetan (stand.)
+TMZ: Tamazight, Berber
 TSW: Tswana
+TUR: Turkish
 UKR: Ukrainian
+UNG: Hungarian
 URD: Urdu
-VIE: Vietnamese
+VIET: Vietnamese
 WAL: Welsh
 WOL: Wolof
 XHO: Xhosa
+XL: Multilingual
 YOR: Yoruba
 ZUL: Zulu

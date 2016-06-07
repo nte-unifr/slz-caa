@@ -33,9 +33,26 @@ class MaterialsController extends Controller
             $jahr = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/jahr.yml'));
             $fertigkeit = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fertigkeit.yml'));
             $fields = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fields.yml'));
+
+            // translate spr
+            $sprTranslated = [];
+            foreach ($spr as $el) {
+                $sprTranslated[$el] = $this->get('translator')->trans($el, [], 'spr');
+            }
+
+            // sort by key
+            asort($sprTranslated);
+
+            // move main langs to top
+            $sprTranslated = array('ESP' => $sprTranslated['ESP']) + $sprTranslated; // pos 4
+            $sprTranslated = array('ILS' => $sprTranslated['ILS']) + $sprTranslated; // pos 3
+            $sprTranslated = array('EFL' => $sprTranslated['EFL']) + $sprTranslated; // pos 2
+            $sprTranslated = array('FLE' => $sprTranslated['FLE']) + $sprTranslated; // pos 1
+            $sprTranslated = array('DAF' => $sprTranslated['DAF']) + $sprTranslated; // pos 0
+
             return $this->render('materials/index.html.twig', array(
                 'materials' => $materials,
-                'spr' => $spr,
+                'spr' => $sprTranslated,
                 'medium' => $medium,
                 'ausgangssprache' => $ausgangssprache,
                 'sprachniveau' => $sprachniveau,
