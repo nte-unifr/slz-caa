@@ -10,7 +10,7 @@
     <div id="collapse{{ identifier }}" class="panel-collapse collapse {{ expanded }} filter-collapse" data-chevron="#chevron{{ identifier }}">
         <div class="panel-body">
             <p class="text-center">
-                <a class="select-all">Select all</a> | <a class="deselect-all">Deselect all</a>
+                <a class="select-all">{{ 'select_all'|trans }}</a> | <a class="deselect-all">{{ 'clear_all'|trans }}</a>
             </p>
 
             {% for category, elements in categories %}

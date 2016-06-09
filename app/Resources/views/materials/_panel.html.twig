@@ -11,7 +11,7 @@
         <div class="panel-body">
             {% if radio is not defined %}
                 <p class="text-center">
-                    <a class="select-all">Select all</a> | <a class="deselect-all">Deselect all</a>
+                    <a class="select-all">{{ 'select_all'|trans }}</a> | <a class="deselect_all">{{ 'clear_all'|trans }}</a>
                 </p>
             {% endif %}
             {% for element in elements %}

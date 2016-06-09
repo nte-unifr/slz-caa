@@ -19,3 +19,5 @@ fulltext_search: Die Suche ist "fulltext", auch auf ausgeblendeten Spalten.
 which_lang: Welche Sprache möchten Sie lernen :
 trick: Trick!
 select_row_trick: Klicken Sie auf eine Zeile, um es auszuwählen, klicken Sie erneut um die Auswahl aufzuheben. Sie können dann die ausgewählten Zeilen mit den Tasten am oberen Rand der Tabelle exportieren.
+select_all: Alle wählen
+clear_all: Alle löschen
