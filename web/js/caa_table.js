@@ -108,7 +108,7 @@ var CAATA = {
                         },
                         columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
                     },
-                    className: 'btn-primary btn-actions'
+                    className: 'btn-info btn-actions'
                 },
                 {
                     extend: 'excelHtml5',
@@ -118,7 +118,7 @@ var CAATA = {
                         },
                         columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
                     },
-                    className: 'btn-primary btn-actions'
+                    className: 'btn-info btn-actions'
                 },
                 {
                     extend: 'csvHtml5',
@@ -128,7 +128,7 @@ var CAATA = {
                         },
                         columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
                     },
-                    className: 'btn-primary btn-actions'
+                    className: 'btn-info btn-actions'
                 },
                 {
                     extend: 'pdfHtml5',
@@ -140,9 +140,26 @@ var CAATA = {
                     },
                     orientation: 'landscape',
                     pageSize: 'LEGAL',
-                    className: 'btn-primary btn-actions'
+                    className: 'btn-info btn-actions'
                 }
             ],
+        });
+
+        // Show/hide export buttons if row selected or not
+        CAATA.table.on('draw', function() {
+            $(".btn-actions").hide();
+        });
+        CAATA.table.on('select', function(e, dt, type, indexes) {
+            var rows = dt.rows( { selected: true } ).count();
+            if (rows > 0) {
+                $(".btn-actions").fadeIn();
+            }
+        });
+        CAATA.table.on('deselect', function(e, dt, type, indexes) {
+            var rows = dt.rows( { selected: true } ).count();
+            if (rows < 1) {
+                $(".btn-actions").fadeOut();
+            }
         });
     },
     draw: function() {
