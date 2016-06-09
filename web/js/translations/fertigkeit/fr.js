@@ -9,4 +9,6 @@
     Translator.add("orthografie", "Orthographe", "fertigkeit", "fr");
     Translator.add("grammatik", "Grammaire", "fertigkeit", "fr");
     Translator.add("test", "Tests", "fertigkeit", "fr");
+    Translator.add("andere", "Autre", "fertigkeit", "fr");
+    Translator.add("alle", "Toutes", "fertigkeit", "fr");
 })(Translator);

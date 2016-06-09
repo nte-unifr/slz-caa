@@ -25,42 +25,42 @@ class Material implements JsonSerializable
     /**
      * @var string
      *
-     * @ORM\Column(name="sb", type="string", length=255, nullable=false)
+     * @ORM\Column(name="sb", type="string", length=500, nullable=false)
      */
     private $sb;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sm2", type="string", length=255, nullable=false)
+     * @ORM\Column(name="sm2", type="string", length=500, nullable=false)
      */
     private $sm2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nrcdrom", type="string", length=255, nullable=false)
+     * @ORM\Column(name="nrcdrom", type="string", length=500, nullable=false)
      */
     private $nrcdrom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="autor", type="string", length=255, nullable=false)
+     * @ORM\Column(name="autor", type="string", length=500, nullable=false)
      */
     private $autor;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titel", type="string", length=255, nullable=false)
+     * @ORM\Column(name="titel", type="string", length=500, nullable=false)
      */
     private $titel;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="jahr", type="string", length=255, nullable=false)
+     * @ORM\Column(name="jahr", type="string", length=500, nullable=false)
      */
     private $jahr;
 
@@ -74,56 +74,56 @@ class Material implements JsonSerializable
     /**
      * @var string
      *
-     * @ORM\Column(name="bereich", type="string", length=255, nullable=false)
+     * @ORM\Column(name="bereich", type="string", length=500, nullable=false)
      */
     private $bereich;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ausgangssprache", type="string", length=255, nullable=false)
+     * @ORM\Column(name="ausgangssprache", type="text", nullable=false)
      */
     private $ausgangssprache;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sprachniveau", type="string", length=255, nullable=false)
+     * @ORM\Column(name="sprachniveau", type="string", length=500, nullable=false)
      */
     private $sprachniveau;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fertigkeit", type="string", length=255, nullable=false)
+     * @ORM\Column(name="fertigkeit", type="string", length=500, nullable=false)
      */
     private $fertigkeit;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fachbezug", type="string", length=255, nullable=false)
+     * @ORM\Column(name="fachbezug", type="string", length=500, nullable=false)
      */
     private $fachbezug;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="medium", type="string", length=255, nullable=false)
+     * @ORM\Column(name="medium", type="string", length=500, nullable=false)
      */
     private $medium;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="spr", type="string", length=455, nullable=false)
+     * @ORM\Column(name="spr", type="string", length=500, nullable=false)
      */
     private $spr;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="asl", type="string", length=255, nullable=false)
+     * @ORM\Column(name="asl", type="string", length=500, nullable=false)
      */
     private $asl;
 

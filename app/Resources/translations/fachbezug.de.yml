@@ -1,45 +1,24 @@
-agronomie: Agronomie
-akademisch: Akademisch
-anatomie: Anatomie
-architektur: Architektur
-astronomie: Astronomie
-beruf: Beruf
-biologie: Biologie
-chemie: Chemie
-didaktik: Didaktik
-elektrotechnik: Elektrotechnik
-film: Film
-gastronomie: Gastronomie
-geisteswissenschaft: Geisteswissenschaft
-geografie: Geografie
-geometrie: Geometrie
-geschichte: Geschichte
-ingenieurwissenschaft: Ingenieurwissenschaft
+alltagssprache: Alltagssprache
 korrespondenz: Korrespondenz
-kunst: Kunst
-kunstgeschichte: Kunstgeschichte
+reisen: Reisen
 landeskunde: Landeskunde
-linguistik: Linguistik
 literatur: Literatur
-mathematik: Mathematik
-medien: Medien
-medizin: Medizin
-methodik: Methodik
 musik: Musik
-naturwissenschaft: Naturwissenschaft
-pädagogik: Pädagogik
-pharmazie: Pharmazie
-philosophie: Philosophie
-physik: Physik
-politik: Politik
-psychologie: Psychologie
+filme: Filme
+spiele: Spiele
+sprachenlernen: Sprachenlernen
+fachsprache: Fachsprache
+akademische sprache: Akademische Sprache
+wirtschaft, politik: Wirtschaft, Politik
 recht: Recht
-sozialwissenschaft: Sozialwissenschaft
-soziologie: Soziologie
-spiel: Spiel
-technik: Technik
-theologie: Theologie
-tourismus: Tourismus
-wirtschaft: Wirtschaft
-wissenschaft: Wissenschaft
-no: Kein bestimmtes Thema
+psychologie, pädagogik: Psychologie, Pädagogik
+geschichte, kunstgeschichte: Geschichte, Kunstgeschichte
+linguistik: Linguistik
+humanwissenschaften: Humanwissenschaften
+naturwissenschaften: Naturwissenschaften
+ingenieurwissenschaft: Ingenieurwissenschaft
+medizin, pharmazie: Medizin, Pharmazie
+berufssprache: Berufssprache
+tourismusberufe: Tourismusberufe
+alltag: Alltag
+studiumberuf: Studium + Beruf

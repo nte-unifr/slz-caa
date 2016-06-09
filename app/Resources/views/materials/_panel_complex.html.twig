@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <a class="panel-heading-anchor" data-toggle="collapse" data-target="#collapse{{ identifier }}">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-filter"></i> {{ title }}
+                <span id="chevron{{ identifier }}"><i class="fa fa-chevron-down"></i></span>
+            </h3>
+        </div>
+    </a>
+    <div id="collapse{{ identifier }}" class="panel-collapse collapse {{ expanded }} filter-collapse" data-chevron="#chevron{{ identifier }}">
+        <div class="panel-body">
+            <p class="text-center">
+                <a class="select-all">Select all</a> | <a class="deselect-all">Deselect all</a>
+            </p>
+
+            {% for category, elements in categories %}
+                {% if categories|length > 1 %}
+                    <p class="lead filters-lead">{{ category|trans({}, identifier) }}</p>
+                {% endif %}
+                {% for element, keywords in elements %}
+                    {% include 'materials/_checkbox.html.twig' with {'value': keywords|join(';')} %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

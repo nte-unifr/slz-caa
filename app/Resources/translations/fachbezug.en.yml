@@ -1,44 +1,24 @@
-agronomie: Agronomy
-akademisch: Academic
-anatomie: Anatomy
-architektur: Architecture
-astronomie: Astronomy
-beruf: Profession
-biologie: Biology
-chemie: Chemistry
-didaktik: Teaching of language
-film: Movies
-gastronomie: Gastronomy
-geisteswissenschaft: Humanities
-geografie: Geography
-geometrie: Geometry
-geschichte: History
-ingenieurwissenschaft: Engineering
+alltagssprache: Everyday speech
 korrespondenz: Correspondence
-kunst: Art
-kunstgeschichte: Art (History)
-landeskunde: Culture
-linguistik: Linguistics
+reisen: Travel
+landeskunde: Civilization
 literatur: Literature
-mathematik: Mathematic
-medien: Media
-medizin: Medicine
-methodik: Methodology
 musik: Music
-naturwissenschaft: Natural science
-pädagogik: Pedagogy
-pharmazie: Pharmacy
-philosophie: Philosophy
-physik: Physics
-politik: Politics
-psychologie: Psychology
+filme: Movies
+spiele: Games
+sprachenlernen: Language learning
+fachsprache: Specific language
+akademische sprache: Academic language
+wirtschaft, politik: Economics, Politics
 recht: Law
-sozialwissenschaft: Social science
-soziologie: Sociology
-spiel: Game
-technik: Technology
-theologie: Theology
-tourismus: Tourism
-wirtschaft: Economics
-wissenschaft: Science
-no: No specific theme
+psychologie, pädagogik: Psychology, Education
+geschichte, kunstgeschichte: History, History of Art
+linguistik: Linguistics
+humanwissenschaften: Human Science
+naturwissenschaften: Natural Science
+ingenieurwissenschaft: Engineering
+medizin, pharmazie: Medicine, Pharmacy
+berufssprache: Professional language
+tourismusberufe: Tourist branch
+alltag: Everyday
+studiumberuf: Studies + profession

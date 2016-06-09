@@ -1,44 +1,66 @@
-- agronomie
-- akademisch
-- anatomie
-- architektur
-- astronomie
-- beruf
-- biologie
-- chemie
-- didaktik
-- film
-- gastronomie
-- geisteswissenschaft
-- geografie
-- geometrie
-- geschichte
-- ingenieurwissenschaft
-- korrespondenz
-- kunst
-- kunstgeschichte
-- landeskunde
-- linguistik
-- literatur
-- mathematik
-- medien
-- medizin
-- methodik
-- musik
-- naturwissenschaft
-- pädagogik
-- pharmazie
-- philosophie
-- physik
-- politik
-- psychologie
-- recht
-- sozialwissenschaft
-- soziologie
-- spiel
-- technik
-- theologie
-- tourismus
-- wirtschaft
-- wissenschaft
-- no
+alltag:
+    alltagssprache:
+        -
+    korrespondenz:
+        - korrespondenz
+    reisen:
+        - reisen
+    landeskunde:
+        - landeskunde
+    literatur:
+        - literatur
+    musik:
+        - musik
+    filme:
+        - film
+    spiele:
+        - spiel
+    sprachenlernen:
+        - didaktik
+        - methodik
+studiumberuf:
+    akademische sprache:
+        - akademisch
+        - wissenschaft
+    wirtschaft, politik:
+        - politik
+        - wirtschaft
+    recht:
+        - recht
+        - sozialkunde
+    psychologie, pädagogik:
+        - pädagogik
+        - psychologie
+    geschichte, kunstgeschichte:
+        - geschichte
+        - kunst
+        - kunstgeschichte
+    linguistik:
+        - linguistik
+    humanwissenschaften:
+        - geisteswissenschaft
+        - philosophie
+        - soziologie
+        - theologie
+    naturwissenschaften:
+        - naturwissenschaft
+        - agronomie
+        - biologie
+        - chemie
+        - geografie
+        - mathematik
+        - physik
+    ingenieurwissenschaft:
+        - elektrotechnik
+        - informatik
+        - ingenieurwissenschaft
+        - technik
+        - architektur
+    medizin, pharmazie:
+        - medizin
+        - pharmazie
+    berufssprache:
+        - beruf
+        - tourismus
+    tourismusberufe:
+        - gastronomie

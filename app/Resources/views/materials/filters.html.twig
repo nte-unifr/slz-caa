@@ -8,16 +8,16 @@
     <div class="panel-group">
         {% set expanded = '' %}
         {%
-            include 'materials/_panel.html.twig'
-            with {'title': 'fachbezug'|trans({}, 'fields'), 'elements': fachbezug, 'identifier': 'fachbezug'}
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'fachbezug'|trans({}, 'fields'), 'categories': fachbezug, 'identifier': 'fachbezug'}
         %}
         {%
             include 'materials/_panel.html.twig'
             with {'title': 'asl'|trans({}, 'fields'), 'elements': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
         %}
         {%
-            include 'materials/_panel.html.twig'
-            with {'title': 'sprachniveau'|trans({}, 'fields'), 'elements': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'sprachniveau'|trans({}, 'fields'), 'categories': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
@@ -25,16 +25,16 @@
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><strong>ES</strong></a>'}
         %}
         {%
-            include 'materials/_panel.html.twig'
-            with {'title': 'fertigkeit'|trans({}, 'fields'), 'elements': fertigkeit, 'identifier': 'fertigkeit'}
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'fertigkeit'|trans({}, 'fields'), 'categories': fertigkeit, 'identifier': 'fertigkeit'}
         %}
         {%
             include 'materials/_panel.html.twig'
             with {'title': 'ausgangssprache'|trans({}, 'fields'), 'elements': ausgangssprache, 'identifier': 'ausgangssprache'}
         %}
         {%
-            include 'materials/_panel.html.twig'
-            with {'title': 'medium'|trans({}, 'fields'), 'elements': medium, 'identifier': 'medium'}
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'medium'|trans({}, 'fields'), 'categories': medium, 'identifier': 'medium'}
         %}
         {%
             include 'materials/_panel.html.twig'

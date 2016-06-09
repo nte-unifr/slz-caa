@@ -68,7 +68,7 @@ class CsvController extends Controller
         // Define frequency of persisting and index
         $batchSize = 20;
         $i = 1;
-
+        
         foreach($data as $row) {
 
             $material = new Material();

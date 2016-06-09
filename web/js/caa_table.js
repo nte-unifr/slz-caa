@@ -64,7 +64,7 @@ var CAATA = {
                 {
                     'name': 'medium',
                     'data': 'medium',
-                    'render': { display: function (data, type, full, meta) { return translateTerms(data, '', 'medium') } }
+                    'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'medium') } }
                 },
                 {
                     'name': 'jahr',
@@ -177,22 +177,22 @@ var arrayToUpperCase = function(array) {
     return array;
 }
 
-var isRowAllowed = function(tableData, filterData, wildcard) {
-    wildcard = typeof wildcard !== 'undefined' ? wildcard.toUpperCase() : null; // define wildcard if not set
+var isRowAllowed = function(tableData, filterData) {
     var intersection = _.intersection(arrayToUpperCase(tableData), arrayToUpperCase(filterData)); // get elements that are in both tables
-    return !_.isEmpty(intersection) || _.contains(filterData, wildcard); // we have at least an element or filter is set to wildcard
+    return !_.isEmpty(intersection); // we have at least an element
 }
 
 // Check each row to filter
 $.fn.dataTable.ext.search.push(
     function(settings, searchData, index, rowData, counter) {
 
+        // note : using slice to duplicate arrays
+
         var tableSpr = rowData['spr'].slice();
         var globalSpr = CAAFI['spr'].slice();
 
         var tableFachbezug = rowData['fachbezug'].slice();
         var globalFachbezug = CAAFI['fachbezug'].slice();
-        globalFachbezug[_.indexOf(globalFachbezug, 'no')] = ""; // replace 'no particular theme' with actual value of nothing
 
         var tableAsl = rowData['asl'].slice();
         var globalAsl = CAAFI['asl'].slice();
@@ -216,7 +216,7 @@ $.fn.dataTable.ext.search.push(
         var globalJahr = CAAFI['jahr'];
 
         if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase())) { return false; }
-        if (!isRowAllowed(tableFachbezug, globalFachbezug, 'no')) { return false; }
+        if (!isRowAllowed(tableFachbezug, globalFachbezug)) { return false; }
         if (!isRowAllowed(tableAsl, globalAsl)) { return false; }
         if (!isRowAllowed(tableSprachniveau, globalSprachniveau)) { return false; }
         if (!isRowAllowed(tableFertigkeit, globalFertigkeit)) { return false; }

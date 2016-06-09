@@ -12,22 +12,26 @@ var CAAFI = {
     },
     setValues: function(el, draw=true) {
         var identifier = el.data('identifier');
-        var value = el.data('value');
+        var data = String(el.data('value'));
+        var values = data.split(";");
 
-        if (el.hasClass('active')) {
-            if (el.hasClass('filter-checkbox')) {
-                CAAFI[identifier].push(value);
+        // we iterate in case there is more than 1 value, eg: Fachbezug
+        $.each(values, function( index, value ) {
+            if (el.hasClass('active')) {
+                if (el.hasClass('filter-checkbox')) {
+                    CAAFI[identifier].push(value);
+                }
+                else {
+                    CAAFI[identifier] = value;
+                }
             }
             else {
-                CAAFI[identifier] = value;
+                CAAFI[identifier] = _.without(CAAFI[identifier], value);
             }
-        }
-        else {
-            CAAFI[identifier] = _.without(CAAFI[identifier], value);
-        }
 
-        if (draw) {
-            CAATA.draw();
-        }
+            if (draw) {
+                CAATA.draw();
+            }
+        });
     }
 };

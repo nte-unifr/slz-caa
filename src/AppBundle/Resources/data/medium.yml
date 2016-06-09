@@ -1,8 +1,27 @@
-- txt
-- acd
-- cdr
-- dvd
-- vid
-- cas
-- web
-- dvdr
+all:
+    txt:
+        - txt
+        - tt
+        - cas (+Buch)
+        - acd (+Buch)
+    acd:
+        - acd
+        - acd (+Buch)
+    cdr:
+        - cdr
+    dvd:
+        - dvd
+    vid:
+        - vid
+    cas:
+        - cas
+        - cas (+Buch)
+    web:
+        - web
+    dvdr:
+        - dvdr
+        - dvdrom
+    mp3:
+        - mp3
+    andere:
+        -

@@ -29,7 +29,6 @@ class ConvertCsvToArray {
                     $header = preg_replace('/[^A-Za-z0-9\-]/', '', $header);
                 }
                 else {
-                    $row = array_map("utf8_encode", $row);
                     $data[] = array_combine($header, $row);
                 }
             }
