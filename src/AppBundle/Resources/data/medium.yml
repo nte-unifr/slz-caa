@@ -23,5 +23,3 @@ all:
         - dvdrom
     mp3:
         - mp3
-    andere:
-        -

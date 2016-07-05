@@ -31,5 +31,3 @@ all:
         - alle
     alle:
         - alle
-    andere:
-        - ""
