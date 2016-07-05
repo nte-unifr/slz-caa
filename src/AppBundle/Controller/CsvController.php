@@ -68,34 +68,38 @@ class CsvController extends Controller
         // Define frequency of persisting and index
         $batchSize = 20;
         $i = 1;
-        
+
         foreach($data as $row) {
 
-            $material = new Material();
-            $material->setTitel($row['TITEL']);
-            $material->setSpr($row['SPR']);
-            $material->setFachbezug($row['FACHBEZUG']);
-            $material->setAsl($row['ASL']);
-            $material->setSprachniveau($row['SPRACHNIVEAU']);
-            $material->setFertigkeit($row['FERTIGKEIT']);
-            $material->setAusgangssprache($row['AUSGANGSSPRACHE']);
-            $material->setMedium($row['MEDIUM']);
-            $material->setJahr($row['JAHR']);
-            $material->setAutor($row['AUTOR']);
-            $material->setKommentar($row['KOMMENTAR']);
-            $material->setNrcdrom($row['NRCDROM']);
-            $material->setSb($row['SB']);
-            $material->setSm2($row['SM2']);
-            $material->setBereich($row['BEREICH']);
+            // we import only material actually received
+            if (strpos($row['ZUSTAND'], 'd') !== false) {
+                $material = new Material();
+                $material->setTitel($row['TITEL']);
+                $material->setSpr($row['SPR']);
+                $material->setFachbezug($row['FACHBEZUG']);
+                $material->setAsl($row['ASL']);
+                $material->setSprachniveau($row['SPRACHNIVEAU']);
+                $material->setFertigkeit($row['FERTIGKEIT']);
+                $material->setAusgangssprache($row['AUSGANGSSPRACHE']);
+                $material->setMedium($row['MEDIUM']);
+                $material->setJahr($row['JAHR']);
+                $material->setAutor($row['AUTOR']);
+                $material->setKommentar($row['KOMMENTAR']);
+                $material->setNrcdrom($row['NRCDROM']);
+                $material->setSb($row['SB']);
+                $material->setSm2($row['SM2']);
+                $material->setBereich($row['BEREICH']);
+                $material->setZustand($row['ZUSTAND']);
 
-            $em->persist($material);
+                $em->persist($material);
 
-            // Each 20, we flush everything
-            if (($i % $batchSize) === 0) {
-                $em->flush();
-                $em->clear(); // detach all obj from Doctrine to save memory
+                // Each 20, we flush everything
+                if (($i % $batchSize) === 0) {
+                    $em->flush();
+                    $em->clear(); // detach all obj from Doctrine to save memory
+                }
+                $i++;
             }
-            $i++;
         }
 
         $em->flush();

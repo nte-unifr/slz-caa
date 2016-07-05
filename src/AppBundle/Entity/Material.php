@@ -127,6 +127,12 @@ class Material implements JsonSerializable
      */
     private $asl;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zustand", type="string", length=100)
+     */
+    private $zustand;
 
 
     /**
@@ -517,5 +523,29 @@ class Material implements JsonSerializable
             }
         }
         return $result;
+    }
+
+    /**
+     * Set zustand
+     *
+     * @param string $zustand
+     *
+     * @return Material
+     */
+    public function setZustand($zustand)
+    {
+        $this->zustand = $zustand;
+
+        return $this;
+    }
+
+    /**
+     * Get zustand
+     *
+     * @return string
+     */
+    public function getZustand()
+    {
+        return $this->zustand;
     }
 }
