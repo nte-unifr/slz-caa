@@ -7,6 +7,7 @@ all:
     acd:
         - acd
         - acd (+Buch)
+        - mp3
     cdr:
         - cdr
     dvd:
@@ -21,5 +22,3 @@ all:
     dvdr:
         - dvdr
         - dvdrom
-    mp3:
-        - mp3
