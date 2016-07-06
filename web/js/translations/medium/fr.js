@@ -8,6 +8,4 @@
     Translator.add("cas", "Cassette audio", "medium", "fr");
     Translator.add("web", "Lien web", "medium", "fr");
     Translator.add("dvdr", "DVD-ROM", "medium", "fr");
-    Translator.add("mp3", "MP3", "medium", "fr");
-    Translator.add("andere", "Autre", "medium", "fr");
 })(Translator);
