@@ -1,33 +1,23 @@
 all:
     wortschatz:
         - wortschatz
-        - alle
     lesen:
         - lesen
-        - alle
     hören:
         - hören
-        - alle
     sprechen:
         - sprechen
-        - alle
     aussprache:
         - aussprache
-        - alle
     schreiben:
         - schreiben
-        - alle
     orthografie:
         - orthografie
-        - alle
     grammatik:
         - grammatik
-        - alle
     test:
         - test
-        - alle
     sprachmittlung:
         - sprachmittlung
-        - alle
     alle:
         - alle
