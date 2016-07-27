@@ -49,3 +49,9 @@ div.dataTables_wrapper div.dataTables_info {
 table.dataTable tr.selected {
     background-color: #004E7B !important;
 }
+
+div.dataTables_wrapper .row.well {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 11px;
+}
