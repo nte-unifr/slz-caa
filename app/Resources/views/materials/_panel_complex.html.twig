@@ -22,5 +22,10 @@
                 {% endfor %}
             {% endfor %}
         </div>
+        {% if footer is defined %}
+            <div class="panel-footer">
+                <i class="fa fa-info-circle"></i> {{ footer|raw }}
+            </div>
+        {% endif %}
     </div>
 </div>
