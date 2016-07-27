@@ -63,6 +63,9 @@ class CsvController extends Controller
         $em->getConnection()->getConfiguration()->setSQLLogger(null);
 
         // Empty materials table first
+        $em->getConnection()->prepare('DROP TABLE IF EXISTS materials_backup')->execute();
+        $em->getConnection()->prepare('CREATE TABLE materials_backup LIKE materials')->execute();
+        $em->getConnection()->prepare('INSERT materials_backup SELECT * FROM materials')->execute();
         $em->createQuery('DELETE FROM AppBundle\Entity\Material')->execute();
 
         // Define frequency of persisting and index
