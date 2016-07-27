@@ -70,4 +70,11 @@ $(document).ready(function () {
   $('#info-selection').on('closed.bs.alert', function () {
     CAAST.setItem('caa.unifr.ch.dismissInfoSelection', 'true')
   })
+  // behaviour of the info-combi (alert)
+  if (CAAST.getItem('caa.unifr.ch.dismissInfoCombi') !== 'true') {
+    $('#info-combi').removeClass('hidden')
+  }
+  $('#info-combi').on('closed.bs.alert', function () {
+    CAAST.setItem('caa.unifr.ch.dismissInfoCombi', 'true')
+  })
 })

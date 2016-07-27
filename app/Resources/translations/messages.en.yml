@@ -21,3 +21,4 @@ trick: Trick!
 select_row_trick: Click on a row to select it, click again to deselect. You can then export the selected rows with the buttons on top of the table.
 select_all: Select all
 clear_all: Clear all
+combi_trick: Different combinations of skills and target levels (e.g. Reading B2 + Speaking A2) require separate search operations.
