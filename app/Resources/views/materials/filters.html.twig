@@ -9,24 +9,24 @@
         {% set expanded = '' %}
         {%
             include 'materials/_panel_complex.html.twig'
+            with { 'title': 'sprachniveau'|trans({}, 'fields'), 'categories': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><strong>IT</strong></a>
+                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><strong>ES</strong></a>' }
+        %}
+        {%
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'fertigkeit'|trans({}, 'fields'), 'categories': fertigkeit, 'identifier': 'fertigkeit'}
+        %}
+        {%
+            include 'materials/_panel_complex.html.twig'
             with {'title': 'fachbezug'|trans({}, 'fields'), 'categories': fachbezug, 'identifier': 'fachbezug'}
         %}
         {%
             include 'materials/_panel.html.twig'
             with {'title': 'asl'|trans({}, 'fields'), 'elements': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
-        %}
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with {'title': 'sprachniveau'|trans({}, 'fields'), 'categories': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><strong>IT</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><strong>ES</strong></a>'}
-        %}
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with {'title': 'fertigkeit'|trans({}, 'fields'), 'categories': fertigkeit, 'identifier': 'fertigkeit'}
         %}
         {%
             include 'materials/_panel.html.twig'
