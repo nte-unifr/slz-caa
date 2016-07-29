@@ -43,6 +43,15 @@
                 <form action="" method="post" {{ form_enctype(form) }}>
                     {{ form_widget(form) }}
                 </form>
+
+                <hr>
+
+                <h3>Step 3 (optional) : Check the filters</h3>
+                <p>
+                  In order to check if some rows aren't filtered correctly, add a debug option to the main page.<br>
+                  And open your web browser console.<br>
+                  <a class="btn btn-sm btn-info" href="{{ path('home', {'debug': '1'}) }}">Debug</a>
+                </p>
             </div>
         </div>
     </div>

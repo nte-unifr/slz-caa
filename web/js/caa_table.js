@@ -201,6 +201,14 @@ var isRowAllowed = function (tableData, filterData) {
   return !_.isEmpty(intersection) // we have at least an element
 }
 
+var debugTable = function (title, data) {
+  if (window.location.search.indexOf('debug') !== -1) {
+    console.log('-----')
+    console.log('problem with ' + title + ' :')
+    console.log(data)
+  }
+}
+
 // Check each row to filter
 $.fn.dataTable.ext.search.push(
   function (settings, searchData, index, rowData, counter) {
@@ -232,13 +240,32 @@ $.fn.dataTable.ext.search.push(
     var tableJahr = rowData['jahr']
     var globalJahr = CAAFI['jahr']
 
-    if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase())) { return false }
-    if (!isRowAllowed(tableFachbezug, globalFachbezug)) { return false }
-    if (!isRowAllowed(tableAsl, globalAsl)) { return false }
-    if (!isRowAllowed(tableSprachniveau, globalSprachniveau)) { return false }
-    if (!isRowAllowed(tableFertigkeit, globalFertigkeit)) { return false }
-    if (!isRowAllowed(tableAusgangssprache, globalAusgangssprache)) { return false }
-    if (!isRowAllowed(tableMedium, globalMedium)) { return false }
+    let debug = window.location.search.indexOf('debug') !== -1
+    if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
+    if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
+      debugTable('Fachbezug', rowData)
+      return false
+    }
+    if (!isRowAllowed(tableAsl, globalAsl)) {
+      debugTable('Asl', rowData)
+      return false
+    }
+    if (!isRowAllowed(tableSprachniveau, globalSprachniveau)) {
+      debugTable('Sprachniveau', rowData)
+      return false
+    }
+    if (!isRowAllowed(tableFertigkeit, globalFertigkeit)) {
+      debugTable('Fertigkeit', rowData)
+      return false
+    }
+    if (!isRowAllowed(tableAusgangssprache, globalAusgangssprache)) {
+      debugTable('Ausgangssprache', rowData)
+      return false
+    }
+    if (!isRowAllowed(tableMedium, globalMedium)) {
+      debugTable('Medium', rowData)
+      return false
+    }
     if (globalJahr !== 'all' && tableJahr < globalJahr) { return false }
 
     return true
