@@ -211,11 +211,9 @@ var isRowAllowed = function (tableData, filterData) {
 }
 
 var debugTable = function (title, data) {
-  if (window.location.pathname.indexOf('/debug') !== -1) {
-    console.log('-----')
-    console.log('problem with ' + title + ' :')
-    console.log(data)
-  }
+  console.log('-----')
+  console.log('problem with ' + title + ' :')
+  console.log(data)
 }
 
 // Check each row to filter
@@ -250,32 +248,36 @@ $.fn.dataTable.ext.search.push(
     var globalJahr = CAAFI['jahr']
 
     let debug = window.location.pathname.indexOf('/debug') !== -1
+    let debugKommentar = window.location.search.indexOf('kommentar') !== -1
     if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
-      debugTable('Fachbezug', rowData)
+      if (debug) debugTable('Fachbezug', rowData)
       return false
     }
     if (!isRowAllowed(tableAsl, globalAsl)) {
-      debugTable('Asl', rowData)
+      if (debug) debugTable('Asl', rowData)
       return false
     }
     if (!isRowAllowed(tableSprachniveau, globalSprachniveau)) {
-      debugTable('Sprachniveau', rowData)
+      if (debug) debugTable('Sprachniveau', rowData)
       return false
     }
     if (!isRowAllowed(tableFertigkeit, globalFertigkeit)) {
-      debugTable('Fertigkeit', rowData)
+      if (debug) debugTable('Fertigkeit', rowData)
       return false
     }
     if (!isRowAllowed(tableAusgangssprache, globalAusgangssprache)) {
-      debugTable('Ausgangssprache', rowData)
+      if (debug) debugTable('Ausgangssprache', rowData)
       return false
     }
     if (!isRowAllowed(tableMedium, globalMedium)) {
-      debugTable('Medium', rowData)
+      if (debug) debugTable('Medium', rowData)
       return false
     }
     if (globalJahr !== 'all' && tableJahr < globalJahr) { return false }
+
+    // special debug operations
+    if (debug && debugKommentar && rowData['kommentar'] === '') debugTable('Kommentar', rowData)
 
     return true
   }
