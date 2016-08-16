@@ -1,12 +1,13 @@
+# You should always match the display setting with caa_table.js
 -
     name: titel
     display: true
 -
     name: fachbezug
-    display: true
+    display: false
 -
     name: asl
-    display: true
+    display: false
 -
     name: sprachniveau
     display: true
@@ -18,10 +19,10 @@
     display: true
 -
     name: medium
-    display: true
+    display: false
 -
     name: jahr
-    display: true
+    display: false
 -
     name: autor
     display: false
@@ -30,7 +31,7 @@
     display: false
 -
     name: kommentar
-    display: false
+    display: true
 -
     name: spr
     display: false

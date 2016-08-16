@@ -36,41 +36,50 @@ window.CAATA = {
         },
         {
           'name': 'titel',
-          'data': 'titel'
+          'data': 'titel',
+          'visible': true
         },
         {
           'name': 'fachbezug',
           'data': 'fachbezug',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'fachbezug') } }
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'fachbezug') } },
+          'visible': false
         },
         {
           'name': 'asl',
           'data': 'asl',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'asl') } }
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'asl') } },
+          'visible': false
         },
         {
           'name': 'sprachniveau',
           'data': 'sprachniveau',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ' ', 'sprachniveau', 'u', true) } }
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ' ', 'sprachniveau', 'u', true) } },
+          'visible': true
         },
         {
           'name': 'fertigkeit',
           'data': 'fertigkeit',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'fertigkeit') } }
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'fertigkeit') } },
+          'visible': true
         },
         {
           'name': 'ausgangssprache',
           'data': 'ausgangssprache',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'ausgangssprache') } }
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'ausgangssprache') } },
+          'visible': true,
+          'width': '10%'
         },
         {
           'name': 'medium',
           'data': 'medium',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'medium') } }
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'medium') } },
+          'visible': false
         },
         {
           'name': 'jahr',
-          'data': 'jahr'
+          'data': 'jahr',
+          'visible': false
         },
         {
           'name': 'autor',
@@ -85,7 +94,7 @@ window.CAATA = {
         {
           'name': 'kommentar',
           'data': 'kommentar',
-          'visible': false
+          'visible': true
         },
         {
           'name': 'spr',
