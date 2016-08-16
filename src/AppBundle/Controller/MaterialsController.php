@@ -66,15 +66,58 @@ class MaterialsController extends Controller
     }
 
     /**
-     * @Route("/materials/{id}.{_format}", requirements={"id" = "\d+"}, defaults={"id" = 1, "_format" = "json"})
+     * @Route("/debug", name="debug", defaults={"_format" = "html"})
+     * @Route("/materials.{_format}", defaults={"_format" = "json"})
      */
-    public function showAction($id, $_format) {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Material');
-        $material = $repository->find($id);
+    public function debugAction($_format)
+    {
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Material");
+        $materials = $repository->findAll();
 
         if ($_format == "json") {
-            $response = new Response(json_encode($material));
+            $response = new Response(json_encode(array("count" => count($materials), "data" => $materials)));
             return $response;
+        }
+        else {
+            $yaml = new Parser();
+            $spr = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/spr.yml'));
+            $medium = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/medium.yml'));
+            $ausgangssprache = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/ausgangssprache.yml'));
+            $sprachniveau = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/sprachniveau.yml'));
+            $fachbezug = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fachbezug.yml'));
+            $asl = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/asl.yml'));
+            $jahr = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/jahr.yml'));
+            $fertigkeit = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fertigkeit.yml'));
+            $fields = $yaml->parse(file_get_contents(__DIR__.'/../Resources/data/fields.yml'));
+
+            // translate spr
+            $sprTranslated = [];
+            foreach ($spr as $el) {
+                $sprTranslated[$el] = $this->get('translator')->trans($el, [], 'spr');
+            }
+
+            // sort by key
+            asort($sprTranslated);
+
+            // move main langs to top
+            $sprTranslated = array('ESP' => $sprTranslated['ESP']) + $sprTranslated; // pos 4
+            $sprTranslated = array('ILS' => $sprTranslated['ILS']) + $sprTranslated; // pos 3
+            $sprTranslated = array('EFL' => $sprTranslated['EFL']) + $sprTranslated; // pos 2
+            $sprTranslated = array('FLE' => $sprTranslated['FLE']) + $sprTranslated; // pos 1
+            $sprTranslated = array('DAF' => $sprTranslated['DAF']) + $sprTranslated; // pos 0
+
+            return $this->render('materials/index.html.twig', array(
+                'materials' => $materials,
+                'spr' => $sprTranslated,
+                'medium' => $medium,
+                'ausgangssprache' => $ausgangssprache,
+                'sprachniveau' => $sprachniveau,
+                'fachbezug' => $fachbezug,
+                'asl' => $asl,
+                'jahr' => $jahr,
+                'fertigkeit' => $fertigkeit,
+                'fields' => $fields
+            ));
         }
     }
 }

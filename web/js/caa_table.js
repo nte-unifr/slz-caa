@@ -202,7 +202,7 @@ var isRowAllowed = function (tableData, filterData) {
 }
 
 var debugTable = function (title, data) {
-  if (window.location.search.indexOf('debug') !== -1) {
+  if (window.location.pathname === '/debug') {
     console.log('-----')
     console.log('problem with ' + title + ' :')
     console.log(data)
@@ -240,7 +240,7 @@ $.fn.dataTable.ext.search.push(
     var tableJahr = rowData['jahr']
     var globalJahr = CAAFI['jahr']
 
-    let debug = window.location.search.indexOf('debug') !== -1
+    let debug = window.location.pathname === '/debug'
     if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
       debugTable('Fachbezug', rowData)
