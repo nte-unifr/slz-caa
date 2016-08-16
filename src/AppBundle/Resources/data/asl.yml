@@ -1,5 +1,11 @@
-- asl
-- kbl
-- nsw
-- tdm
-- lw
+all:
+  asl:
+    - asl
+  kbl:
+    - kbl
+  nsw:
+    - nsw
+  tdm:
+    - tdm
+  lw:
+    - lw

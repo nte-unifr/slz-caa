@@ -12,13 +12,14 @@
             <p class="text-center">
                 <a class="select-all">{{ 'select_all'|trans }}</a> | <a class="deselect-all">{{ 'clear_all'|trans }}</a>
             </p>
-
             {% for category, elements in categories %}
                 {% if categories|length > 1 %}
                     <p class="lead filters-lead">{{ category|trans({}, identifier) }}</p>
                 {% endif %}
                 {% for element, keywords in elements %}
-                    {% include 'materials/_checkbox.html.twig' with {'value': keywords|join(';')} %}
+                    <a class="btn-filter filter-checkbox btn btn-primary active" data-value="{{ keywords|join(';') }}" data-identifier="{{ identifier }}">
+                        {{ element|trans({}, identifier) }} <i class="fa fa-check-square"></i>
+                    </a>
                 {% endfor %}
             {% endfor %}
         </div>

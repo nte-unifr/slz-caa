@@ -37,19 +37,19 @@
             with {'title': 'fachbezug'|trans({}, 'fields'), 'categories': fachbezug, 'identifier': 'fachbezug'}
         %}
         {%
-            include 'materials/_panel.html.twig'
-            with {'title': 'asl'|trans({}, 'fields'), 'elements': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'asl'|trans({}, 'fields'), 'categories': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
         %}
         {%
-            include 'materials/_panel.html.twig'
-            with {'title': 'ausgangssprache'|trans({}, 'fields'), 'elements': ausgangssprache, 'identifier': 'ausgangssprache'}
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'ausgangssprache'|trans({}, 'fields'), 'categories': ausgangssprache, 'identifier': 'ausgangssprache'}
         %}
         {%
             include 'materials/_panel_complex.html.twig'
             with {'title': 'medium'|trans({}, 'fields'), 'categories': medium, 'identifier': 'medium'}
         %}
         {%
-            include 'materials/_panel.html.twig'
+            include 'materials/_panel_radio.html.twig'
             with {'title': 'jahr'|trans({}, 'fields'), 'elements': jahr, 'identifier': 'jahr', 'radio': 'all'}
         %}
         <p class="text-center reset-filters-box"><a class="reset-filters">Reset all filters</a></p>

@@ -1,6 +1,13 @@
-- deutsch
-- englisch
-- französisch
-- italienisch
-- spanisch
-- other
+all:
+  deutsch:
+    - deutsch
+  englisch:
+    - englisch
+  französisch:
+    - französisch
+  italienisch:
+    - italienisch
+  spanisch:
+    - spanisch
+  other:
+    - other
