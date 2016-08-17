@@ -9,6 +9,39 @@ var typewatch = (function () {
   }
 })()
 
+var translateTerms = function (data, separator, translations, keycase, label) {
+  keycase = typeof keycase !== 'undefined' ? keycase : 'l'
+  label = typeof label !== 'undefined' ? label : false
+  var result = ''
+  var key = ''
+  _.each(data, function (i) {
+    key = keycase === 'u' ? i.toUpperCase() : i.toLowerCase()
+    result = (result === '') ? result : result + separator
+    result += label ? '<span class="label label-default">' : ''
+    result += Translator.trans(key, {}, translations)
+    result += label ? '</span>' : ''
+  })
+  return result
+}
+
+var arrayToUpperCase = function (array) {
+  _.each(array, function (element, index, tableData) {
+    array[index] = element.toUpperCase()
+  })
+  return array
+}
+
+var isRowAllowed = function (tableData, filterData) {
+  var intersection = _.intersection(arrayToUpperCase(tableData), arrayToUpperCase(filterData)) // get elements that are in both tables
+  return !_.isEmpty(intersection) // we have at least an element
+}
+
+var debugTable = function (title, data) {
+  console.log('-----')
+  console.log('problem with ' + title + ' :')
+  console.log(data)
+}
+
 window.CAATA = {
   table: null,
   initTable: function () {
@@ -183,37 +216,6 @@ window.CAATA = {
     var col = CAATA.table.column(colName)
     col.visible(!col.visible())
   }
-}
-
-var translateTerms = function (data, separator, translations, keycase = 'l', label = false) {
-  var result = ''
-  var key = ''
-  _.each(data, function (i) {
-    key = keycase === 'u' ? i.toUpperCase() : i.toLowerCase()
-    result = (result === '') ? result : result + separator
-    result += label ? '<span class="label label-default">' : ''
-    result += Translator.trans(key, {}, translations)
-    result += label ? '</span>' : ''
-  })
-  return result
-}
-
-var arrayToUpperCase = function (array) {
-  _.each(array, function (element, index, tableData) {
-    array[index] = element.toUpperCase()
-  })
-  return array
-}
-
-var isRowAllowed = function (tableData, filterData) {
-  var intersection = _.intersection(arrayToUpperCase(tableData), arrayToUpperCase(filterData)) // get elements that are in both tables
-  return !_.isEmpty(intersection) // we have at least an element
-}
-
-var debugTable = function (title, data) {
-  console.log('-----')
-  console.log('problem with ' + title + ' :')
-  console.log(data)
 }
 
 // Check each row to filter
