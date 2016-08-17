@@ -12,7 +12,8 @@ window.CAAFI = {
   setSpr: function (value) {
     CAAFI['spr'] = value
   },
-  setValues: function (el, draw = true) {
+  setValues: function (el, draw) {
+    draw = typeof draw !== 'undefined' ? draw : true
     var identifier = el.data('identifier')
     var data = String(el.data('value'))
     var values = data.split(';')
