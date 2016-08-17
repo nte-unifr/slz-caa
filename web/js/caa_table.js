@@ -249,8 +249,8 @@ $.fn.dataTable.ext.search.push(
     var tableJahr = rowData['jahr']
     var globalJahr = CAAFI['jahr']
 
-    let debug = window.location.pathname.indexOf('/debug') !== -1
-    let debugKommentar = window.location.search.indexOf('kommentar') !== -1
+    var debug = window.location.pathname.indexOf('/debug') !== -1
+    var debugKommentar = window.location.search.indexOf('kommentar') !== -1
     if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
       if (debug) debugTable('Fachbezug', rowData)
