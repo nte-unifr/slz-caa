@@ -33,12 +33,10 @@ $(document).ready(function () {
   $('#filters-accordion .filter-collapse').on('show.bs.collapse', function () {
     var $chevron = $(this).data('chevron')
     $($chevron).html("<i class='fa fa-chevron-up'></i>")
-    $($chevron).closest('.panel-heading').css('cursor', 'n-resize')
   })
   $('#filters-accordion .filter-collapse').on('hide.bs.collapse', function () {
     var $chevron = $(this).data('chevron')
     $($chevron).html("<i class='fa fa-chevron-down'></i>")
-    $($chevron).closest('.panel-heading').css('cursor', 's-resize')
   })
 
   // use chosen for the spr select
