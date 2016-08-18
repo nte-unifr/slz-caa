@@ -250,7 +250,6 @@ $.fn.dataTable.ext.search.push(
     var globalJahr = CAAFI['jahr']
 
     var debug = window.location.pathname.indexOf('/debug') !== -1
-    var debugKommentar = window.location.search.indexOf('kommentar') !== -1
     if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
       if (debug) debugTable('Fachbezug', rowData)
@@ -277,9 +276,6 @@ $.fn.dataTable.ext.search.push(
       return false
     }
     if (globalJahr !== 'all' && tableJahr < globalJahr) { return false }
-
-    // special debug operations
-    if (debug && debugKommentar && rowData['kommentar'] === '') debugTable('Kommentar', rowData)
 
     return true
   }
