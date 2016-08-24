@@ -99,4 +99,5 @@
     Translator.add("mehrsprachig", "Multilingual", "ausgangssprache", "en");
     Translator.add("yoruba", "Yoruba", "ausgangssprache", "en");
     Translator.add("zulu", "Zulu", "ausgangssprache", "en");
+    Translator.add("andere", "Others", "ausgangssprache", "en");
 })(Translator);

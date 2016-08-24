@@ -58,4 +58,11 @@
     Translator.add("beruf", "Beruf", "fachbezug", "de");
     Translator.add("tourismus", "Tourismus", "fachbezug", "de");
     Translator.add("gastronomie", "Gastronomie", "fachbezug", "de");
+    Translator.add("anatomie", "Anatomie", "fachbezug", "de");
+    Translator.add("medien", "Medien", "fachbezug", "de");
+    Translator.add("astronomie", "Astronomie", "fachbezug", "de");
+    Translator.add("umwelt", "Umwelt", "fachbezug", "de");
+    Translator.add("finanz", "Finanz", "fachbezug", "de");
+    Translator.add("geologie", "Geologie", "fachbezug", "de");
+    Translator.add("sport", "Sport", "fachbezug", "de");
 })(Translator);
