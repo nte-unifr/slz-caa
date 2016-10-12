@@ -55,3 +55,13 @@ div.dataTables_wrapper .row.well {
     margin-left: 0;
     padding: 11px;
 }
+
+.materials-spr {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.materials-spr-select {
+  font-weight: 400;
+  margin-bottom: 0;
+}

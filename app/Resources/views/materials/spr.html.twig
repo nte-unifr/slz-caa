@@ -1,9 +1,12 @@
-<p class="lead text-center">
-    {{ 'which_lang'|trans}}
+<p class="lead text-center materials-spr">
+    {{ 'which_lang'|trans }}
     <select id="select-spr">
         {% for key, element in spr %}
             <option value="{{ key }}">{{ element }}</option>
         {% endfor %}
     </select>
+</p>
+<p class="text-center materials-spr-select">
+  {{ 'select_objectives'|trans }}
 </p>
 <hr>
