@@ -19,5 +19,7 @@ all:
         - test
     sprachmittlung:
         - sprachmittlung
+    lernstrategien:
+        - lernen
     alle:
         - alle

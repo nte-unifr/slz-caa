@@ -11,4 +11,5 @@
     Translator.add("test", "Test", "fertigkeit", "de");
     Translator.add("alle", "Alle", "fertigkeit", "de");
     Translator.add("sprachmittlung", "Sprachmittlung", "fertigkeit", "de");
+    Translator.add("lernstrategien", "Lernstrategien", "fertigkeit", "de");
 })(Translator);
