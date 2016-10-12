@@ -140,7 +140,7 @@ window.CAATA = {
         'url': langUrl,
         'lengthMenu': '_MENU_'
       },
-      'dom': "<'row well'<'col-md-6'i><'col-md-6 text-right'B>>" +
+      'dom': "<'row well'<'col-md-9'i><'col-md-3 text-right'B>>" +
         "<'row'<'col-sm-12'tr>>" +
         "<'row well'<'col-md-3'l><'col-md-9'p>>",
       'buttons': [

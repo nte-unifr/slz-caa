@@ -18,7 +18,6 @@ search: Suche
 fulltext_search: Die Suche ist "fulltext", auch auf ausgeblendeten Spalten.
 which_lang: Welche Sprache möchten Sie lernen :
 trick: Tipp!
-select_row_trick: Um einen Titel auszuwählen, klicken Sie auf die Zeile, um die Auswahl aufzuheben klicken Sie erneut. Sie können dann die ausgewählten Zeilen mit den neu erscheinenden Schaltknöpfen am oberen Rand der Tabelle exportieren.
 select_all: Alle wählen
 clear_all: Alle löschen
 combi_trick: Unterschiedliche Kombinationen von Fertigkeiten und Zielstufen (z.B. Lesen B2 + Sprechen A2) erfordern separate Suchvorgänge.

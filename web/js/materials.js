@@ -63,13 +63,6 @@ $(document).ready(function () {
     CAATA.table.draw() // use direct draw : speedy
   })
 
-  // behaviour of the info-selection (alert)
-  if (CAAST.getItem('caa.unifr.ch.dismissInfoSelection') !== 'true') {
-    $('#info-selection').removeClass('hidden')
-  }
-  $('#info-selection').on('closed.bs.alert', function () {
-    CAAST.setItem('caa.unifr.ch.dismissInfoSelection', 'true')
-  })
   // behaviour of the info-combi (alert)
   if (CAAST.getItem('caa.unifr.ch.dismissInfoCombi') !== 'true') {
     $('#info-combi').removeClass('hidden')

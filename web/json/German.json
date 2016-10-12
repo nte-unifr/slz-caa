@@ -21,5 +21,13 @@
 	"oAria": {
 		"sSortAscending":  ": aktivieren, um Spalte aufsteigend zu sortieren",
 		"sSortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
-	}
+	},
+  "select": {
+    "rows":
+      {
+        "_": "<strong>%d Titel ausgewählt</strong> | Um die Auswahl aufzuheben klicken Sie erneut.",
+        "0": "<strong><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Tipp :</strong> Um einen Titel für den Export auszuwählen, klicken Sie auf die Zeile.",
+        "1": "<strong>1 Titel ausgewählt</strong> | Um die Auswahl aufzuheben klicken Sie erneut."
+      }
+  }
 }

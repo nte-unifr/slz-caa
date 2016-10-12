@@ -18,7 +18,6 @@ search: Rechercher
 fulltext_search: La recherche est de type "fulltext", également sur les colonnes masquées.
 which_lang: Quelle langue désirez-vous apprendre :
 trick: Astuce!
-select_row_trick: Pour sélectionner un titre, cliquez sur la ligne, pour le désélectionner cliquez à nouveau. Vous pouvez ensuite exporter les lignes choisies grâce aux boutons apparaissant au-dessus du tableau.
 select_all: Tout sélectionner
 clear_all: Tout desélectionner
 combi_trick: Des combinaisons variées de compétences et de niveaux cible (p.ex. Lire B2 + Parler A2), exigent des recherches séparées.
