@@ -7,7 +7,12 @@
     cursor: pointer;
 }
 
-
+#filters-accordion h2 {
+  padding: 15px 0 15px 15px;
+  margin: 0 0 15px 0;
+  background-color: #0a3859;
+  color: #fff;
+}
 #filters-accordion a.panel-heading-anchor {
     background-color: #f5f5f5;
     border-color: #ddd;

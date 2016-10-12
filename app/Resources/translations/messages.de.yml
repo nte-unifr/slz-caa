@@ -23,3 +23,4 @@ select_all: Alle wählen
 clear_all: Alle löschen
 combi_trick: Unterschiedliche Kombinationen von Fertigkeiten und Zielstufen (z.B. Lesen B2 + Sprechen A2) erfordern separate Suchvorgänge.
 select_objectives: Wählen Sie in ‘Suchkriterien’ Ihre Ziele aus
+search_criteria: Suchkriterien
