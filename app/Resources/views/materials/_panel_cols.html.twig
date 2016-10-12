@@ -11,12 +11,12 @@
         <div class="panel-body">
             {% for field in fields %}
                 {% if field.display %}
-                    <a class="btn btn-primary btn-toggle-col active" data-field="{{ field.name }}">
+                    <a class="btn btn-default btn-toggle-col active" data-field="{{ field.name }}">
                         {{ field.name|trans({}, 'fields') }} <i class="fa fa-check-square"></i>
                     </a>
                 {% else %}
-                    <a class="btn btn-primary btn-toggle-col" data-field="{{ field.name }}">
-                        {{ field.name|trans({}, 'fields') }} <i class="fa fa-square"></i>
+                    <a class="btn btn-default btn-toggle-col" data-field="{{ field.name }}">
+                        {{ field.name|trans({}, 'fields') }} <i class="fa fa-square-o"></i>
                     </a>
                 {% endif %}
             {% endfor %}

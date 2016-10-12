@@ -4,26 +4,26 @@ window.CAAUI = {
   toggleBox: function (el) {
     if (el.hasClass('active')) {
       el.removeClass('active')
-      el.find('i.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+      el.find('i.fa-check-square').removeClass('fa-check-square').addClass('fa-square-o')
     } else {
       el.addClass('active')
-      el.find('i.fa-square').removeClass('fa-square').addClass('fa-check-square')
+      el.find('i.fa-square-o').removeClass('fa-square-o').addClass('fa-check-square')
     }
   },
   checkBox: function (el) {
     el.addClass('active')
-    el.find('i.fa-square').removeClass('fa-square').addClass('fa-check-square')
+    el.find('i.fa-square-o').removeClass('fa-square-o').addClass('fa-check-square')
   },
   uncheckBox: function (el) {
     el.removeClass('active')
-    el.find('i.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+    el.find('i.fa-check-square').removeClass('fa-check-square').addClass('fa-square-o')
   },
   checkRadio: function (el) {
     el.closest('.panel-body').find('.btn-filter').each(function () {
       $(this).removeClass('active')
-      $(this).find('i.fa-check-circle').removeClass('fa-check-circle').addClass('fa-circle')
+      $(this).find('i.fa-check-circle').removeClass('fa-check-circle').addClass('fa-circle-o')
     })
-    el.find('i.fa-circle').removeClass('fa-circle').addClass('fa-check-circle')
+    el.find('i.fa-circle-o').removeClass('fa-circle-o').addClass('fa-check-circle')
     el.addClass('active')
   }
 }

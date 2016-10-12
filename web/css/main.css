@@ -37,6 +37,11 @@
 #filters-accordion .reset-filters-box {
     margin-top: 6px;
 }
+#filters-accordion .btn-default.active {
+  color: #fff;
+  background-color: #002e48;
+  border-color: #00273e;
+}
 
 .panel-body .btn {
     margin-bottom: 3px;
@@ -69,4 +74,18 @@ div.dataTables_wrapper .row.well {
 .materials-spr-select {
   font-weight: 400;
   margin-bottom: 0;
+}
+
+#info-combi {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.info-combi-fix {
+  margin-top: 5px;
+}
+
+.alert-info.alert-light {
+  background-color: #f5f5f5;
+  color: #6d6d6d;
+  border-color: #ddd;
 }

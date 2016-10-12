@@ -17,7 +17,7 @@
                     <p class="lead filters-lead">{{ category|trans({}, identifier) }}</p>
                 {% endif %}
                 {% for element, keywords in elements %}
-                    <a class="btn-filter filter-checkbox btn btn-primary active" data-value="{{ keywords|join(';') }}" data-identifier="{{ identifier }}">
+                    <a class="btn-filter filter-checkbox btn btn-default active" data-value="{{ keywords|join(';') }}" data-identifier="{{ identifier }}">
                         {{ element|trans({}, identifier) }} <i class="fa fa-check-square"></i>
                     </a>
                 {% endfor %}

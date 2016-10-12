@@ -1,25 +1,7 @@
 <div id="filters-accordion">
     <h2>{{ 'search_criteria'|trans }}</h2>
     <div class="panel-group">
-        {% include 'materials/_panel_search.html.twig' %}
-    </div>
-    <div class="panel-group">
-        {% include 'materials/_panel_cols.html.twig' %}
-    </div>
-    <div class="panel-group">
         {% set expanded = '' %}
-        <div id="info-combi" class="alert alert-info hidden" role="alert">
-            <div class="row">
-              <div class="col-xs-10">
-                <strong>{{ 'trick'|trans }}</strong> {{ 'combi_trick'|trans }}
-              </div>
-              <div class="col-xs-2">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            </div>
-        </div>
         {%
             include 'materials/_panel_complex.html.twig'
             with { 'title': 'sprachniveau'|trans({}, 'fields'), 'categories': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
@@ -33,13 +15,22 @@
             include 'materials/_panel_complex.html.twig'
             with {'title': 'fertigkeit'|trans({}, 'fields'), 'categories': fertigkeit, 'identifier': 'fertigkeit'}
         %}
+        <div id="info-combi" class="alert alert-info alert-light hidden" role="alert">
+            <div class="row">
+              <div class="col-xs-10">
+                <strong>{{ 'trick'|trans }}</strong> {{ 'combi_trick'|trans }}
+              </div>
+              <div class="col-xs-2">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
+        </div>
+        <div class="info-combi-fix"></div>
         {%
             include 'materials/_panel_complex.html.twig'
             with {'title': 'fachbezug'|trans({}, 'fields'), 'categories': fachbezug, 'identifier': 'fachbezug'}
-        %}
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with {'title': 'asl'|trans({}, 'fields'), 'categories': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
         %}
         {%
             include 'materials/_panel_complex.html.twig'
@@ -53,6 +44,16 @@
             include 'materials/_panel_radio.html.twig'
             with {'title': 'jahr'|trans({}, 'fields'), 'elements': jahr, 'identifier': 'jahr', 'radio': 'all'}
         %}
+        {%
+            include 'materials/_panel_complex.html.twig'
+            with {'title': 'asl'|trans({}, 'fields'), 'categories': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
+        %}
         <p class="text-center reset-filters-box"><a class="reset-filters">Reset all filters</a></p>
+    </div>
+    <div class="panel-group">
+        {% include 'materials/_panel_cols.html.twig' %}
+    </div>
+    <div class="panel-group">
+        {% include 'materials/_panel_search.html.twig' %}
     </div>
 </div>
