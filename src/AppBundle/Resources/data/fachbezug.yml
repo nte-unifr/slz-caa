@@ -16,9 +16,6 @@ alltag:
         - film
     spiele:
         - spiel
-    sprachenlernen:
-        - didaktik
-        - methodik
 studiumberuf:
     akademische sprache:
         - akademisch
@@ -64,3 +61,6 @@ studiumberuf:
         - tourismus
     tourismusberufe:
         - gastronomie
+    sprachenlernen:
+        - didaktik
+        - methodik

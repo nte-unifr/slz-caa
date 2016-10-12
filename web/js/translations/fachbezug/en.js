@@ -8,7 +8,7 @@
     Translator.add("musik", "Music", "fachbezug", "en");
     Translator.add("filme", "Movies", "fachbezug", "en");
     Translator.add("spiele", "Games", "fachbezug", "en");
-    Translator.add("sprachenlernen", "Language learning", "fachbezug", "en");
+    Translator.add("sprachenlernen", "Learning methodology", "fachbezug", "en");
     Translator.add("fachsprache", "Specific language", "fachbezug", "en");
     Translator.add("akademische sprache", "Academic language", "fachbezug", "en");
     Translator.add("wirtschaft, politik", "Economics, Politics", "fachbezug", "en");
