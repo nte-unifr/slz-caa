@@ -48,7 +48,7 @@
             include 'materials/_panel_complex.html.twig'
             with {'title': 'asl'|trans({}, 'fields'), 'categories': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
         %}
-        <p class="text-center reset-filters-box"><a class="reset-filters">Reset all filters</a></p>
+        <p class="text-center reset-filters-box"><a class="reset-filters">{{ 'reset_all'|trans }}</a></p>
     </div>
     <div class="panel-group">
         {% include 'materials/_panel_cols.html.twig' %}

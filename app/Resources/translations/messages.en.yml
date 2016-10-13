@@ -23,3 +23,4 @@ clear_all: Clear all
 combi_trick: Different combinations of skills and target levels (e.g. Reading B2 + Speaking A2) require separate search operations.
 select_objectives: Select your objectives in the ‘Search criteria’
 search_criteria: Search criteria
+reset_all: Reset all filters

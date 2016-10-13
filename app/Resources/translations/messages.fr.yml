@@ -23,3 +23,4 @@ clear_all: Tout desélectionner
 combi_trick: Des combinaisons variées de compétences et de niveaux cible (p.ex. Lire B2 + Parler A2), exigent des recherches séparées.
 select_objectives: Sélectionnez vos objectifs en ‘Critères de recherche’
 search_criteria: Critères de recherche
+reset_all: Réinitialiser tous les filtres
