@@ -145,13 +145,15 @@ window.CAATA = {
         "<'row well'<'col-md-3'l><'col-md-9'p>>",
       'buttons': [
         {
-          extend: 'copyHtml5',
+          extend: 'pdfHtml5',
           exportOptions: {
             modifier: {
               selected: true
             },
             columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
           },
+          orientation: 'landscape',
+          pageSize: 'LEGAL',
           className: 'btn-info btn-actions'
         },
         {
@@ -172,18 +174,6 @@ window.CAATA = {
             },
             columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
           },
-          className: 'btn-info btn-actions'
-        },
-        {
-          extend: 'pdfHtml5',
-          exportOptions: {
-            modifier: {
-              selected: true
-            },
-            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
-          },
-          orientation: 'landscape',
-          pageSize: 'LEGAL',
           className: 'btn-info btn-actions'
         }
       ]
