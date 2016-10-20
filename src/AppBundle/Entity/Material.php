@@ -510,21 +510,6 @@ class Material implements JsonSerializable
         );
     }
 
-    // Utility
-
-    public function sprachniveauDisplay($string)
-    {
-        $result = "";
-        $sprachniveaux = explode(" ", $string);
-        foreach ($sprachniveaux as $index => $sprachniveau) {
-            $result .= '<span class="label label-default">' . $sprachniveau . '</span>';
-            if ($index != count($sprachniveaux)-1) {
-                $result .= '&nbsp;';
-            }
-        }
-        return $result;
-    }
-
     /**
      * Set zustand
      *
