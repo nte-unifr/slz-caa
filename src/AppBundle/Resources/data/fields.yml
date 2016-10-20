@@ -3,17 +3,14 @@
     name: titel
     display: true
 -
-    name: fachbezug
-    display: false
--
-    name: asl
-    display: false
--
     name: sprachniveau
     display: true
 -
     name: fertigkeit
     display: true
+-
+    name: fachbezug
+    display: false
 -
     name: ausgangssprache
     display: true
@@ -22,6 +19,9 @@
     display: false
 -
     name: jahr
+    display: true
+-
+    name: asl
     display: false
 -
     name: autor
@@ -32,6 +32,3 @@
 -
     name: kommentar
     display: true
--
-    name: spr
-    display: false

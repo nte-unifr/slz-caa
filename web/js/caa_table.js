@@ -54,7 +54,7 @@ window.CAATA = {
 
     // Datatable init
     CAATA.table = tableEl.DataTable({
-      'order': [[ 1, 'asc' ]],
+      'order': [[ 7, 'desc' ], [1, 'asc']],
       'rowId': 'id',
       'select': 'multi',
       'ajax': 'materials.json',
@@ -73,18 +73,6 @@ window.CAATA = {
           'visible': true
         },
         {
-          'name': 'fachbezug',
-          'data': 'fachbezug',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'fachbezug') } },
-          'visible': false
-        },
-        {
-          'name': 'asl',
-          'data': 'asl',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'asl') } },
-          'visible': false
-        },
-        {
           'name': 'sprachniveau',
           'data': 'sprachniveau',
           'render': { display: function (data, type, full, meta) { return translateTerms(data, ' ', 'sprachniveau', 'u', true) } },
@@ -95,6 +83,12 @@ window.CAATA = {
           'data': 'fertigkeit',
           'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'fertigkeit') } },
           'visible': true
+        },
+        {
+          'name': 'fachbezug',
+          'data': 'fachbezug',
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'fachbezug') } },
+          'visible': false
         },
         {
           'name': 'ausgangssprache',
@@ -112,6 +106,12 @@ window.CAATA = {
         {
           'name': 'jahr',
           'data': 'jahr',
+          'visible': true
+        },
+        {
+          'name': 'asl',
+          'data': 'asl',
+          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'asl') } },
           'visible': false
         },
         {

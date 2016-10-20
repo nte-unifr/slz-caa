@@ -492,6 +492,7 @@ class Material implements JsonSerializable
 
     public function jsonSerialize()
     {
+        $jahr = is_numeric($this->jahr) ? $this->jahr : '';
         return array(
             'id' => $this->id,
             'titel' => $this->titel,
@@ -502,7 +503,7 @@ class Material implements JsonSerializable
             'fertigkeit' => explode(" ", $this->fertigkeit),
             'ausgangssprache' => explode(" ", $this->ausgangssprache),
             'medium' => explode(" ", $this->medium),
-            'jahr' => $this->jahr,
+            'jahr' => $jahr,
             'autor' => $this->autor,
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
             'kommentar' => $this->kommentar,
