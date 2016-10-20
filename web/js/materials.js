@@ -1,6 +1,13 @@
-/* global $, CAAFI, CAATA, CAAUI, CAAST */
+/* global $, CAAFI, CAATA, CAAUI, CAAST, Translator */
+var getTitleMessage = function () {
+  var spr = $('#select-spr').chosen().val()
+  return Translator.trans('material', {}, 'messages') + ' : ' + Translator.trans(spr, {}, 'spr') + ' - ' + Translator.trans('caa_abr', {}, 'messages')
+}
 
 $(document).ready(function () {
+  // set default title
+  document.title = getTitleMessage()
+
   // init values of filters and then table
   $('#filters-accordion .filter-checkbox').each(function () {
     if ($(this).hasClass('active')) {
@@ -60,6 +67,7 @@ $(document).ready(function () {
   $('#select-spr').chosen().change(function () {
     var val = $('#select-spr').chosen().val()
     CAAFI.setSpr(val)
+    document.title = getTitleMessage()
     CAATA.table.draw() // use direct draw : speedy
   })
 

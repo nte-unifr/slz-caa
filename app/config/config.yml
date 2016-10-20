@@ -96,6 +96,7 @@ bazinga_js_translation:
         - ausgangssprache
         - spr
         - asl
+        - messages
 
 # Vich uploader-bundle
 vich_uploader:
