@@ -181,7 +181,10 @@ window.CAATA = {
 
     // Show/hide export buttons if row selected or not
     CAATA.table.on('draw', function () {
-      $('.btn-actions').hide()
+      var rows = CAATA.table.rows({ selected: true }).count()
+      if (rows < 1) {
+        $('.btn-actions').hide()
+      }
     })
     CAATA.table.on('select', function (e, dt, type, indexes) {
       var rows = dt.rows({ selected: true }).count()
