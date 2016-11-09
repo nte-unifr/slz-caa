@@ -492,7 +492,7 @@ class Material implements JsonSerializable
 
     public function jsonSerialize()
     {
-        $jahr = is_numeric($this->jahr) ? $this->jahr : '';
+        $jahr = ctype_digit(substr($this->jahr, 0, 1)) ? $this->jahr : '';
         return array(
             'id' => $this->id,
             'titel' => $this->titel,
