@@ -27,7 +27,7 @@
     Translator.add("EPR", "Esperanto", "spr", "en");
     Translator.add("ESP", "Spanish", "spr", "en");
     Translator.add("EST", "Estonian", "spr", "en");
-    Translator.add("FIN", "Finnisch", "spr", "en");
+    Translator.add("FIN", "Finnish", "spr", "en");
     Translator.add("FLA", "Flemish", "spr", "en");
     Translator.add("FLE", "French", "spr", "en");
     Translator.add("FRI", "Frisian", "spr", "en");
