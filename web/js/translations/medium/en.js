@@ -9,4 +9,5 @@
     Translator.add("web", "Link", "medium", "en");
     Translator.add("dvdr", "DVD-ROM", "medium", "en");
     Translator.add("dcd", "Data CD", "medium", "en");
+    Translator.add("installed", "<i class=\"fa fa-desktop\" aria-hidden=\"true\"><\/i>", "medium", "en");
 })(Translator);

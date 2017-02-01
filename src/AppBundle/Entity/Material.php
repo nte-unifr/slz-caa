@@ -134,6 +134,13 @@ class Material implements JsonSerializable
      */
     private $zustand;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="install", type="boolean")
+     */
+    private $install;
+
 
     /**
      * Get id
@@ -493,6 +500,10 @@ class Material implements JsonSerializable
     public function jsonSerialize()
     {
         $jahr = ctype_digit(substr($this->jahr, 0, 1)) ? $this->jahr : '';
+        $medium = explode(" ", $this->medium);
+        if ($this->install) {
+            $medium[] = 'installed';
+        }
         return array(
             'id' => $this->id,
             'titel' => $this->titel,
@@ -502,12 +513,13 @@ class Material implements JsonSerializable
             'sprachniveau' => explode(" ", $this->sprachniveau),
             'fertigkeit' => explode(" ", $this->fertigkeit),
             'ausgangssprache' => explode(" ", $this->ausgangssprache),
-            'medium' => explode(" ", $this->medium),
+            'medium' => $medium,
             'jahr' => $jahr,
             'autor' => $this->autor,
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
             'kommentar' => $this->kommentar,
-            'nrcdrom' => explode(" ", $this->nrcdrom)
+            'nrcdrom' => explode(" ", $this->nrcdrom),
+            'install' => $this->install
         );
     }
 
@@ -533,5 +545,29 @@ class Material implements JsonSerializable
     public function getZustand()
     {
         return $this->zustand;
+    }
+
+    /**
+     * Set install
+     *
+     * @param boolean $install
+     *
+     * @return Material
+     */
+    public function setInstall($install)
+    {
+        $this->install = $install;
+
+        return $this;
+    }
+
+    /**
+     * Get install
+     *
+     * @return boolean
+     */
+    public function getInstall()
+    {
+        return $this->install;
     }
 }

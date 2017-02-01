@@ -38,9 +38,15 @@
     margin-top: 6px;
 }
 #filters-accordion .btn-default.active {
-  color: #fff;
-  background-color: #002e48;
-  border-color: #00273e;
+    color: #fff;
+    background-color: #002e48;
+    border-color: #00273e;
+}
+#filters-accordion .filter-medium {
+    cursor: pointer;
+}
+#filters-accordion .filter-medium:hover {
+    text-decoration: none;
 }
 
 .panel-body .btn {

@@ -1,18 +1,7 @@
-<div class="panel panel-default">
-    <a class="panel-heading-anchor" data-toggle="collapse" data-target="#collapseSearch">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <i class="fa fa-search"></i> {{ 'search'|trans }}
-                <span id="chevronSearch"><i class="fa fa-chevron-up"></i></span>
-            </h3>
-        </div>
-    </a>
-    <div id="collapseSearch" class="panel-collapse collapse in filter-collapse" data-chevron="#chevronSearch">
-        <div class="panel-body">
-            <input id="mainSearch" type="search" name="search" class="form-control" placeholder="{{ 'search'|trans }}">
-        </div>
-        <div class="panel-footer">
-            <i class="fa fa-info-circle"></i> {{ 'fulltext_search'|trans }}
-        </div>
-    </div>
-</div>
+{% extends 'materials/_panel.html.twig' %}
+
+{% block panel_title %}<i class="fa fa-search"></i> {{ 'search'|trans }}{% endblock %}
+
+{% block panel_main %}
+    <input id="mainSearch" type="search" name="search" class="form-control" placeholder="{{ 'search'|trans }}">
+{% endblock %}

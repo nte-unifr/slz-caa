@@ -1,0 +1,9 @@
+{% extends 'materials/_panel_complex.html.twig' %}
+
+{% block panel_footer %}
+    <div class="panel-footer">
+        <a class="btn-filter filter-checkbox filter-medium" data-value="install" data-identifier="install">
+            <i class="fa fa-square-o"></i> {{ 'preinstalled_only'|trans }} (<i class="fa fa-desktop" aria-hidden="true"></i>)
+        </a>
+    </div>
+{% endblock %}

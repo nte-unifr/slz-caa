@@ -1,10 +1,10 @@
 <div id="filters-accordion">
     <h2>{{ 'search_criteria'|trans }}</h2>
     <div class="panel-group">
-        {% set expanded = '' %}
+        {% set expanded = false %}
         {%
             include 'materials/_panel_complex.html.twig'
-            with { 'title': 'sprachniveau'|trans({}, 'fields'), 'categories': sprachniveau, 'identifier': 'sprachniveau', 'footer': 'level_description'|trans ~':
+            with { 'title': 'sprachniveau'|trans({}, 'fields'), 'categories': sprachniveau, 'identifier': 'sprachniveau', 'footer': '<i class="fa fa-info-circle"></i>&nbsp;'~'level_description'|trans ~':
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
                 <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
@@ -37,7 +37,7 @@
             with {'title': 'ausgangssprache'|trans({}, 'fields'), 'categories': ausgangssprache, 'identifier': 'ausgangssprache'}
         %}
         {%
-            include 'materials/_panel_complex.html.twig'
+            include 'materials/_panel_medium.html.twig'
             with {'title': 'medium'|trans({}, 'fields'), 'categories': medium, 'identifier': 'medium'}
         %}
         {%
@@ -46,14 +46,20 @@
         %}
         {%
             include 'materials/_panel_complex.html.twig'
-            with {'title': 'asl'|trans({}, 'fields'), 'categories': asl, 'identifier': 'asl', 'footer': 'reference_books_examples'|trans}
+            with {'title': 'asl'|trans({}, 'fields'), 'categories': asl, 'identifier': 'asl', 'footer': '<i class="fa fa-info-circle"></i>&nbsp;'~'reference_books_examples'|trans}
         %}
         <p class="text-center reset-filters-box"><a class="reset-filters">{{ 'reset_all'|trans }}</a></p>
     </div>
     <div class="panel-group">
-        {% include 'materials/_panel_cols.html.twig' %}
+        {% 
+            include 'materials/_panel_cols.html.twig'
+            with {'identifier': 'Cols', 'expanded': true}
+        %}
     </div>
     <div class="panel-group">
-        {% include 'materials/_panel_search.html.twig' %}
+        {%
+            include 'materials/_panel_search.html.twig'
+            with {'identifier': 'Search', 'expanded': true, 'footer': '<i class="fa fa-info-circle"></i>&nbsp;'~'fulltext_search'|trans}
+        %}
     </div>
 </div>

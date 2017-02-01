@@ -1,32 +1,17 @@
-<div class="panel panel-default">
-    <a class="panel-heading-anchor" data-toggle="collapse" data-target="#collapse{{ identifier }}">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <i class="fa fa-filter"></i> {{ title }}
-                <span id="chevron{{ identifier }}"><i class="fa fa-chevron-down"></i></span>
-            </h3>
-        </div>
-    </a>
-    <div id="collapse{{ identifier }}" class="panel-collapse collapse {{ expanded }} filter-collapse" data-chevron="#chevron{{ identifier }}">
-        <div class="panel-body">
-            <p class="text-center">
-                <a class="select-all">{{ 'select_all'|trans }}</a> | <a class="deselect-all">{{ 'clear_all'|trans }}</a>
-            </p>
-            {% for category, elements in categories %}
-                {% if categories|length > 1 %}
-                    <p class="lead filters-lead">{{ category|trans({}, identifier) }}</p>
-                {% endif %}
-                {% for element, keywords in elements %}
-                    <a class="btn-filter filter-checkbox btn btn-default active" data-value="{{ keywords|join(';') }}" data-identifier="{{ identifier }}">
-                        {{ element|trans({}, identifier) }} <i class="fa fa-check-square"></i>
-                    </a>
-                {% endfor %}
-            {% endfor %}
-        </div>
-        {% if footer is defined %}
-            <div class="panel-footer">
-                <i class="fa fa-info-circle"></i> {{ footer|raw }}
-            </div>
+{% extends 'materials/_panel.html.twig' %}
+
+{% block panel_main %}
+    <p class="text-center">
+        <a class="select-all">{{ 'select_all'|trans }}</a> | <a class="deselect-all">{{ 'clear_all'|trans }}</a>
+    </p>
+    {% for category, elements in categories %}
+        {% if categories|length > 1 %}
+            <p class="lead filters-lead">{{ category|trans({}, identifier) }}</p>
         {% endif %}
-    </div>
-</div>
+        {% for element, keywords in elements %}
+            <a class="btn-filter filter-checkbox btn btn-default active" data-value="{{ keywords|join(';') }}" data-identifier="{{ identifier }}">
+                {{ element|trans({}, identifier) }} <i class="fa fa-check-square"></i>
+            </a>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

@@ -9,6 +9,20 @@ use Symfony\Component\Yaml\Parser;
 
 class MaterialsController extends Controller
 {
+
+    /**
+     * @Route("/materials/{id}.{_format}")
+     */
+    public function showAction($id, $_format)
+    {
+        if ($_format == "json") {
+            $repository = $this->getDoctrine()->getRepository("AppBundle:Material");
+            $material = $repository->find($id);
+            $response = new Response(json_encode($material));
+            return $response;
+        }
+    }
+
     /**
      * @Route("/", name="home", defaults={"_format" = "html"})
      * @Route("/materials.{_format}", defaults={"_format" = "json"})

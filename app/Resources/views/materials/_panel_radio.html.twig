@@ -1,29 +1,14 @@
-<div class="panel panel-default">
-    <a class="panel-heading-anchor" data-toggle="collapse" data-target="#collapse{{ identifier }}">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <i class="fa fa-filter"></i> {{ title }}
-                <span id="chevron{{ identifier }}"><i class="fa fa-chevron-down"></i></span>
-            </h3>
-        </div>
-    </a>
-    <div id="collapse{{ identifier }}" class="panel-collapse collapse {{ expanded }} filter-collapse" data-chevron="#chevron{{ identifier }}">
-        <div class="panel-body">
-            {% for element in elements %}
-                <a class="btn-filter filter-radio full-width btn btn-default{% if element == radio %} active filter-radio-all{% endif %}" data-value="{{ element }}" data-identifier="{{ identifier }}">
-                    {{ element|trans({}, identifier) }}&nbsp;
-                    {% if element == radio %}
-                        <i class="fa fa-check-circle"></i>
-                    {% else %}
-                        <i class="fa fa-circle-o"></i>
-                    {% endif %}
-                </a>
-            {% endfor %}
-        </div>
-        {% if footer is defined %}
-            <div class="panel-footer">
-                <i class="fa fa-info-circle"></i> {{ footer|raw }}
-            </div>
-        {% endif %}
-    </div>
-</div>
+{% extends 'materials/_panel.html.twig' %}
+
+{% block panel_main %}
+    {% for element in elements %}
+        <a class="btn-filter filter-radio full-width btn btn-default{% if element == radio %} active filter-radio-all{% endif %}" data-value="{{ element }}" data-identifier="{{ identifier }}">
+            {{ element|trans({}, identifier) }}&nbsp;
+            {% if element == radio %}
+                <i class="fa fa-check-circle"></i>
+            {% else %}
+                <i class="fa fa-circle-o"></i>
+            {% endif %}
+        </a>
+    {% endfor %}
+{% endblock %}

@@ -73,6 +73,11 @@ class CsvController extends Controller
         $i = 1;
 
         foreach($data as $row) {
+            // check if material is installed
+            $install = 'false';
+            if ($row['INSTALL'] != '') {
+                $install = true;
+            }
 
             // we import only material actually received
             if (strpos($row['ZUSTAND'], 'd') !== false) {
@@ -93,6 +98,7 @@ class CsvController extends Controller
                 $material->setSm2($row['SM2']);
                 $material->setBereich($row['BEREICH']);
                 $material->setZustand($row['ZUSTAND']);
+                $material->setInstall($install);
 
                 $em->persist($material);
 

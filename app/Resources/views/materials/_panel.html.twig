@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <a class="panel-heading-anchor" data-toggle="collapse" data-target="#collapse{{ identifier }}">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                {% block panel_title %}<i class="fa fa-filter"></i> {{ title }}{% endblock %}
+                <span id="chevron{{ identifier }}"><i class="fa fa-chevron-{% if expanded %}up{% else %}down{% endif %}"></i></span>
+            </h3>
+        </div>
+    </a>
+    <div id="collapse{{ identifier }}" class="panel-collapse collapse{% if expanded %} in{% endif %} filter-collapse" data-chevron="#chevron{{ identifier }}">
+        <div class="panel-body">
+            {% block panel_main %}{% endblock %}
+            {% block panel_extra %}{% endblock %}
+        </div>
+        {% block panel_footer %}
+            {% if footer is defined %}
+                <div class="panel-footer">
+                    {{ footer|raw }}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+</div>

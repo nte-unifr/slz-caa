@@ -7,3 +7,4 @@ cas: Audiokassette
 web: Link
 dvdr: DVD-ROM
 dcd: Daten-CD
+installed: <i class="fa fa-desktop" aria-hidden="true"></i>

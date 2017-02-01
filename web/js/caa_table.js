@@ -134,6 +134,11 @@ window.CAATA = {
           'data': 'spr',
           'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'spr', 'u') } },
           'visible': false
+        },
+        {
+          'name': 'install',
+          'data': 'install',
+          'visible': false
         }
       ],
       'language': {
@@ -242,6 +247,9 @@ $.fn.dataTable.ext.search.push(
     var tableJahr = rowData['jahr']
     var globalJahr = CAAFI['jahr']
 
+    var tableInstall = rowData['install']
+    var globalInstall = CAAFI['install']
+
     var debug = window.location.pathname.indexOf('/debug') !== -1
     if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
@@ -269,6 +277,7 @@ $.fn.dataTable.ext.search.push(
       return false
     }
     if (globalJahr !== 'all' && tableJahr < globalJahr) { return false }
+    if (globalInstall === true && tableInstall === false) { return false }
 
     return true
   }

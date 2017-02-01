@@ -9,6 +9,7 @@ window.CAAFI = {
   ausgangssprache: [],
   medium: [],
   jahr: 'all',
+  install: false,
   setSpr: function (value) {
     CAAFI['spr'] = value
   },
@@ -20,14 +21,16 @@ window.CAAFI = {
 
     // we iterate in case there is more than 1 value, eg: Fachbezug
     $.each(values, function (index, value) {
-      if (el.hasClass('active')) {
-        if (el.hasClass('filter-checkbox')) {
+      if (identifier === 'jahr') {
+        CAAFI[identifier] = value
+      } else if (identifier === 'install') {
+        CAAFI[identifier] = !CAAFI[identifier]
+      } else {
+        if (el.hasClass('active')) {
           CAAFI[identifier].push(value)
         } else {
-          CAAFI[identifier] = value
+          CAAFI[identifier] = _.without(CAAFI[identifier], value)
         }
-      } else {
-        CAAFI[identifier] = _.without(CAAFI[identifier], value)
       }
 
       if (draw) {
