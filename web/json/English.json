@@ -25,9 +25,9 @@
   "select": {
     "rows":
       {
-        "_": "<strong>%d titles selected</strong> | To deselect them, click again.",
-        "0": "<strong><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Trick :</strong> To select a title to export, click on the row.",
-        "1": "<strong>1 title selected</strong> | To deselect it, click again."
+        "_": "<br><strong>%d titles selected</strong> | To deselect them, click again.",
+        "0": "<br><strong><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Trick :</strong> To select a title to export, click on the row.",
+        "1": "<br><strong>1 title selected</strong> | To deselect it, click again."
       }
   }
 }

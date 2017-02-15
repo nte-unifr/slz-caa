@@ -25,4 +25,5 @@
     Translator.add("select_objectives", "Select your objectives in the \u2018Search criteria\u2019", "messages", "en");
     Translator.add("search_criteria", "Search criteria", "messages", "en");
     Translator.add("reset_all", "Reset all filters", "messages", "en");
+    Translator.add("preinstalled_only", "Only material preinstalled on the PCs", "messages", "en");
 })(Translator);

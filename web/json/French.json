@@ -24,9 +24,13 @@
   "select": {
     "rows":
       {
-        "_": "<strong>%d titres choisis</strong> | Pour les désélectionner, cliquez à nouveau.",
-        "0": "<strong><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Astuce :</strong> Pour sélectionner un titre à exporter, cliquez sur la ligne.",
-        "1": "<strong>1 titre choisi</strong> | Pour le désélectionner, cliquez à nouveau."
+        "_": "<br><strong>%d titres choisis</strong> | Pour les désélectionner, cliquez à nouveau.",
+        "0": "<br><strong><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Astuce :</strong> Pour sélectionner un titre à exporter, cliquez sur la ligne.",
+        "1": "<br><strong>1 titre choisi</strong> | Pour le désélectionner, cliquez à nouveau."
       }
-  }
+  },
+	"buttons" : {
+		"selectAll": "Tout sélectionner",
+		"selectNone": "Tout desélectionner"
+	}
 }

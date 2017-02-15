@@ -7,4 +7,4 @@ cas: Cassette audio
 web: Lien web
 dvdr: DVD-ROM
 dcd: Data CD
-installed: <i class="fa fa-desktop" aria-hidden="true"></i>
+installed: '[installé sur les PCs]'

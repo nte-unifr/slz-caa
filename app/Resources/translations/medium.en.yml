@@ -7,4 +7,4 @@ cas: Audio tape
 web: Link
 dvdr: DVD-ROM
 dcd: Data CD
-installed: <i class="fa fa-desktop" aria-hidden="true"></i>
+installed: '[installed on PCs]'

@@ -9,17 +9,18 @@ var typewatch = (function () {
   }
 })()
 
-var translateTerms = function (data, separator, translations, keycase, label) {
+var translateTerms = function (data, separator, translations, keycase, label, isExport) {
   keycase = typeof keycase !== 'undefined' ? keycase : 'l'
   label = typeof label !== 'undefined' ? label : false
+  isExport = typeof isExport !== 'undefined' ? isExport : false
   var result = ''
   var key = ''
   _.each(data, function (i) {
     key = keycase === 'u' ? i.toUpperCase() : i.toLowerCase()
-    result = (result === '') ? result : result + separator
-    result += label ? '<span class="label label-default">' : ''
-    result += Translator.trans(key, {}, translations)
-    result += label ? '</span>' : ''
+    key = key === 'installed' && !isExport ? '<i class="fa fa-desktop" aria-hidden="true"></i>' : key
+    if (result !== '') { result += separator }
+    var trans = Translator.trans(key, {}, translations)
+    result += label ? '<span class="label label-default">' + trans + '</span>' : trans
   })
   return result
 }
@@ -100,7 +101,10 @@ window.CAATA = {
         {
           'name': 'medium',
           'data': 'medium',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'medium') } },
+          'render': {
+            display: function (data, type, full, meta) { return translateTerms(data, ', ', 'medium') },
+            export: function (data, type, full, meta) { return translateTerms(data, ', ', 'medium', 'l', false, true) }
+          },
           'visible': false
         },
         {
@@ -145,17 +149,22 @@ window.CAATA = {
         'url': langUrl,
         'lengthMenu': '_MENU_'
       },
-      'dom': "<'row well'<'col-md-9'i><'col-md-3 text-right'B>>" +
+      'dom': "<'row well'<'col-md-6'i><'col-md-6 text-right'B>>" +
         "<'row'<'col-sm-12'tr>>" +
         "<'row well'<'col-md-3'l><'col-md-9'p>>",
       'buttons': [
+        {
+          extend: 'selectNone',
+          className: 'btn-actions'
+        },
         {
           extend: 'pdfHtml5',
           exportOptions: {
             modifier: {
               selected: true
             },
-            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
+            orthogonal: 'export'
           },
           orientation: 'landscape',
           pageSize: 'LEGAL',
@@ -167,7 +176,8 @@ window.CAATA = {
             modifier: {
               selected: true
             },
-            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
+            orthogonal: 'export'
           },
           className: 'btn-info btn-actions'
         },
@@ -177,7 +187,8 @@ window.CAATA = {
             modifier: {
               selected: true
             },
-            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
+            orthogonal: 'export'
           },
           className: 'btn-info btn-actions'
         }

@@ -25,4 +25,5 @@
     Translator.add("select_objectives", "W\u00e4hlen Sie in \u2018Suchkriterien\u2019 Ihre Ziele aus", "messages", "de");
     Translator.add("search_criteria", "Suchkriterien", "messages", "de");
     Translator.add("reset_all", "Alle Filter zur\u00fccksetzen", "messages", "de");
+    Translator.add("preinstalled_only", "Nur auf den PCs vorinstalliertes Material", "messages", "de");
 })(Translator);

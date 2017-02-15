@@ -25,9 +25,13 @@
   "select": {
     "rows":
       {
-        "_": "<strong>%d Titel ausgewählt</strong> | Um die Auswahl aufzuheben klicken Sie erneut.",
-        "0": "<strong><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Tipp :</strong> Um einen Titel für den Export auszuwählen, klicken Sie auf die Zeile.",
-        "1": "<strong>1 Titel ausgewählt</strong> | Um die Auswahl aufzuheben klicken Sie erneut."
+        "_": "<br><strong>%d Titel ausgewählt</strong> | Um die Auswahl aufzuheben klicken Sie erneut.",
+        "0": "<br><strong><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Tipp :</strong> Um einen Titel für den Export auszuwählen, klicken Sie auf die Zeile.",
+        "1": "<br><strong>1 Titel ausgewählt</strong> | Um die Auswahl aufzuheben klicken Sie erneut."
       }
-  }
+  },
+	"buttons" : {
+		"selectAll": "Alle wählen",
+		"selectNone": "Alle löschen"
+	}
 }

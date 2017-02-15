@@ -25,4 +25,5 @@
     Translator.add("select_objectives", "S\u00e9lectionnez vos objectifs en \u2018Crit\u00e8res de recherche\u2019", "messages", "fr");
     Translator.add("search_criteria", "Crit\u00e8res de recherche", "messages", "fr");
     Translator.add("reset_all", "R\u00e9initialiser tous les filtres", "messages", "fr");
+    Translator.add("preinstalled_only", "Uniquement le mat\u00e9riel pr\u00e9install\u00e9 sur les PC", "messages", "fr");
 })(Translator);
