@@ -74,7 +74,7 @@ class CsvController extends Controller
 
         foreach($data as $row) {
             // check if material is installed
-            $install = 'false';
+            $install = false;
             if ($row['INSTALL'] != '') {
                 $install = true;
             }
