@@ -1,0 +1,13 @@
+easy_admin:
+  entities:
+    Asl:
+      class: AppBundle\Entity\Asl
+      label: 'Asl'
+      list:
+        title: '%%entity_label%%'
+        sort: ['code', 'ASC']
+        fields:
+          - 'code'
+          - 'de'
+          - 'en'
+          - 'fr'

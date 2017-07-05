@@ -1,0 +1,13 @@
+easy_admin:
+  site_name: 'SLZ-CAA <em style="font-size: 80%;">Admin.</em>'
+  list:
+    max_results: 30
+  design:
+    brand_color: '#00134a'
+    form_theme: 'vertical'
+    menu:
+      - { label: 'Links' }
+      - { label: 'Metadata' }
+      - { entity: 'Ausgangssprache', icon: 'tags', label: 'Ausgangssprachen' }
+      - { entity: 'Asl', icon: 'tags', label: 'Asl' }
+      - { entity: 'Sprache', icon: 'tags', label: 'Sprachen' }

@@ -1,0 +1,14 @@
+easy_admin:
+  entities:
+    Sprache:
+      class: AppBundle\Entity\Sprache
+      label: 'Sprachen'
+      list:
+        title: '%%entity_label%%'
+        sort: ['code', 'ASC']
+        fields:
+          - 'code'
+          - 'de'
+          - 'en'
+          - 'fr'
+          - 'top'
