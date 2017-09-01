@@ -1,0 +1,29 @@
+{% extends 'materials/_panel.html.twig' %}
+
+{% set identifier = 'fachbezug' %}
+
+{% block panel_main %}
+  <p class="lead filters-lead">{{ 'alltag'|trans({}, identifier) }}</p>
+  {% for element in fachbezug_alltag %}
+    {% if element.matching == '-' %}
+      {% set value = '' %}
+    {% else %}
+      {% set value = element.matching %}
+    {% endif %}
+    <a class="btn btn-default active btn-filter filter-checkbox" data-value="{{ value }}" data-identifier="{{ identifier }}">
+      {% if "fr" in app.request.locale %}{{ element.fr }}{% endif %}
+      {% if "de" in app.request.locale %}{{ element.de }}{% endif %}
+      {% if "en" in app.request.locale %}{{ element.en }}{% endif %}
+      &nbsp;<i class="fa fa-check-square"></i>
+    </a>
+  {% endfor %}
+  <p class="lead filters-lead">{{ 'studiumberuf'|trans({}, identifier) }}</p>
+  {% for element in fachbezug_studiumberuf %}
+    <a class="btn-filter filter-checkbox btn btn-default active" data-value="{{ element.matching }}" data-identifier="{{ identifier }}">
+      {% if "fr" in app.request.locale %}{{ element.fr }}{% endif %}
+      {% if "de" in app.request.locale %}{{ element.de }}{% endif %}
+      {% if "en" in app.request.locale %}{{ element.en }}{% endif %}
+      &nbsp;<i class="fa fa-check-square"></i>
+    </a>
+  {% endfor %}
+{% endblock %}

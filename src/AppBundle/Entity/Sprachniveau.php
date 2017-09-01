@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ausgangssprache
+ * Sprachniveau
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Ausgangssprache
+class Sprachniveau
 {
     /**
      * @var integer
@@ -24,9 +24,16 @@ class Ausgangssprache
     /**
      * @var string
      *
-     * @ORM\Column(name="code", type="string", length=10)
+     * @ORM\Column(name="code", type="string", length=100)
      */
     private $code;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="matching", type="string", length=500)
+     */
+    private $matching;
 
     /**
      * @var string
@@ -65,7 +72,7 @@ class Ausgangssprache
      *
      * @param string $code
      *
-     * @return Ausgangssprache
+     * @return Sprachniveau
      */
     public function setCode($code)
     {
@@ -85,11 +92,35 @@ class Ausgangssprache
     }
 
     /**
+     * Set matching
+     *
+     * @param string $matching
+     *
+     * @return Sprachniveau
+     */
+    public function setMatching($matching)
+    {
+        $this->matching = $matching;
+
+        return $this;
+    }
+
+    /**
+     * Get matching
+     *
+     * @return string
+     */
+    public function getMatching()
+    {
+        return $this->matching;
+    }
+
+    /**
      * Set de
      *
      * @param string $de
      *
-     * @return Ausgangssprache
+     * @return Sprachniveau
      */
     public function setDe($de)
     {
@@ -113,7 +144,7 @@ class Ausgangssprache
      *
      * @param string $en
      *
-     * @return Ausgangssprache
+     * @return Sprachniveau
      */
     public function setEn($en)
     {
@@ -137,7 +168,7 @@ class Ausgangssprache
      *
      * @param string $fr
      *
-     * @return Ausgangssprache
+     * @return Sprachniveau
      */
     public function setFr($fr)
     {

@@ -1,65 +1,21 @@
 <div id="filters-accordion">
-    <h2>{{ 'search_criteria'|trans }}</h2>
-    <div class="panel-group">
-        {% set expanded = false %}
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with { 'title': 'sprachniveau'|trans({}, 'fields'), 'categories': sprachniveau, 'identifier': 'sprachniveau', 'footer': '<i class="fa fa-info-circle"></i>&nbsp;'~'level_description'|trans ~':
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><strong>IT</strong></a>
-                <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><strong>ES</strong></a>' }
-        %}
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with {'title': 'fertigkeit'|trans({}, 'fields'), 'categories': fertigkeit, 'identifier': 'fertigkeit'}
-        %}
-        <div id="info-combi" class="alert alert-info alert-light hidden" role="alert">
-            <div class="row">
-              <div class="col-xs-10">
-                <strong><i class="fa fa-lightbulb-o" aria-hidden="true"></i> {{ 'trick'|trans }}</strong> {{ 'combi_trick'|trans }}
-              </div>
-              <div class="col-xs-2">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            </div>
-        </div>
-        <div class="info-combi-fix"></div>
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with {'title': 'fachbezug'|trans({}, 'fields'), 'categories': fachbezug, 'identifier': 'fachbezug'}
-        %}
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with {'title': 'ausgangssprache'|trans({}, 'fields'), 'categories': ausgangssprache, 'identifier': 'ausgangssprache'}
-        %}
-        {%
-            include 'materials/_panel_medium.html.twig'
-            with {'title': 'medium'|trans({}, 'fields'), 'categories': medium, 'identifier': 'medium'}
-        %}
-        {%
-            include 'materials/_panel_radio.html.twig'
-            with {'title': 'jahr'|trans({}, 'fields'), 'elements': jahr, 'identifier': 'jahr', 'radio': 'all'}
-        %}
-        {%
-            include 'materials/_panel_complex.html.twig'
-            with {'title': 'asl'|trans({}, 'fields'), 'categories': asl, 'identifier': 'asl', 'footer': '<i class="fa fa-info-circle"></i>&nbsp;'~'reference_books_examples'|trans}
-        %}
-        <p class="text-center reset-filters-box"><a class="reset-filters">{{ 'reset_all'|trans }}</a></p>
-    </div>
-    <div class="panel-group">
-        {% 
-            include 'materials/_panel_cols.html.twig'
-            with {'identifier': 'Cols', 'expanded': true}
-        %}
-    </div>
-    <div class="panel-group">
-        {%
-            include 'materials/_panel_search.html.twig'
-            with {'identifier': 'Search', 'expanded': true, 'footer': '<i class="fa fa-info-circle"></i>&nbsp;'~'fulltext_search'|trans}
-        %}
-    </div>
+  <h2>{{ 'search_criteria'|trans }}</h2>
+  <div class="panel-group">
+    {% set expanded = false %}
+    {% include 'materials/_filters_sprachniveau.html.twig' %}
+    {% include 'materials/_filters_fertigkeit.html.twig' %}
+    {% include 'materials/_filters__combitrick.html.twig' %}
+    {% include 'materials/_filters_fachbezug.html.twig' %}
+    {% include 'materials/_filters_ausgangssprache.html.twig' %}
+    {% include 'materials/_filters_medium.html.twig' %}
+    {% include 'materials/_filters_jahr.html.twig' %}
+    {% include 'materials/_filters_asl.html.twig' %}
+    <p class="text-center reset-filters-box"><a class="reset-filters">{{ 'reset_all'|trans }}</a></p>
+  </div>
+  <div class="panel-group">
+    {% include 'materials/_filters_cols.html.twig' %}
+  </div>
+  <div class="panel-group">
+    {% include 'materials/_filters_search.html.twig' %}
+  </div>
 </div>

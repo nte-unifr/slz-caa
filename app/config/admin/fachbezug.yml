@@ -1,0 +1,14 @@
+easy_admin:
+  entities:
+    Fachbezug:
+      class: AppBundle\Entity\Fachbezug
+      label: 'Fachbezug'
+      list:
+        title: '%%entity_label%%'
+        sort: ['code', 'ASC']
+        fields:
+          - 'code'
+          - 'de'
+          - 'en'
+          - 'fr'
+          - 'category'

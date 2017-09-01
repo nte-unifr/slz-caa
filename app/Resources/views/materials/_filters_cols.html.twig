@@ -1,0 +1,24 @@
+{% extends 'materials/_panel.html.twig' %}
+
+{% set identifier = 'cols' %}
+{% set expanded = true %}
+
+{% block panel_title %}
+  <i class="fa fa-eye"></i> {{ 'displayed_columns'|trans }}
+{% endblock %}
+
+{% block panel_select %}{% endblock %}
+
+{% block panel_main %}
+  {% for field in fields %}
+    {% if field.display %}
+      <a class="btn btn-default btn-toggle-col active" data-field="{{ field.name }}">
+          {{ field.name|trans({}, 'fields') }} <i class="fa fa-check-square"></i>
+      </a>
+    {% else %}
+      <a class="btn btn-default btn-toggle-col" data-field="{{ field.name }}">
+          {{ field.name|trans({}, 'fields') }} <i class="fa fa-square-o"></i>
+      </a>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

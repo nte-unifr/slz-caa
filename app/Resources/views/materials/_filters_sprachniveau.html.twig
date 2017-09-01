@@ -1,0 +1,17 @@
+{% extends 'materials/_panel.html.twig' %}
+
+{% set identifier = 'sprachniveau' %}
+{% set elements = sprachniveau %}
+
+{% block element_value %}{{ element.matching }}{% endblock %}
+
+{% block panel_footer %}
+  <div class="panel-footer">
+    <i class="fa fa-info-circle"></i> {{ 'level_description'|trans }}:
+    <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/RasterSelbstbeurteilungDE.pdf"><strong>DE</strong></a>
+    <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/French-Francais.pdf"><strong>FR</strong></a>
+    <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/English.pdf"><strong>EN</strong></a>
+    <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Italian-Italiano.pdf"><strong>IT</strong></a>
+    <a href="http://www.unifr.ch/centredelangues/autoapprentissage/Niveauraster/Spanish.pdf"><strong>ES</strong></a>
+  </div>
+{% endblock %}

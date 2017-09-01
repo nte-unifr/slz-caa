@@ -1,0 +1,11 @@
+easy_admin:
+  entities:
+    Sprachniveau:
+      class: AppBundle\Entity\Sprachniveau
+      label: 'Zielstufen'
+      list:
+        title: '%%entity_label%%'
+        sort: ['code', 'ASC']
+        fields:
+          - 'code'
+          - 'matching'

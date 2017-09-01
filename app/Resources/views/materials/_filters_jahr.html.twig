@@ -1,0 +1,20 @@
+{% extends 'materials/_panel.html.twig' %}
+
+{% set identifier = 'jahr' %}
+{% set elements = jahr %}
+
+{% block panel_select %}{% endblock %}
+
+{% block panel_main %}
+  {% for element in elements %}
+    <a class="btn-filter filter-radio full-width btn btn-default{% if element == 'all' %} active filter-radio-all{% endif %}"
+      data-value="{{ element }}" data-identifier="{{ identifier }}">
+      {{ element|trans({}, identifier) }}&nbsp;
+      {% if element == 'all' %}
+          <i class="fa fa-check-circle"></i>
+      {% else %}
+          <i class="fa fa-circle-o"></i>
+      {% endif %}
+    </a>
+  {% endfor %}
+{% endblock %}

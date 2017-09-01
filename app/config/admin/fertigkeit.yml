@@ -1,0 +1,13 @@
+easy_admin:
+  entities:
+    Fertigkeit:
+      class: AppBundle\Entity\Fertigkeit
+      label: 'Fertigkeit'
+      list:
+        title: '%%entity_label%%'
+        sort: ['code', 'ASC']
+        fields:
+          - 'code'
+          - 'de'
+          - 'en'
+          - 'fr'

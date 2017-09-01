@@ -1,0 +1,13 @@
+{% extends 'materials/_panel.html.twig' %}
+
+{% set identifier = 'ausgangssprache' %}
+{% set elements = ausgangssprache %}
+
+{% block element_value %}{{ element.de }}{% endblock %}
+
+{% block panel_main %}
+  {{ parent() }}
+  <a class="btn btn-default active btn-filter filter-checkbox" data-value="other" data-identifier="{{ identifier }}">
+    {{ 'other'|trans({}, 'spr') }} <i class="fa fa-check-square"></i>
+  </a>
+{% endblock %}

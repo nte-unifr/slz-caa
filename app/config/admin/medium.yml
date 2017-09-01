@@ -1,8 +1,8 @@
 easy_admin:
   entities:
-    Ausgangssprache:
-      class: AppBundle\Entity\Ausgangssprache
-      label: 'Ausgangssprachen'
+    Medium:
+      class: AppBundle\Entity\Medium
+      label: 'Medium'
       list:
         title: '%%entity_label%%'
         sort: ['code', 'ASC']

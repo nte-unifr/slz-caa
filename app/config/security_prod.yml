@@ -1,0 +1,22 @@
+security:
+  providers:
+    shib:
+      memory:
+        users:
+          - { name: '***REMOVED***', roles: 'ROLE_ADMIN' }
+          - { name: '***REMOVED***', roles: 'ROLE_ADMIN' }
+          - { name: '***REMOVED***', roles: 'ROLE_ADMIN' }
+          - { name: '***REMOVED***', roles: 'ROLE_ADMIN' }
+          - { name: '***REMOVED***', roles: 'ROLE_ADMIN' }
+          - { name: '***REMOVED***', roles: 'ROLE_ADMIN' }
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    admin:
+      pattern: ^/admin
+      remote_user:
+        provider: shib
+        user: ***REMOVED***
+  access_control:
+    - { path: ^/admin, roles: ROLE_ADMIN }

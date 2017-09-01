@@ -1,0 +1,20 @@
+{% extends 'materials/_panel.html.twig' %}
+
+{% set identifier = 'search' %}
+{% set expanded = true %}
+
+{% block panel_title %}
+  <i class="fa fa-search"></i> {{ identifier|trans }}
+{% endblock %}
+
+{% block panel_select %}{% endblock %}
+
+{% block panel_main %}
+  <input id="mainSearch" type="search" name="search" class="form-control" placeholder="{{ 'search'|trans }}">
+{% endblock %}
+
+{% block panel_footer %}
+  <div class="panel-footer">
+    <i class="fa fa-info-circle"></i> {{ 'fulltext_search'|trans }}
+  </div>
+{% endblock %}

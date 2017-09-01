@@ -1,8 +1,12 @@
 <p class="lead text-center materials-spr">
     {{ 'which_lang'|trans }}
     <select id="select-spr">
-        {% for key, element in spr %}
-            <option value="{{ key }}">{{ element }}</option>
+        {% for element in spr %}
+            <option value="{{ element.code }}">
+                {% if "fr" in app.request.locale %}{{ element.fr }}{% endif %}
+                {% if "de" in app.request.locale %}{{ element.de }}{% endif %}
+                {% if "en" in app.request.locale %}{{ element.en }}{% endif %}
+            </option>
         {% endfor %}
     </select>
 </p>
