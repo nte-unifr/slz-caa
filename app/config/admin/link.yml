@@ -1,0 +1,25 @@
+easy_admin:
+  entities:
+    Link:
+      class: AppBundle\Entity\Link
+      label: 'Link'
+      list:
+        title: '%%entity_label%%'
+        sort: ['name', 'ASC']
+        fields:
+          - 'name'
+          - 'date'
+      form:
+        fields:
+          - { type: 'group', css_class: 'col-sm-9' }
+          - name
+          - url
+          - description
+          - { type: 'group', css_class: 'col-sm-3' }
+          - sprache
+          - ausgangssprache
+          - date
+          - asl
+          - fachbezug
+          - fertigkeit
+          - sprachniveau

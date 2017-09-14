@@ -6,7 +6,8 @@ easy_admin:
     brand_color: '#00134a'
     form_theme: 'vertical'
     menu:
-      - { label: 'Links' }
+      - { label: 'Data' }
+      - { entity: 'Link', icon: 'tags', label: 'Links' }
       - { label: 'Metadata' }
       - { entity: 'Asl', icon: 'tags', label: 'Asl' }
       - { entity: 'Fachbezug', icon: 'tags', label: 'Fachbezügen' }
