@@ -7,7 +7,7 @@ easy_admin:
     form_theme: 'vertical'
     menu:
       - { label: 'Data' }
-      - { entity: 'Link', icon: 'tags', label: 'Links' }
+      - { entity: 'Link', icon: 'tags', label: 'Links', default: true }
       - { label: 'Metadata' }
       - { entity: 'Asl', icon: 'tags', label: 'Asl' }
       - { entity: 'Fachbezug', icon: 'tags', label: 'Fachbezügen' }
