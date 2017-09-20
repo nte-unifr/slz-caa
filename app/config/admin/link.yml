@@ -8,7 +8,7 @@ easy_admin:
         sort: ['name', 'ASC']
         fields:
           - 'name'
-          - 'date'
+          - { property: 'date', label: 'Jahr' }
       form:
         fields:
           - { type: 'group', css_class: 'col-sm-9' }
@@ -19,6 +19,7 @@ easy_admin:
           - sprache
           - ausgangssprache
           - date
+          - { property: 'date', label: 'Jahr' }
           - asl
           - fachbezug
           - fertigkeit
