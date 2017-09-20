@@ -57,6 +57,12 @@ class Sprache
     private $top;
 
 
+    public function __toString()
+    {
+        return $this->getCode();
+    }
+
+
     /**
      * Get id
      *

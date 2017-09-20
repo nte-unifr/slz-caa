@@ -50,6 +50,12 @@ class Asl
     private $fr;
 
 
+    public function __toString()
+    {
+        return $this->getCode();
+    }
+
+
     /**
      * Get id
      *
