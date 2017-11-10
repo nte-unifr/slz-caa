@@ -8,10 +8,10 @@ easy_admin:
     menu:
       - { label: 'Data' }
       - { entity: 'Link', icon: 'tags', label: 'Links', default: true }
-      #- { label: 'Metadata' }
-      #- { entity: 'Asl', icon: 'tags', label: 'Asl' }
-      #- { entity: 'Fachbezug', icon: 'tags', label: 'Fachbezügen' }
-      #- { entity: 'Fertigkeit', icon: 'tags', label: 'Fertigkeiten' }
-      #- { entity: 'Medium', icon: 'tags', label: 'Media' }
-      #- { entity: 'Sprache', icon: 'tags', label: 'Sprachen' }
-      #- { entity: 'Sprachniveau', icon: 'tags', label: 'Zielstufen' }
+      - { label: 'Metadata' }
+      - { entity: 'Asl', icon: 'tags', label: 'Asl' }
+      - { entity: 'Fachbezug', icon: 'tags', label: 'Fachbezügen' }
+      - { entity: 'Fertigkeit', icon: 'tags', label: 'Fertigkeiten' }
+      - { entity: 'Medium', icon: 'tags', label: 'Media' }
+      - { entity: 'Sprache', icon: 'tags', label: 'Sprachen' }
+      - { entity: 'Sprachniveau', icon: 'tags', label: 'Zielstufen' }
