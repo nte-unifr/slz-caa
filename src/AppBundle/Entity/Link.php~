@@ -9,7 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
- * @ORM\HasLifecycleCallbacks
  */
 class Link
 {
@@ -112,25 +111,6 @@ class Link
 
 
     /**
-     *
-     * @ORM\PrePersist
-     * @ORM\PreUpdate
-     */
-    public function update()
-    {
-        $this->setUpdatedAt(new \DateTime('now'));
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->asl = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-
-    /**
      * Get id
      *
      * @return integer
@@ -210,6 +190,13 @@ class Link
     public function getDescription()
     {
         return $this->description;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->asl = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -414,29 +401,5 @@ class Link
     public function getSprache()
     {
         return $this->sprache;
-    }
-
-    /**
-     * Set updatedAt
-     *
-     * @param \DateTime $updatedAt
-     *
-     * @return Link
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedAt
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
     }
 }

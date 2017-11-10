@@ -5,10 +5,10 @@ easy_admin:
       label: 'Link'
       list:
         title: '%%entity_label%%'
-        sort: ['name', 'ASC']
+        sort: ['updatedAt', 'ASC']
         fields:
           - 'name'
-          - { property: 'date', label: 'Jahr' }
+          - { property: 'updatedAt', label: 'Update' }
       form:
         fields:
           - { type: 'group', css_class: 'col-sm-9' }
@@ -18,8 +18,6 @@ easy_admin:
           - { type: 'group', css_class: 'col-sm-3' }
           - sprache
           - ausgangssprache
-          - date
-          - { property: 'date', label: 'Jahr' }
           - asl
           - fachbezug
           - fertigkeit
