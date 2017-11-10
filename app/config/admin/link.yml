@@ -5,7 +5,7 @@ easy_admin:
       label: 'Link'
       list:
         title: '%%entity_label%%'
-        sort: ['updatedAt', 'ASC']
+        sort: ['updatedAt', 'DESC']
         fields:
           - 'name'
           - { property: 'updatedAt', label: 'Update' }
