@@ -14,6 +14,7 @@ $(document).ready(function () {
       CAAFI.setValues($(this), false)
     }
   })
+  CAAFI.setSpr($('#select-spr').chosen().val()) // set initial value, can be diff than daf because of default lang
   CAATA.initTable()
 
   // behaviour of filters when selecting/deselecting options
