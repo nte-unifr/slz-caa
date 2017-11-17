@@ -128,10 +128,15 @@ class MaterialsController extends Controller
     private function getLocaleOrder(Request $request)
     {
         $lang = $request->getSession()->get('_locale');
+
+        // no lang set in session, use default
+        if ($lang == '') {
+            $lang = $request->getDefaultLocale();
+        }
         
-        if ($lang === 'fr_FR') {
+        if (strpos($lang, 'fr') !== false) {
             return 'fr';
-        } elseif ($lang === 'en_EN') {
+        } elseif (strpos($lang, 'en') !== false) {
             return 'en';
         } else {
             return 'de';
