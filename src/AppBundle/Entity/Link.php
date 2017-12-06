@@ -104,6 +104,16 @@ class Link
     private $sprache;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Lernmaterialformate")
+     * @ORM\OrderBy({"de" = "ASC"})
+     * @ORM\JoinTable(name="links_lernmaterialformate",
+     *      joinColumns={@ORM\JoinColumn(name="link_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="lernmaterialformate_id", referencedColumnName="id", onDelete="CASCADE")}
+     * )
+     */
+    private $lernmaterialformate;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      *
      * @var \DateTime
@@ -438,5 +448,39 @@ class Link
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Add lernmaterialformate
+     *
+     * @param \AppBundle\Entity\Lernmaterialformate $lernmaterialformate
+     *
+     * @return Link
+     */
+    public function addLernmaterialformate(\AppBundle\Entity\Lernmaterialformate $lernmaterialformate)
+    {
+        $this->lernmaterialformate[] = $lernmaterialformate;
+
+        return $this;
+    }
+
+    /**
+     * Remove lernmaterialformate
+     *
+     * @param \AppBundle\Entity\Lernmaterialformate $lernmaterialformate
+     */
+    public function removeLernmaterialformate(\AppBundle\Entity\Lernmaterialformate $lernmaterialformate)
+    {
+        $this->lernmaterialformate->removeElement($lernmaterialformate);
+    }
+
+    /**
+     * Get lernmaterialformate
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLernmaterialformate()
+    {
+        return $this->lernmaterialformate;
     }
 }
