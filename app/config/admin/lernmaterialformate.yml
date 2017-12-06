@@ -1,8 +1,8 @@
 easy_admin:
   entities:
-    Lernmaterialformate:
+    Lernformate:
       class: AppBundle\Entity\Lernmaterialformate
-      label: 'Lernmaterialformate'
+      label: 'Lernformate'
       list:
         title: '%%entity_label%%'
         sort: ['de', 'ASC']

@@ -12,7 +12,7 @@ easy_admin:
       - { entity: 'Asl', icon: 'tags', label: 'Asl' }
       - { entity: 'Fachbezug', icon: 'tags', label: 'Fachbezügen' }
       - { entity: 'Fertigkeit', icon: 'tags', label: 'Fertigkeiten' }
-      - { entity: 'Lernmaterialformate', icon: 'tags', 'label': 'Lernmaterialformate' }
+      - { entity: 'Lernformate', icon: 'tags', 'label': 'Lernformate' }
       - { entity: 'Medium', icon: 'tags', label: 'Media' }
       - { entity: 'Sprache', icon: 'tags', label: 'Sprachen' }
       - { entity: 'Sprachniveau', icon: 'tags', label: 'Zielstufen' }
