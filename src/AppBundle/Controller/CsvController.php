@@ -7,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use AppBundle\Entity\Csv;
 use AppBundle\Entity\Material;
 
@@ -21,8 +23,8 @@ class CsvController extends Controller
         $csv = new Csv();
 
         $form = $this->createFormBuilder($csv)
-            ->add('uploadedFile', 'file', array('label' => false))
-            ->add('save', 'submit', array('label' => 'Import CSV', 'attr' => array('class' => 'btn-info btn-sm')))
+            ->add('uploadedFile', FileType::class, array('label' => false))
+            ->add('save', SubmitType::class, array('label' => 'Import CSV', 'attr' => array('class' => 'btn-info btn-sm')))
             ->getForm();
 
         $form->handleRequest($request);

@@ -40,9 +40,9 @@
                 <hr>
 
                 <h3>Step 2 : Import your CSV</h3>
-                <form action="" method="post" {{ form_enctype(form) }}>
+                {{ form_start(form) }}
                     {{ form_widget(form) }}
-                </form>
+                {{ form_end(form) }}
 
                 <hr>
 
