@@ -141,6 +141,20 @@ class Material implements JsonSerializable
      */
     private $install;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ble", type="boolean")
+     */
+    private $ble;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="autonr", type="integer")
+     */
+    private $autonr;
+
 
     /**
      * Get id
@@ -569,5 +583,53 @@ class Material implements JsonSerializable
     public function getInstall()
     {
         return $this->install;
+    }
+
+    /**
+     * Set ble
+     *
+     * @param boolean $ble
+     *
+     * @return Material
+     */
+    public function setBle($ble)
+    {
+        $this->ble = $ble;
+
+        return $this;
+    }
+
+    /**
+     * Get ble
+     *
+     * @return boolean
+     */
+    public function getBle()
+    {
+        return $this->ble;
+    }
+
+    /**
+     * Set autonr.
+     *
+     * @param int $autonr
+     *
+     * @return Material
+     */
+    public function setAutonr($autonr)
+    {
+        $this->autonr = $autonr;
+
+        return $this;
+    }
+
+    /**
+     * Get autonr.
+     *
+     * @return int
+     */
+    public function getAutonr()
+    {
+        return $this->autonr;
     }
 }

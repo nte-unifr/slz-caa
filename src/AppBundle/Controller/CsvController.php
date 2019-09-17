@@ -80,6 +80,11 @@ class CsvController extends Controller
             if ($row['INSTALL'] != '') {
                 $install = true;
             }
+            // check if material is in BLE
+            $ble = false;
+            if ($row['AUSLEIHEBLE'] != '') {
+                $ble = true;
+            }
 
             // we import only material actually received
             if (strpos($row['ZUSTAND'], 'd') !== false) {
@@ -101,6 +106,8 @@ class CsvController extends Controller
                 $material->setBereich($row['BEREICH']);
                 $material->setZustand($row['ZUSTAND']);
                 $material->setInstall($install);
+                $material->setBle($ble);
+                $material->setAutonr($row['AUTONR']);
 
                 $em->persist($material);
 
