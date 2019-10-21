@@ -16,7 +16,7 @@ material: Matériel
 displayed_columns: Colonnes affichées
 search: Rechercher
 fulltext_search: La recherche est de type "fulltext", également sur les colonnes masquées.
-which_lang: Quelle langue désirez-vous apprendre :
+which_lang: "Quelle langue désirez-vous apprendre :"
 trick: Astuce!
 select_all: Tout sélectionner
 clear_all: Tout desélectionner

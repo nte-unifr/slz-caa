@@ -16,7 +16,7 @@ material: Lernmaterialien
 displayed_columns: Angezeigten Spalten
 search: Suche
 fulltext_search: Die Suche ist "fulltext", auch auf ausgeblendeten Spalten.
-which_lang: Welche Sprache möchten Sie lernen :
+which_lang: "Welche Sprache möchten Sie lernen :"
 trick: Tipp!
 select_all: Alle wählen
 clear_all: Alle löschen
