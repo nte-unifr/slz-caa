@@ -1,16 +1,16 @@
-(function (Translator) {
-    // en
-    Translator.add("wortschatz", "Vocabulary", "fertigkeit", "en");
-    Translator.add("lesen", "Reading", "fertigkeit", "en");
-    Translator.add("h\u00f6ren", "Listening", "fertigkeit", "en");
-    Translator.add("sprechen", "Speaking", "fertigkeit", "en");
-    Translator.add("aussprache", "Pronunciation", "fertigkeit", "en");
-    Translator.add("schreiben", "Writing", "fertigkeit", "en");
-    Translator.add("orthografie", "Spelling", "fertigkeit", "en");
-    Translator.add("grammatik", "Grammar", "fertigkeit", "en");
-    Translator.add("test", "Tests", "fertigkeit", "en");
-    Translator.add("alle", "All", "fertigkeit", "en");
-    Translator.add("sprachmittlung", "Mediation", "fertigkeit", "en");
-    Translator.add("lernstrategien", "Learning strategies", "fertigkeit", "en");
-    Translator.add("lernen", "Learning", "fertigkeit", "en");
+(function (t) {
+// en
+t.add("wortschatz", "Vocabulary", "fertigkeit", "en");
+t.add("lesen", "Reading", "fertigkeit", "en");
+t.add("h\u00f6ren", "Listening", "fertigkeit", "en");
+t.add("sprechen", "Speaking", "fertigkeit", "en");
+t.add("aussprache", "Pronunciation", "fertigkeit", "en");
+t.add("schreiben", "Writing", "fertigkeit", "en");
+t.add("orthografie", "Spelling", "fertigkeit", "en");
+t.add("grammatik", "Grammar", "fertigkeit", "en");
+t.add("test", "Tests", "fertigkeit", "en");
+t.add("alle", "All", "fertigkeit", "en");
+t.add("sprachmittlung", "Mediation", "fertigkeit", "en");
+t.add("lernstrategien", "Learning strategies", "fertigkeit", "en");
+t.add("lernen", "Learning", "fertigkeit", "en");
 })(Translator);

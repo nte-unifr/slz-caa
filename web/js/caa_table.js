@@ -71,7 +71,8 @@ window.CAATA = {
         {
           'name': 'titel',
           'data': 'titel',
-          'visible': true
+          'visible': true,
+          'width': '20%'
         },
         {
           'name': 'sprachniveau',
@@ -127,6 +128,12 @@ window.CAATA = {
           'name': 'code',
           'data': 'code',
           'visible': false
+        },
+        {
+          'name': 'ble',
+          'data': 'ble',
+          'render': { display: function(data, type, full, meta) { return Translator.trans(data, {}, 'messages') } },
+          'visible': true
         },
         {
           'name': 'kommentar',

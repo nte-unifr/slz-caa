@@ -30,5 +30,8 @@
     name: code
     display: false
 -
+    name: ble
+    display: true
+-
     name: kommentar
     display: true

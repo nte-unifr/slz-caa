@@ -1,16 +1,16 @@
-(function (Translator) {
-    // fr
-    Translator.add("wortschatz", "Vocabulaire", "fertigkeit", "fr");
-    Translator.add("lesen", "Lire", "fertigkeit", "fr");
-    Translator.add("h\u00f6ren", "Ecouter", "fertigkeit", "fr");
-    Translator.add("sprechen", "Parler", "fertigkeit", "fr");
-    Translator.add("aussprache", "Prononciation", "fertigkeit", "fr");
-    Translator.add("schreiben", "Ecrire", "fertigkeit", "fr");
-    Translator.add("orthografie", "Orthographe", "fertigkeit", "fr");
-    Translator.add("grammatik", "Grammaire", "fertigkeit", "fr");
-    Translator.add("test", "Tests", "fertigkeit", "fr");
-    Translator.add("alle", "Toutes", "fertigkeit", "fr");
-    Translator.add("sprachmittlung", "M\u00e9diation", "fertigkeit", "fr");
-    Translator.add("lernstrategien", "Strat\u00e9gies d'apprentissage", "fertigkeit", "fr");
-    Translator.add("lernen", "Apprendre", "fertigkeit", "fr");
+(function (t) {
+// fr
+t.add("wortschatz", "Vocabulaire", "fertigkeit", "fr");
+t.add("lesen", "Lire", "fertigkeit", "fr");
+t.add("h\u00f6ren", "Ecouter", "fertigkeit", "fr");
+t.add("sprechen", "Parler", "fertigkeit", "fr");
+t.add("aussprache", "Prononciation", "fertigkeit", "fr");
+t.add("schreiben", "Ecrire", "fertigkeit", "fr");
+t.add("orthografie", "Orthographe", "fertigkeit", "fr");
+t.add("grammatik", "Grammaire", "fertigkeit", "fr");
+t.add("test", "Tests", "fertigkeit", "fr");
+t.add("alle", "Toutes", "fertigkeit", "fr");
+t.add("sprachmittlung", "M\u00e9diation", "fertigkeit", "fr");
+t.add("lernstrategien", "Strat\u00e9gies d'apprentissage", "fertigkeit", "fr");
+t.add("lernen", "Apprendre", "fertigkeit", "fr");
 })(Translator);

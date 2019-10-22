@@ -533,7 +533,8 @@ class Material implements JsonSerializable
             'code' => $this->bereich."|".$this->spr."|".$this->sb."|".$this->sm2,
             'kommentar' => $this->kommentar,
             'nrcdrom' => explode(" ", $this->nrcdrom),
-            'install' => $this->install
+            'install' => $this->install,
+            'ble' => $this->ble
         );
     }
 

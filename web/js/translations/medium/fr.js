@@ -1,13 +1,13 @@
-(function (Translator) {
-    // fr
-    Translator.add("txt", "Livre", "medium", "fr");
-    Translator.add("acd", "CD audio", "medium", "fr");
-    Translator.add("cdr", "CD-ROM", "medium", "fr");
-    Translator.add("dvd", "DVD", "medium", "fr");
-    Translator.add("vid", "Cassette vid\u00e9o", "medium", "fr");
-    Translator.add("cas", "Cassette audio", "medium", "fr");
-    Translator.add("web", "Lien web", "medium", "fr");
-    Translator.add("dvdr", "DVD-ROM", "medium", "fr");
-    Translator.add("dcd", "Data CD", "medium", "fr");
-    Translator.add("installed", "[install\u00e9 sur les PCs]", "medium", "fr");
+(function (t) {
+// fr
+t.add("txt", "Livre", "medium", "fr");
+t.add("acd", "CD audio", "medium", "fr");
+t.add("cdr", "CD-ROM", "medium", "fr");
+t.add("dvd", "DVD", "medium", "fr");
+t.add("vid", "Cassette vid\u00e9o", "medium", "fr");
+t.add("cas", "Cassette audio", "medium", "fr");
+t.add("web", "Lien web", "medium", "fr");
+t.add("dvdr", "DVD-ROM", "medium", "fr");
+t.add("dcd", "Data CD", "medium", "fr");
+t.add("installed", "[install\u00e9 sur les PCs]", "medium", "fr");
 })(Translator);
