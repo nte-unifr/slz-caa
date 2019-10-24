@@ -262,8 +262,7 @@ $.fn.dataTable.ext.search.push(
     var tableInstall = rowData['install']
     var globalInstall = CAAFI['install']
 
-    var debug = window.location.pathname.indexOf('/debug') !== -1
-    if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
+    if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase())) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
       return false
     }
