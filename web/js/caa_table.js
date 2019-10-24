@@ -37,12 +37,6 @@ var isRowAllowed = function (tableData, filterData) {
   return !_.isEmpty(intersection) // we have at least an element
 }
 
-var debugTable = function (title, data) {
-  console.log('-----')
-  console.log('problem with ' + title + ' :')
-  console.log(data)
-}
-
 window.CAATA = {
   table: null,
   initTable: function () {
@@ -271,27 +265,21 @@ $.fn.dataTable.ext.search.push(
     var debug = window.location.pathname.indexOf('/debug') !== -1
     if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase()) && !debug) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
-      if (debug) debugTable('Fachbezug', rowData)
       return false
     }
     if (!isRowAllowed(tableAsl, globalAsl)) {
-      if (debug) debugTable('Asl', rowData)
       return false
     }
     if (!isRowAllowed(tableSprachniveau, globalSprachniveau)) {
-      if (debug) debugTable('Sprachniveau', rowData)
       return false
     }
     if (!isRowAllowed(tableFertigkeit, globalFertigkeit)) {
-      if (debug) debugTable('Fertigkeit', rowData)
       return false
     }
     if (!isRowAllowed(tableAusgangssprache, globalAusgangssprache)) {
-      if (debug) debugTable('Ausgangssprache', rowData)
       return false
     }
     if (!isRowAllowed(tableMedium, globalMedium)) {
-      if (debug) debugTable('Medium', rowData)
       return false
     }
     if (globalJahr !== 'all' && tableJahr < globalJahr) { return false }
