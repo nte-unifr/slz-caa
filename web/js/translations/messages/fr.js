@@ -36,6 +36,7 @@ t.add("select_objectives", "S\u00e9lectionnez vos objectifs en \u2018Crit\u00e8r
 t.add("search_criteria", "Crit\u00e8res de recherche", "messages", "fr");
 t.add("reset_all", "R\u00e9initialiser tous les filtres", "messages", "fr");
 t.add("preinstalled_only", "Uniquement le mat\u00e9riel pr\u00e9install\u00e9 sur les PC", "messages", "fr");
+t.add("loanable_only", "Uniquement le mat\u00e9riel pr\u00eatable", "messages", "fr");
 t.add("false", "Non", "messages", "fr");
 t.add("true", "Oui", "messages", "fr");
 })(Translator);

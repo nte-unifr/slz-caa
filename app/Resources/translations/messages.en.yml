@@ -25,5 +25,6 @@ select_objectives: Select your objectives in the ‘Search criteria’
 search_criteria: Search criteria
 reset_all: Reset all filters
 preinstalled_only: Only material preinstalled on the PCs
+loanable_only: Only loanable material
 "false": "No"
 "true": "Yes"

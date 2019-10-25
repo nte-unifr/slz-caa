@@ -36,6 +36,7 @@ t.add("select_objectives", "W\u00e4hlen Sie in \u2018Suchkriterien\u2019 Ihre Zi
 t.add("search_criteria", "Suchkriterien", "messages", "de");
 t.add("reset_all", "Alle Filter zur\u00fccksetzen", "messages", "de");
 t.add("preinstalled_only", "Nur auf den PCs vorinstalliertes Material", "messages", "de");
+t.add("loanable_only", "Nur ausleihbares Material", "messages", "de");
 t.add("false", "Nein", "messages", "de");
 t.add("true", "Ja", "messages", "de");
 })(Translator);

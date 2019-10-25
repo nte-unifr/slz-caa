@@ -10,6 +10,7 @@ window.CAAFI = {
   medium: [],
   jahr: 'all',
   install: false,
+  ble: false,
   setSpr: function (value) {
     CAAFI['spr'] = value
   },
@@ -23,8 +24,10 @@ window.CAAFI = {
     $.each(values, function (index, value) {
       if (identifier === 'jahr') {
         CAAFI[identifier] = value
-      } else if (identifier === 'install') {
+      } else if (identifier === 'install' || identifier === 'ble') {
         CAAFI[identifier] = !CAAFI[identifier]
+        console.log(CAAFI[identifier])
+        console.log(identifier)
       } else {
         if (el.hasClass('active')) {
           CAAFI[identifier].push(value)
@@ -37,5 +40,10 @@ window.CAAFI = {
         CAATA.draw()
       }
     })
+  },
+  disable: function (el) {
+    var identifier = el.data('identifier')
+    CAAFI[identifier] = false
+    CAATA.draw()
   }
 }

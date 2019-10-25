@@ -36,6 +36,7 @@ t.add("select_objectives", "Select your objectives in the \u2018Search criteria\
 t.add("search_criteria", "Search criteria", "messages", "en");
 t.add("reset_all", "Reset all filters", "messages", "en");
 t.add("preinstalled_only", "Only material preinstalled on the PCs", "messages", "en");
+t.add("loanable_only", "Only loanable material", "messages", "en");
 t.add("false", "No", "messages", "en");
 t.add("true", "Yes", "messages", "en");
 })(Translator);

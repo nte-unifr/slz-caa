@@ -262,6 +262,9 @@ $.fn.dataTable.ext.search.push(
     var tableInstall = rowData['install']
     var globalInstall = CAAFI['install']
 
+    var tableBle = rowData['ble']
+    var globalBle = CAAFI['ble']
+
     if (!_.contains(arrayToUpperCase(tableSpr), globalSpr.toUpperCase())) { return false }
     if (!isRowAllowed(tableFachbezug, globalFachbezug)) {
       return false
@@ -283,6 +286,7 @@ $.fn.dataTable.ext.search.push(
     }
     if (globalJahr !== 'all' && tableJahr < globalJahr) { return false }
     if (globalInstall === true && tableInstall === false) { return false }
+    if (globalBle === true && tableBle === false) { return false }
 
     return true
   }

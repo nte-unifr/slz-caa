@@ -25,5 +25,6 @@ select_objectives: Sélectionnez vos objectifs en ‘Critères de recherche’
 search_criteria: Critères de recherche
 reset_all: Réinitialiser tous les filtres
 preinstalled_only: Uniquement le matériel préinstallé sur les PC
+loanable_only: Uniquement le matériel prêtable
 "false": "Non"
 "true": "Oui"

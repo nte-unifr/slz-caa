@@ -19,7 +19,7 @@ $(document).ready(function () {
 
   // behaviour of filters when selecting/deselecting options
   $('#filters-accordion .btn-filter').click(function () {
-    if ($(this).hasClass('filter-checkbox')) {
+    if ($(this).hasClass('filter-checkbox') || $(this).hasClass('filter-toggle')) {
       CAAUI.toggleBox($(this))
     } else {
       CAAUI.checkRadio($(this))
@@ -47,9 +47,15 @@ $(document).ready(function () {
       CAAUI.checkBox($(this))
       CAAFI.setValues($(this))
     })
+
     var radio = $('#filters-accordion .filter-radio-all').first()
     CAAUI.checkRadio(radio)
     CAAFI.setValues(radio)
+
+    $('#filters-accordion .btn-filter.filter-toggle').each(function () {
+      CAAUI.uncheckBox($(this))
+      CAAFI.disable($(this))
+    })
   })
 
   // behaviour of buttons to show/hide cols
