@@ -95,3 +95,6 @@ div.dataTables_wrapper .row.well {
   color: #6d6d6d;
   border-color: #ddd;
 }
+#top-navbar {
+  height: 60px;
+}

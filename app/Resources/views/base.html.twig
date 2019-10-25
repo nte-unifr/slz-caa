@@ -33,14 +33,14 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <nav class="navbar navbar-transversal hidden-xs">
+                <nav id="top-navbar" class="navbar navbar-transversal hidden-xs">
                     <div class="container-fluid">
                         <ul class="nav navbar-nav navbar-left">
                             <a class="navbar-brand" href="https://www.unifr.ch">
-                                <img src="{{ asset('images/square.png') }}" width="22" height="22" alt="">
+                                <img src="{{ asset('images/square.png') }}" width="40" height="40" alt="">
                             </a>
                             <li><a href="//www.unifr.ch/centredelangues"><i class="fa fa-chevron-right" aria-hidden="true"></i> {{ 'language_center'|trans }}</a></li>
-                            <li><a href="//www.unifr.ch/centredelangues/fr/Auto"><i class="fa fa-chevron-right" aria-hidden="true"></i> {{ 'caa'|trans }}</a></li>
+                            <li><a href="//www3.unifr.ch/centredelangues/fr/autoapprentissage/"><i class="fa fa-chevron-right" aria-hidden="true"></i> {{ 'caa'|trans }}</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li {% if "fr" in app.request.locale %}class="active"{% endif %}><a href="fr">Fr</a></li>
@@ -65,18 +65,13 @@
                                 <a class="navbar-brand visible-xs" href="https://www.unifr.ch">
                                     <img src="{{ asset('images/circle.png') }}" width="22" height="22" alt="">
                                 </a>
-                                <span class="navbar-brand">{{ 'brand'|trans }}</span>
+                                <span class="navbar-brand">{{ 'search_material'|trans }}</span>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="main-navbar-collapse">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="{{ path('home') }}">{{ 'search_material'|trans }}</a></li>
-                                    <li><a href="https://survey.unifr.ch/index.php/466119/lang-{{ app.request.locale|split('_')[0] }}">{{ 'registration'|trans }}</a></li>
-                                </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="//www.unifr.ch/centredelangues/{{ app.request.locale|split('_')[0] }}/Auto/projet-dapprentissage">{{ 'info'|trans }}</a></li>
-                                    <li><a href="//www.unifr.ch/centredelangues/{{ app.request.locale|split('_')[0] }}/Auto/FAQ">FAQ</a></li>
+                                    <li><a href="https://survey.unifr.ch/index.php/466119/lang-{{ app.request.locale|split('_')[0] }}">{{ 'registration'|trans }}</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right visible-xs-block">
                                     <li class="dropdown">
