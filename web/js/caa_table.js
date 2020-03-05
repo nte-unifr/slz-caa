@@ -71,25 +71,37 @@ window.CAATA = {
         {
           'name': 'sprachniveau',
           'data': 'sprachniveau',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ' ', 'sprachniveau', 'u', true) } },
+          'render': {
+            display: function (data, type, full, meta) { return translateTerms(data, ' ', 'sprachniveau', 'u', true) },
+            export: function (data, type, full, meta) { return translateTerms(data, ', ', 'sprachniveau', 'u') }
+          },
           'visible': true
         },
         {
           'name': 'fertigkeit',
           'data': 'fertigkeit',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'fertigkeit') } },
+          'render': {
+            display: function (data, type, full, meta) { return translateTerms(data, ', ', 'fertigkeit') },
+            export: function (data, type, full, meta) { return translateTerms(data, ', ', 'fertigkeit') }
+          },
           'visible': true
         },
         {
           'name': 'fachbezug',
           'data': 'fachbezug',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'fachbezug') } },
+          'render': {
+            display: function (data, type, full, meta) { return translateTerms(data, ',<br>', 'fachbezug') },
+            export: function (data, type, full, meta) { return translateTerms(data, ', ', 'fachbezug') }
+          },
           'visible': false
         },
         {
           'name': 'ausgangssprache',
           'data': 'ausgangssprache',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'ausgangssprache') } },
+          'render': {
+            display: function (data, type, full, meta) { return translateTerms(data, ', ', 'ausgangssprache') },
+            export: function (data, type, full, meta) { return translateTerms(data, ', ', 'ausgangssprache') }
+          },
           'visible': true,
           'width': '10%'
         },
@@ -110,7 +122,10 @@ window.CAATA = {
         {
           'name': 'asl',
           'data': 'asl',
-          'render': { display: function (data, type, full, meta) { return translateTerms(data, ', ', 'asl') } },
+          'render': {
+            display: function (data, type, full, meta) { return translateTerms(data, ', ', 'asl') },
+            export: function (data, type, full, meta) { return translateTerms(data, ', ', 'asl') }
+          },
           'visible': false
         },
         {
@@ -126,7 +141,10 @@ window.CAATA = {
         {
           'name': 'ble',
           'data': 'ble',
-          'render': { display: function(data, type, full, meta) { return Translator.trans(data, {}, 'messages') } },
+          'render': {
+            display: function(data, type, full, meta) { return Translator.trans(data, {}, 'messages') },
+            export: function(data, type, full, meta) { return Translator.trans(data, {}, 'messages') }
+          },
           'visible': true
         },
         {
@@ -169,7 +187,10 @@ window.CAATA = {
           },
           orientation: 'landscape',
           pageSize: 'LEGAL',
-          className: 'btn-info btn-actions'
+          className: 'btn-info btn-actions',
+          customize : function(doc) {
+            doc.content[1].table.widths = [ '15%', '4%', '7%', '8%', '6%', '5%', '3%', '6%', '6%', '6%', '3%', '31%'];
+          }
         },
         {
           extend: 'excelHtml5',
